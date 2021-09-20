@@ -1,0 +1,18 @@
+20:31:22 Yoav has connection with cell phone.20:31:29 Yoav has connection with cell phone.20:31:44 Yoav has connection with remote.20:31:44 Yoav has connection with cell phone.20:31:51 Yoav has connection with remote.20:31:51 Yoav has connection with cell phone.20:34:39: Yoav has connection with cell phone.
+20:35:04: Yoav has connection with cell phone.
+20:35:38: Yoav has connection with cell phone.
+20:35:47: Yoav has connection with cell phone.
+20:37:06: Yoav has connection with remote.
+20:37:14: Yoav has connection with remote.
+20:37:22: Yoav has connection with cell phone.
+20:41:52: |Yoav has connection with cell phone.|
+20:42:28: |Yoav has connection with cell phone.|
+20:42:56: |Yoav has connection with remote.|
+20:43:55: |Yoav has connection with cell phone.|
+20:43:59: |Yoav has connection with cell phone.|
+20:44:05: |Yoav has connection with cell phone.|
+20:44:13: |Yoav has connection with cell phone.|
+20:45:15: |Yoav has connection with cell phone.|
+20:45:22: |Yoav has connection with remote.| |Yoav has connection with cell phone.|
+20:45:29: |Yoav has connection with remote.| |Yoav has connection with cell phone.|
+20:45:34: |Yoav has connection with remote.| |Yoav has connection with cell phone.|

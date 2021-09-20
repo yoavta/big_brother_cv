@@ -1,0 +1,9 @@
+bottle
+wine glass
+cup
+fork
+spoon
+bowl
+umbrella
+handbag
+suitcase
