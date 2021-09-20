@@ -1,0 +1,6 @@
+knife
+microwave
+oven
+toaster
+scissors
+hair drier

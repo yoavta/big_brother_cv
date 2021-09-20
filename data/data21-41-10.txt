@@ -1,0 +1,5 @@
+21:41:17; Yoav has connection with chair.$
+21:41:37; Yoav is  eating a apple.$
+21:41:41; Yoav is  eating a apple.$
+21:42:08; watch out!! Yoav is playing with scissors.$
+21:42:16; Yoav has connection with cell phone.$

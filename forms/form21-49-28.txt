@@ -1,0 +1,4 @@
+report time: 21-49-28.
+
+Situations:
+ Yoav has connection with chair:  7 times.
