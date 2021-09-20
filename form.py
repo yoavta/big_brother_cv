@@ -30,8 +30,9 @@ class form:
         # f = open(self.path, 'r')
         dict = {}
         with open(self.path, 'r', encoding='UTF-8') as file:
-            while (line := file.readline().rstrip()):
-                split1  = line.split(';')
+            line = file.readline().rstrip()
+            while line:
+                split1 = line.split(';')
                 split2 = split1[1]
                 split3 = split2.split('$')
                 split4= split3[:-1]
@@ -40,6 +41,7 @@ class form:
                         dict[event]=dict[event]+1
                     else:
                         dict[event]=1
+                line = file.readline().rstrip()
 
                     # print(split3)
 
@@ -53,7 +55,7 @@ class form:
         file = open(path, 'w+')
         file.write(text)
         file.close()
-        os.startfile("C:/Users/tamir/OneDrive/summerProjects/situations_detector/"+path)
+        # os.startfile("C:/Users/tamir/OneDrive/summerProjects/situations_detector/"+path)
 
 
 

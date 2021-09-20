@@ -1,7 +1,7 @@
 import math
 import cv2
 import numpy as np
-import Lights
+#import Lights
 import time
 from form import form
 from cvzone.HandTrackingModule import HandDetector
@@ -42,8 +42,8 @@ with open(classesFile, 'rt') as f:
 f.close()
 
 # Connecting to the network:
-model_configuration = 'yolov3-320.cfg'
-model_weights = 'yolov3-320.weights'
+model_configuration = 'yolov3-tiny.cfg'
+model_weights = 'yolov3-tiny.weights'
 net = cv2.dnn.readNetFromDarknet(model_configuration,model_weights)
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
@@ -227,7 +227,7 @@ def camera_move(dir,dis):
         print("camera moving "+ str_dis+ " down")
 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 screen_width = 1280
 screen_height = 720
 cap.set(3, screen_width)
