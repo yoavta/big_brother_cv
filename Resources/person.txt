@@ -3,3 +3,4 @@ oven
 toaster
 hair drier
 backpack
+sofa
