@@ -1,0 +1,17 @@
+19:24:22; yolevin has connection with toilet.$ yolevin has connection with sink.$
+19:24:23; yolevin has connection with toilet.$
+19:24:24; yolevin has connection with toilet.$
+19:24:25; yolevin has connection with toilet.$
+19:24:26; yolevin has connection with toilet.$
+19:24:28; yolevin has connection with toilet.$ yolevin using the tv with tvmonitor.$
+19:24:30; yolevin has connection with toilet.$ yolevin using the tv with tvmonitor.$
+19:24:31; yolevin has connection with toilet.$
+19:24:32; yolevin has connection with toilet.$
+19:24:33; yolevin has connection with toilet.$ yolevin has connection with sink.$
+19:24:34; yolevin has connection with toilet.$
+19:24:35; yolevin using the tv with tvmonitor.$ yolevin has connection with toilet.$
+19:24:36; yolevin using the tv with tvmonitor.$ yolevin has connection with sink.$
+19:24:37; yolevin has connection with toilet.$ yolevin has connection with sink.$
+19:24:38; yolevin has connection with toilet.$ yolevin has connection with sink.$
+19:24:39; yolevin has connection with sink.$
+19:24:40; yolevin has connection with toilet.$ yolevin has connection with sink.$ yolevin using the tv with tvmonitor.$

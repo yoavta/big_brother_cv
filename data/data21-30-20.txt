@@ -1,0 +1,8 @@
+21:30:38; Yotam has connection with cell phone.$
+21:30:39; Yotam has connection with laptop.$ Yotam has connection with chair.$
+21:30:40; Yotam has connection with laptop.$ Yotam has connection with chair.$ Yotam has connection with mouse.$
+21:30:42; Yotam has connection with laptop.$ Yotam has connection with chair.$
+21:30:43; Yotam has connection with keyboard.$ Yotam has connection with chair.$
+21:30:44; Yotam has connection with keyboard.$
+21:30:46; Yotam has connection with laptop.$ Yotam has connection with chair.$ Yotam has connection with mouse.$
+21:30:47; Yotam has connection with laptop.$ Yotam has connection with chair.$

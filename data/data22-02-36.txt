@@ -1,0 +1,10 @@
+22:03:06; Yotav has connection with keyboard.$ Yotav has connection with chair.$
+22:03:08; Yotav has connection with keyboard.$ Yotav has connection with chair.$
+22:03:09; Yotav has connection with keyboard.$ Yotav has connection with chair.$
+22:03:10; Yotav has connection with chair.$
+22:03:12; Yotav has connection with chair.$ Yotav has connection with keyboard.$
+22:03:13; Yotav has connection with keyboard.$ Yotav has connection with chair.$
+22:03:18; Yotav has connection with chair.$
+22:03:22; Yotav has connection with chair.$
+22:03:42; Yotav has connection with tie.$
+22:03:44; Yotav has connection with cell phone.$

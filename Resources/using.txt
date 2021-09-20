@@ -1,0 +1,5 @@
+sink
+clock
+toilet
+refrigerator
+cell phone
