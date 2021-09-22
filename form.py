@@ -1,4 +1,5 @@
 import time
+import datetime
 import os
 import math
 
@@ -42,22 +43,51 @@ class form:
                 for event in split4:
                     if event in dict.keys():
                         # Check timestamp to see if it is a new connection:
-                        if abs(int(timestamp.split(':')[1]) - int(dict[event][-1][1].split(':')[1])) <= 5:
-                            dict[event][-1][2] = dict[event][-1][2] + 1
-                            dict[event][-1][1] = timestamp
+                        time_list = timestamp.split(':')
+                        latest_event = dict[event][-1]
+                        if (int(time_list[0]) - int(latest_event[2].split(':')[0]) == 0 and
+                            int(time_list[1]) - int(latest_event[2].split(':')[1]) <= 5) or\
+                            (int(time_list[0]) - int(latest_event[2].split(':')[0]) == 1 and
+                                abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) >= 55) or\
+                                abs((int(time_list[0]) - int(latest_event[2].split(':')[0])) == 23 and
+                                    abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) <= 5):
+                            latest_event[3] = latest_event[3] + 1
+                            latest_event[2] = timestamp
                         else:
-                            dict[event].append([dict[event][-1][0] + 1, timestamp, 1])
+                            dict[event].append([latest_event[0] + 1, timestamp, timestamp, 1])
                     else:
-                        dict[event] = [[1, timestamp, 1]]  # [id, timestamp, count]
+                        dict[event] = [[1, timestamp, timestamp, 1]]  # [id, first timestamp, last timestamp, count]
                 line = file.readline().rstrip()
                 # print(split3)
 
         current_time = time.strftime("%H-%M-%S", time.localtime())
-        text = "report time: "+current_time+".\n\nSituations:\n"
+        text = "report time: " + current_time + "\n\nImportant events:\n"
+        # ADD HERE SUMMARY OF IMPORTANT EVENTS (DANGEROUS, SURPRISING...)
+        text = text + "\n\nSituations:\n"
+
+        total_times = {}
 
         for t in dict:
             for con in dict[t]:
-                text = text + str(t[:-1]) + "(" + str(con[0]) + "):  "+str(con[2])+" times.\n"
+                text = text + str(t[:-1]) + " from " + str(con[1]) + " to " + str(con[2])+".\n"
+                # start = con[1].split(':')
+                # end = con[2].split(':')
+                # hours =  int(end[0]) - int(start[0])
+                # minutes = int(end[1]) - int(start[1])
+                # if hours == 0:
+                #     total_times[t] = minutes
+                # elif hours == 1:
+                #     total_times[t] = abs(minutes)
+                # if (int(end[0]) - int(start[0]) == 0 and
+                #     int(end[1]) - int(start[1]) <= 5) or \
+                #         (int(time_list[0]) - int(latest_event[2].split(':')[0]) == 1 and
+                #          abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) >= 55) or \
+                #         abs((int(time_list[0]) - int(latest_event[2].split(':')[0])) == 23 and
+                #             abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) <= 5):
+
+        text = text + "\n\nIn total:\n"
+        for t in dict:
+            text = text + str(t[:-1]) + " for " + " ______ hour(s)."
 
         path = "forms/form" + current_time + ".txt"
         file = open(path, 'w+')
