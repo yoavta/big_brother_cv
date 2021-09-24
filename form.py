@@ -2,6 +2,7 @@ import time
 import datetime
 import os
 import math
+from datetime import datetime
 
 
 class form:
@@ -45,12 +46,9 @@ class form:
                         # Check timestamp to see if it is a new connection:
                         time_list = timestamp.split(':')
                         latest_event = dict[event][-1]
-                        if (int(time_list[0]) - int(latest_event[2].split(':')[0]) == 0 and
-                            int(time_list[1]) - int(latest_event[2].split(':')[1]) <= 5) or\
-                            (int(time_list[0]) - int(latest_event[2].split(':')[0]) == 1 and
-                                abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) >= 55) or\
-                                abs((int(time_list[0]) - int(latest_event[2].split(':')[0])) == 23 and
-                                    abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) <= 5):
+                        FMT = '%H:%M:%S'
+                        if int(str((datetime.strptime(timestamp, FMT) - datetime.strptime(latest_event[2], FMT)))
+                                .split(':')[1]) < 1:
                             latest_event[3] = latest_event[3] + 1
                             latest_event[2] = timestamp
                         else:
@@ -64,30 +62,35 @@ class form:
         text = "report time: " + current_time + "\n\nImportant events:\n"
         # ADD HERE SUMMARY OF IMPORTANT EVENTS (DANGEROUS, SURPRISING...)
         text = text + "\n\nSituations:\n"
+        # DOESN'T PRINT BY CHRONOLOGICAL ORDER!
 
         total_times = {}
 
         for t in dict:
             for con in dict[t]:
                 text = text + str(t[:-1]) + " from " + str(con[1]) + " to " + str(con[2])+".\n"
-                # start = con[1].split(':')
-                # end = con[2].split(':')
-                # hours =  int(end[0]) - int(start[0])
-                # minutes = int(end[1]) - int(start[1])
-                # if hours == 0:
-                #     total_times[t] = minutes
-                # elif hours == 1:
-                #     total_times[t] = abs(minutes)
-                # if (int(end[0]) - int(start[0]) == 0 and
-                #     int(end[1]) - int(start[1]) <= 5) or \
-                #         (int(time_list[0]) - int(latest_event[2].split(':')[0]) == 1 and
-                #          abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) >= 55) or \
-                #         abs((int(time_list[0]) - int(latest_event[2].split(':')[0])) == 23 and
-                #             abs(int(time_list[1]) - int(latest_event[2].split(':')[1])) <= 5):
+                start = con[1]
+                end = con[2]
+                FMT = '%H:%M:%S'
+                tdelta = datetime.strptime(end, FMT) - datetime.strptime(start, FMT)
+                if t[:-1] in total_times:
+                    t1 = datetime.strptime(str(total_times[t[:-1]]), FMT)
+                    t2 = datetime.strptime(str(tdelta), FMT)
+                    time_zero = datetime.strptime('00:00:00', FMT)
+                    total_times[t[:-1]] = (t1 - time_zero + t2).time()
+                else:
+                    total_times[t[:-1]] = tdelta
 
         text = text + "\n\nIn total:\n"
-        for t in dict:
-            text = text + str(t[:-1]) + " for " + " ______ hour(s)."
+        for t in total_times:
+            text = text + str(t) + " for " + str(total_times[t])
+            split = str(total_times[t]).split(':')
+            if split[0] != '0' or split[0] != '00':
+                text = text + " hour(s).\n"
+            elif split[1] != '00':
+                text = text + " minute(s).\n"
+            else:
+                text = text + " second(s).\n"
 
         path = "forms/form" + current_time + ".txt"
         file = open(path, 'w+')
