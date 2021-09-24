@@ -1,6 +1,18 @@
-microwave
+laptop
+tvmonitor
+skis
+snowboard
+kite
+skateboard
+surfboard
+bicycle
 oven
-toaster
-hair drier
-backpack
 sofa
+bed
+chair
+bench
+sink
+toilet
+refrigerator
+tie
+backpack

@@ -1,24 +1,32 @@
 import math
 import cv2
 import numpy as np
-#import Lights
+import Lights
 import time
 from form import form
 from cvzone.HandTrackingModule import HandDetector
+from rasbppery import Camera
 
 whT = 320
 confThreshold = 0.5
 nmsThreshold = 0.3
-detector = HandDetector(detectionCon = 0.8, maxHands = 2)
+detector = HandDetector(detectionCon = 0.4, maxHands = 2)
 data_form = form()
+my_camera = Camera(-0.3,0)
 
 #define Name
-name = 'Yoav'
+
+name = 'yoav'
 
 # Extracting object names:
 classesFile = "Resources/coco.names.txt"
 with open(classesFile, 'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/sitting.txt"
+with open(classesFile, 'rt') as f:
+    sitting_list = f.read().rstrip('\n').split('\n')
 f.close()
 
 classesFile = "Resources/danger.txt"
@@ -41,9 +49,60 @@ with open(classesFile, 'rt') as f:
     hand_list = f.read().rstrip('\n').split('\n')
 f.close()
 
+
+classesFile = "Resources/computer.txt"
+with open(classesFile, 'rt') as f:
+    computer_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/holdings.txt"
+with open(classesFile, 'rt') as f:
+    holdings_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/other.txt"
+with open(classesFile, 'rt') as f:
+    other_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/playing.txt"
+with open(classesFile, 'rt') as f:
+    playing_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/specific.txt"
+with open(classesFile, 'rt') as f:
+    specific_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/tv.txt"
+with open(classesFile, 'rt') as f:
+    tv_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/using.txt"
+with open(classesFile, 'rt') as f:
+    using_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+classesFile = "Resources/wearing.txt"
+with open(classesFile, 'rt') as f:
+    wearing_list = f.read().rstrip('\n').split('\n')
+f.close()
+
+
+
+
+
+
+
+
+
+
+
 # Connecting to the network:
-model_configuration = 'yolov3-tiny.cfg'
-model_weights = 'yolov3-tiny.weights'
+model_configuration = 'yolov3-320.cfg'
+model_weights = 'yolov3-320.weights'
 net = cv2.dnn.readNetFromDarknet(model_configuration,model_weights)
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
@@ -53,11 +112,28 @@ net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 def analyze_connections(connections):
     events =[]
     for con in connections:
-        if con in food_list:
-            st = name + " is  eating a " + con + "."
+        if con in computer_list:
+            st = name + " using the computer with " + con + "."
         elif con in danger_list:
             # Lights.alarm_once(5)
             st = "watch out!! " + name + " is playing with " + con + "."
+        elif con in food_list:
+            st = name + " is  eating a " + con + "."
+        elif con in holdings_list:
+            st = name + " is  holding a " + con + "."
+        elif con in playing_list:
+            st = name + " is playing with "+ con + "."
+        elif con in sitting_list:
+            st = name + " is sitting on a "+ con + "."
+        elif con in specific_list:
+            if con == 'toothbrush':
+                st = name + "is brushing is teeth."
+            elif con == 'book':
+                st = name + " is reading a book."
+        elif con in tv_list:
+            st = name + " using the tv with " + con + "."
+        elif con in wearing_list:
+            st = name + " is wearing a " + con + "."
         else:
             st = name + " has connection with " + con + "."
         # print(st)
@@ -189,7 +265,7 @@ def find_objects(outputs, image):
 
 def camera_move_check(rectangle_size, center_object):
     half_rec_size = int(rectangle_size/2)
-    center_screen = (int(screen_width/2), int(screen_height/2))
+    center_screen = (int(screen_width/2), int(screen_height/2)+100)
     top_left= (center_screen[0]-half_rec_size,center_screen[1]-half_rec_size)
 
     cv2.rectangle(img, top_left, (top_left[0] + rectangle_size, top_left[1] + rectangle_size), (0, 0, 255), 2)
@@ -201,35 +277,43 @@ def camera_move_check(rectangle_size, center_object):
 
 
     if x < left_x:
-        return (1, x-center_screen[0])
+        # print("camera moving left")
+        my_camera.move_pan_one_step(1)
 
     if x> right_x:
-        return (2, x-center_screen[0])
+        # print("camera moving right")
+        my_camera.move_pan_one_step(-1)
 
     if y< lower_y:
-        return (3, y-center_screen[1])
+        # print("camera moving up")
+        my_camera.move_tilt_one_step(-1)
 
     if y> upper_y:
-        return (4, y-center_screen[1])
+        # print("camera moving down")
+        my_camera.move_tilt_one_step(1)
 
-    return (0,0)
 
 
 def camera_move(dir,dis):
-    str_dis = str(dis)[:-2]
-    if dir == 1:
-        print("camera moving "+ str_dis+ " left")
-    elif dir == 2:
-        print("camera moving "+ str_dis+ " right")
-    elif dir == 3:
-        print("camera moving "+ str_dis+ " up")
-    else:
-        print("camera moving "+ str_dis+ " down")
+    pass
+    # str_dis = str(dis)[:-2]
+    # if dir == 1:
+    #     print("camera moving "+ str_dis+ " left")
+    #     my_camera.move_pan_one_step(1)
+    # elif dir == 2:
+    #     print("camera moving "+ str_dis+ " right")
+    #     my_camera.move_pan_one_step(-1)
+    # if dir == 3:
+    #     print("camera moving "+ str_dis+ " up")
+    #     my_camera.move_tilt_one_step(-1)
+    # else:
+    #     print("camera moving "+ str_dis+ " down")
+    #     my_camera.move_tilt_one_step(1)
 
 
-cap = cv2.VideoCapture(0)
-screen_width = 1280
-screen_height = 720
+cap = cv2.VideoCapture(1)
+screen_width = 1000
+screen_height = 500
 cap.set(3, screen_width)
 cap.set(4, screen_height)
 
@@ -253,13 +337,16 @@ while True:
                                             # confidence, and 80 predictions for which object it is
         hands, img = detector.findHands(img)
         person_center = find_objects(outputs, img)
-        moving_sensitivity= 500
+        moving_sensitivity= 150
+
         if person_center is not None:
-            (dirc, dis) = camera_move_check(moving_sensitivity, person_center)
-            if (dirc, dis)!=(0,0):
-                print('object is ' + str(math.fabs(dis)) + " way " + str(dir))
-                camera_move(dir, math.fabs(dis))
+            camera_move_check(moving_sensitivity, person_center)
+            # if (dirc, dis)!=(0,0):
+            #     print('object is ' + str(math.fabs(dis)) + " way " + str(dir))
+            #     camera_move(dir, math.fabs(dis))
+
         cv2.imshow("Image", img)
+
 
 
     confidence_level = 3

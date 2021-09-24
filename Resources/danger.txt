@@ -4,3 +4,4 @@ oven
 toaster
 scissors
 hair drier
+vase
