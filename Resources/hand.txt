@@ -1,3 +1,9 @@
+mouse
+keyboard
+remote
+toothbrush
+cell phone
+book
 banana
 apple
 sandwich
@@ -7,6 +13,26 @@ carrot
 hot dog
 pizza
 donut
+sports ball
+baseball bat
+baseball glove
+frisbee
+tennis racket
+teddy bear
 knife
+microwave
+toaster
 scissors
-cell phone
+hair drier
+vase
+bottle
+wine glass
+cup
+fork
+spoon
+bowl
+umbrella
+handbag
+suitcase
+clock
+
