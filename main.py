@@ -12,7 +12,7 @@ confThreshold = 0.5
 nmsThreshold = 0.3
 detector = HandDetector(detectionCon = 0.4, maxHands = 2)
 data_form = form()
-my_camera = Camera(-0.3,0)
+# my_camera = Camera(-0.3,0)
 
 #define Name
 
@@ -90,19 +90,9 @@ with open(classesFile, 'rt') as f:
     wearing_list = f.read().rstrip('\n').split('\n')
 f.close()
 
-
-
-
-
-
-
-
-
-
-
 # Connecting to the network:
-model_configuration = 'yolov3-320.cfg'
-model_weights = 'yolov3-320.weights'
+model_configuration = 'yolov3-tiny.cfg'
+model_weights = 'yolov3-tiny.weights'
 net = cv2.dnn.readNetFromDarknet(model_configuration,model_weights)
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
@@ -208,7 +198,6 @@ def find_objects(outputs, image):
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
         # print(str(i) + ':')
         # print(classNames[classIds[i]], "{:.2f}".format(confs[i]))
-
         if classNames[classIds[k]] == 'person':
             person_box = box
             person_cor = (x, y, (x + w), (y + h))
@@ -218,47 +207,6 @@ def find_objects(outputs, image):
     person_connections(person_box, indices)
     hand_connections(indices)
     return person_center
-
-
-
-
-
-                    # a,b= find_shortest_dis(person_box,box)
-                    # object_cor = (x, y, (x + w), (y + h))
-                    # object_center = (int((object_cor[0] + object_cor[2]) / 2), int((object_cor[1] + object_cor[3]) / 2))
-                    # cv2.line(img, person_center, object_center, (0, 0, 255), 4)
-                    # cv2.line(img,a,b,(0,0,255),4)
-
-    # print('----------------')
-
-
-
-
-
-
-
-
-
-
-    # # Find distance between objects:
-    # for square1 in indices:
-    #     square1 = square1[0]
-    #     box1 = bbox[square1]
-    #     x1, y1, w1, h1 = box1[0], box1[1], box1[2], box1[3]
-    #     for square2 in indices[square1 + 1:]:
-    #         square2 = square2[0]
-    #         box2 = bbox[square2]
-    #         x2, y2, w2, h2 = box2[0], box2[1], box2[2], box2[3]
-    #         if (x1 >= x2 + w2) or (x2 >= x1 + w1) or (y1 >= y2 + h2) or (y2 >= y1 + h1):
-    #             print('~ ' + classNames[classIds[square1]] + ' and ' + classNames[classIds[square2]] + ' DON\'T OVERLAP')
-    #             if classNames[classIds[square1]] in connections:
-    #                 connections[classNames[classIds[square1]]] = connections[classNames[classIds[square1]]] + 1
-    #             else:
-    #                 connections[classNames[classIds[square1]]] = 1
-    #
-    #         else:
-    #             print('~ ' + classNames[classIds[square1]] + ' and ' + classNames[classIds[square2]] + ' DO OVERLAP')
-
 
 
 
@@ -292,26 +240,7 @@ def camera_move_check(rectangle_size, center_object):
         # print("camera moving down")
         my_camera.move_tilt_one_step(1)
 
-
-
-def camera_move(dir,dis):
-    pass
-    # str_dis = str(dis)[:-2]
-    # if dir == 1:
-    #     print("camera moving "+ str_dis+ " left")
-    #     my_camera.move_pan_one_step(1)
-    # elif dir == 2:
-    #     print("camera moving "+ str_dis+ " right")
-    #     my_camera.move_pan_one_step(-1)
-    # if dir == 3:
-    #     print("camera moving "+ str_dis+ " up")
-    #     my_camera.move_tilt_one_step(-1)
-    # else:
-    #     print("camera moving "+ str_dis+ " down")
-    #     my_camera.move_tilt_one_step(1)
-
-
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 screen_width = 1000
 screen_height = 500
 cap.set(3, screen_width)
@@ -339,11 +268,8 @@ while True:
         person_center = find_objects(outputs, img)
         moving_sensitivity= 150
 
-        if person_center is not None:
-            camera_move_check(moving_sensitivity, person_center)
-            # if (dirc, dis)!=(0,0):
-            #     print('object is ' + str(math.fabs(dis)) + " way " + str(dir))
-            #     camera_move(dir, math.fabs(dis))
+        # if person_center is not None:
+        #     camera_move_check(moving_sensitivity, person_center)
 
         cv2.imshow("Image", img)
 
