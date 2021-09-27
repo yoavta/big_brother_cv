@@ -6,6 +6,8 @@ import time
 from form import form
 from cvzone.HandTrackingModule import HandDetector
 from rasbppery import Camera
+from firebase_config import firebase_config
+import pyrebase
 
 whT = 320
 confThreshold = 0.5
@@ -14,9 +16,11 @@ detector = HandDetector(detectionCon = 0.4, maxHands = 2)
 data_form = form()
 # my_camera = Camera(-0.3,0)
 
-#define Name
+firebase = firebase_config()
 
-name = 'yoav'
+#define Name
+db = firebase.firebase.database()
+name = db.child("name").get().val()
 
 # Extracting object names:
 classesFile = "Resources/coco.names.txt"
@@ -29,15 +33,9 @@ with open(classesFile, 'rt') as f:
     sitting_list = f.read().rstrip('\n').split('\n')
 f.close()
 
-classesFile = "Resources/danger.txt"
-with open(classesFile, 'rt') as f:
-    danger_list = f.read().rstrip('\n').split('\n')
-f.close()
 
-classesFile = "Resources/food.txt"
-with open(classesFile, 'rt') as f:
-    food_list = f.read().rstrip('\n').split('\n')
-f.close()
+danger_list = firebase.update(db.child("data").child("categories").child("danger").get().val())
+food_list = firebase.update(db.child("data").child("categories").child("food").get().val())
 
 classesFile = "Resources/person.txt"
 with open(classesFile, 'rt') as f:
@@ -48,7 +46,6 @@ classesFile = "Resources/hand.txt"
 with open(classesFile, 'rt') as f:
     hand_list = f.read().rstrip('\n').split('\n')
 f.close()
-
 
 classesFile = "Resources/computer.txt"
 with open(classesFile, 'rt') as f:
@@ -89,6 +86,8 @@ classesFile = "Resources/wearing.txt"
 with open(classesFile, 'rt') as f:
     wearing_list = f.read().rstrip('\n').split('\n')
 f.close()
+
+
 
 # Connecting to the network:
 model_configuration = 'yolov3-tiny.cfg'
@@ -256,6 +255,14 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         data_form.print_report()
         break
+
+    if firebase.is_changed():
+        print("categories changed")
+        danger_list = firebase.update(db.child("data").child("categories").child("danger").get().val())
+        food_list = firebase.update(db.child("data").child("categories").child("food").get().val())
+        firebase.update_finished()
+        print("categories update")
+
     for i in range(4):
         success, img = cap.read()  # Read camera
         blob = cv2.dnn.blobFromImage(img, 1 / 255, (whT, whT), [0, 0, 0], 1, crop=False)  # Make blob for net
