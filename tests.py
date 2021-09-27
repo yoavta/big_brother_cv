@@ -5,12 +5,12 @@ from firebase_config import firebase_config
 firebase = firebase_config()
 
 
-db = firebase.firebase.database()
-data = {"name": "Parwiz Forogh"}
+db = firebase.db
 
-# db.child("power").set("19")
+
+db.child("power").set("1")
 while (True):
-    mode = db.child("power").get().val()
+    mode = db.child("power").get().pyres
     if (mode == '0'):
         print ('camera off')
     else:
