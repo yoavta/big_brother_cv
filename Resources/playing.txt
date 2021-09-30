@@ -1,0 +1,12 @@
+skis
+snowboard
+sports ball
+kite
+baseball bat
+baseball glove
+frisbee
+skateboard
+surfboard
+bicycle
+tennis racket
+teddy bear
