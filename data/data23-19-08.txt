@@ -1,0 +1,21 @@
+23:19:21; Yotav using the computer with mouse.$
+23:19:23; Yotav using the computer with laptop.$
+23:19:26; Yotav is sitting on a chair.$
+23:19:27; Yotav is sitting on a chair.$
+23:19:34; Yotav is sitting on a chair.$
+23:19:36; Yotav is sitting on a chair.$
+23:19:38; Yotav is sitting on a chair.$
+23:19:39; Yotav is sitting on a chair.$
+23:19:44; Yotav is sitting on a chair.$
+23:19:45; Yotav is playing with scissors.$ Yotav is sitting on a chair.$
+23:19:47; Yotav is sitting on a chair.$
+23:19:48; Yotav is sitting on a chair.$
+23:19:50; Yotav is sitting on a chair.$
+23:20:10; Yotav is playing with scissors.$
+23:20:16; Yotav is sitting on a chair.$
+23:20:40; Yotav is sitting on a chair.$
+23:20:52; Yotav is playing with scissors.$
+23:20:54; Yotav is playing with scissors.$
+23:20:55; Yotav is playing with scissors.$
+23:22:02; Yotav is sitting on a chair.$
+23:22:07; Yotav is playing with scissors.$

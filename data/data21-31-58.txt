@@ -1,0 +1,20 @@
+21:32:14; Yotam using the computer with keyboard.$
+21:32:15; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:17; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:18; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:19; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:21; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:22; Yotam using the computer with keyboard.$
+21:32:23; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:25; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:27; Yotam using the computer with keyboard.$ Yotam has connection with chair.$
+21:32:29; Yotam using the computer with laptop.$
+21:32:30; Yotam using the computer with laptop.$
+21:32:31; Yotam using the computer with laptop.$
+21:32:33; Yotam using the computer with laptop.$
+21:32:34; Yotam using the computer with laptop.$
+21:32:36; Yotam using the computer with laptop.$
+21:32:37; Yotam using the computer with laptop.$
+21:32:38; Yotam using the computer with laptop.$ Yotam has connection with chair.$ Yotam using the computer with mouse.$
+21:32:42; Yotam has connection with chair.$
+21:32:43; Yotam has connection with chair.$

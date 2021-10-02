@@ -6,6 +6,7 @@ from yeelight import transitions
 
 bulb1 = Bulb('192.168.0.191', effect="smooth")
 bulb2 = Bulb('192.168.0.159', effect="smooth")
+# bulb_savta = Bulb('192.168.1.167', effect="smooth")
 bulbs = [bulb1, bulb2]
 
 old_prop = []
@@ -16,9 +17,10 @@ def alarm_once(sec):
     stop_alarm_all()
 
 def print_hi(name):
-    # # from yeelight import discover_bulbs
-    # # bulbs =  discover_bulbs()
-    # # print(bulbs)
+    bulb_savta.turn_off()
+#     from yeelight import discover_bulbs
+#     bulbs =  discover_bulbs()
+#     print(bulbs)
     #
     # # transitions = [
     # #     TemperatureTransition(20, duration=500),
@@ -39,10 +41,10 @@ def print_hi(name):
     # bulb1.start_flow(flow)
     # time.sleep(10)
     # bulb1.turn_off()
-
-    alarm_all()
-    time.sleep(5)
-    stop_alarm_all()
+# 
+#     alarm_all()
+#     time.sleep(5)
+#     stop_alarm_all()
 
 
 

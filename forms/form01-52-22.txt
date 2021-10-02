@@ -1,0 +1,41 @@
+report time: 01-52-22
+
+Important events:
+
+
+Situations:
+ yoav tamir is sitting on a sofa from 01:45:42 to 01:45:44.
+ yoav tamir using the computer with laptop from 01:45:44 to 01:45:44.
+ yoav tamir is sitting on a bed from 01:46:17 to 01:46:17.
+ yoav tamir is wearing a tie from 01:46:34 to 01:47:32.
+ yoav tamir has connection with microwave from 01:46:49 to 01:46:49.
+ yoav tamir using the tv with remote from 01:46:52 to 01:47:36.
+ yoav tamir is reading a book from 01:47:34 to 01:47:34.
+ yoav tamir using the tv with tvmonitor from 01:47:38 to 01:47:38.
+ yoav tamir is playing with baseball bat from 01:47:55 to 01:48:07.
+ yoav tamiris brushing is teeth from 01:48:02 to 01:48:02.
+ yoav tamir using the tv with remote from 01:48:48 to 01:49:37.
+ yoav tamir has connection with cell phone from 01:48:57 to 01:48:57.
+ yoav tamiris brushing is teeth from 01:49:09 to 01:49:09.
+ yoav tamir is sitting on a sofa from 01:49:23 to 01:49:23.
+ yoav tamir has connection with scissors from 01:50:45 to 01:50:45.
+ yoav tamir has connection with cell phone from 01:51:38 to 01:51:38.
+ yoav tamir using the tv with tvmonitor from 01:51:44 to 01:51:44.
+ yoav tamir has connection with microwave from 01:51:49 to 01:51:49.
+ watch out!! yoav tamir is playing with scissors from 01:51:59 to 01:52:08.
+
+
+In total:
+ yoav tamir is sitting on a sofa for 00:00:02 second(s), 2 time(s) total.
+ yoav tamir using the computer with laptop for 0:00:00 second(s), 1 time(s) total.
+ yoav tamir is sitting on a bed for 0:00:00 second(s), 1 time(s) total.
+ yoav tamir is wearing a tie for 0:00:58 second(s), 1 time(s) total.
+ yoav tamir has connection with microwave for 00:00:00 second(s), 2 time(s) total.
+ yoav tamir using the tv with remote for 00:01:33 minute(s), 2 time(s) total.
+ yoav tamir is reading a book for 0:00:00 second(s), 1 time(s) total.
+ yoav tamir using the tv with tvmonitor for 00:00:00 second(s), 2 time(s) total.
+ yoav tamir is playing with baseball bat for 0:00:12 second(s), 1 time(s) total.
+ yoav tamiris brushing is teeth for 00:00:00 second(s), 2 time(s) total.
+ yoav tamir has connection with cell phone for 00:00:00 second(s), 2 time(s) total.
+ yoav tamir has connection with scissors for 0:00:00 second(s), 1 time(s) total.
+ watch out!! yoav tamir is playing with scissors for 0:00:09 second(s), 1 time(s) total.
