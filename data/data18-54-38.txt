@@ -1,0 +1,44 @@
+18:55:33; Sharon has entered the house.$
+18:55:37; Sharon has a connection with a(n) refrigerator.$
+18:55:39; Sharon has a connection with a(n) refrigerator.$
+18:55:43; Sharon has a connection with a(n) refrigerator.$
+18:56:19; Sharon is eating a(n) apple.$
+18:56:22; Sharon is eating a(n) apple.$
+18:56:25; Sharon is eating a(n) apple.$
+18:56:27; Sharon has a connection with a(n) bottle.$
+18:57:32; Sharon is eating a(n) apple.$
+18:57:34; Sharon is eating a(n) apple.$
+18:57:47; Sharon has a connection with a(n) sink.$
+18:58:15; Sharon has a connection with a(n) sink.$
+18:58:21; Sharon has a connection with a(n) sink.$
+18:58:22; Sharon has a connection with a(n) sink.$
+18:59:10; Sharon has a connection with a(n) sink.$
+18:59:14; Sharon has a connection with a(n) sink.$
+19:00:11; Sharon has a connection with a(n) sink.$
+19:00:12; Sharon has a connection with a(n) sink.$
+19:00:19; Sharon has a connection with a(n) sink.$
+19:00:22; Sharon has a connection with a(n) sink.$
+19:00:31; Sharon has a connection with a(n) sink.$
+19:00:43; Sharon is sitting on a(n) chair.$
+19:00:47; Sharon has a connection with a(n) sink.$
+19:00:54; Sharon is sitting on a(n) chair.$
+19:00:55; Sharon has a connection with a(n) sink.$
+19:00:57; Sharon has a connection with a(n) sink.$
+19:00:58; Sharon has a connection with a(n) sink.$
+19:01:00; Sharon is sitting on a(n) chair.$
+19:01:01; Sharon is sitting on a(n) chair.$
+19:01:03; Sharon is sitting on a(n) chair.$
+19:01:04; Sharon is sitting on a(n) chair.$
+19:01:05; Sharon is sitting on a(n) chair.$
+19:01:07; Sharon is sitting on a(n) chair.$
+19:01:08; Sharon is sitting on a(n) chair.$
+19:01:10; Sharon is sitting on a(n) chair.$
+19:01:23; Sharon has a connection with a(n) sink.$
+19:01:34; Sharon has a connection with a(n) sink.$
+19:01:43; Sharon has a connection with a(n) sink.$
+19:01:44; Sharon has a connection with a(n) sink.$
+19:01:46; Sharon is sitting on a(n) chair.$
+19:01:58; Sharon has a connection with a(n) sink.$
+19:02:00; Sharon has a connection with a(n) sink.$
+19:02:01; Sharon has a connection with a(n) sink.$
+19:02:04; Sharon is sitting on a(n) chair.$

@@ -1,16 +1,40 @@
 import pantilthat
+import time
 class Camera:
     def __init__(self,start_x, start_y):
         self.current_x = start_x
         self.current_y = start_y
-        self.max_left=-89
-        self.max_right=89
-        self.max_up=89
-        self.max_down=-89
+        self.max_left=-87
+        self.max_right=87
+        self.max_up=87
+        self.max_down=-87
         self.servo= pantilthat.PanTilt()
         self.servo.pan(self.current_x)
         self.servo.tilt(self.current_y)
+#         self.show_off()
+    
         
+        
+    def show_off(self):
+        self.move_right(2)
+        time.sleep(0.5)
+        self.move_right(2)
+        time.sleep(0.5)
+        self.move_down(2)
+        self.move_right(2)
+        time.sleep(0.5)
+        self.move_down(2)
+        self.move_right(2)
+        time.sleep(0.2)
+        self.move_down(2)
+        self.move_right(2)
+        time.sleep(0.2)
+        self.move_down(2)
+        self.move_right(2)
+        self.move_right(2)
+        self.move_right(2)
+        self.move_down(2)
+        self.move_right(3)
         
     def camera_move(self,dirc, dis):
         str_dis = str(dis)[:-2]

@@ -118,8 +118,6 @@ class categories_list:
         return new_list
     
     def get_importants(self):
-        print("get importants")
-        print(self.updated_categories_list)
         return self.updated_categories_list
     
 

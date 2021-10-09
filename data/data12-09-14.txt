@@ -1,0 +1,57 @@
+12:09:44; yoav is sitting on a chair.$
+12:09:47; yoav is sitting on a chair.$
+12:09:50; yoav is sitting on a chair.$
+12:09:52; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:09:53; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:09:54; yoav is sitting on a chair.$
+12:09:56; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:09:57; yoav is sitting on a chair.$
+12:09:58; yoav is sitting on a chair.$
+12:10:00; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:10:01; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:10:02; yoav is sitting on a chair.$
+12:10:04; yoav is sitting on a chair.$
+12:10:05; yoav is sitting on a chair.$
+12:10:06; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:10:08; yoav is sitting on a chair.$
+12:10:09; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:10:10; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:11:04; yoav is sitting on a chair.$
+12:11:06; yoav using the computer with laptop.$ yoav is sitting on a chair.$
+12:11:07; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:11:09; yoav using the computer with laptop.$ yoav is sitting on a chair.$
+12:11:10; yoav using the computer with laptop.$
+12:11:14; yoav using the computer with laptop.$
+12:11:15; yoav using the computer with laptop.$
+12:11:16; yoav using the computer with laptop.$ yoav is sitting on a chair.$
+12:11:19; yoav using the computer with laptop.$
+12:11:20; yoav using the computer with laptop.$
+12:11:21; yoav using the computer with laptop.$ yoav is sitting on a chair.$
+12:11:23; yoav is sitting on a chair.$
+12:11:25; yoav is sitting on a chair.$
+12:11:26; yoav is sitting on a chair.$
+12:11:30; yoav is sitting on a chair.$
+12:11:32; yoav using the computer with laptop.$ yoav is sitting on a chair.$
+12:11:33; yoav is sitting on a chair.$
+12:11:35; yoav is sitting on a chair.$
+12:11:38; yoav is sitting on a chair.$
+12:11:39; yoav is sitting on a chair.$
+12:11:40; yoav is sitting on a chair.$
+12:11:42; yoav is sitting on a chair.$
+12:11:43; yoav is sitting on a chair.$
+12:11:44; yoav is sitting on a chair.$
+12:11:45; yoav is sitting on a chair.$
+12:11:47; yoav is sitting on a chair.$
+12:11:50; yoav is sitting on a chair.$
+12:11:52; yoav is sitting on a chair.$ yoav using the computer with laptop.$
+12:11:53; yoav is sitting on a chair.$
+12:11:54; yoav is sitting on a chair.$
+12:11:57; yoav is sitting on a chair.$
+12:11:59; yoav is sitting on a chair.$
+12:12:00; yoav is sitting on a chair.$
+12:12:01; yoav is sitting on a chair.$
+12:12:02; yoav is sitting on a chair.$
+12:12:04; yoav is sitting on a chair.$
+12:12:05; yoav is sitting on a chair.$
+12:12:06; yoav is sitting on a chair.$
+12:12:08; yoav is sitting on a chair.$

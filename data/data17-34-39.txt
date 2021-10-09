@@ -1,0 +1,39 @@
+17:35:59; Sharon has entered the house.$
+17:36:01; Sharon is sitting on a(n) sofa.$
+17:36:24; Sharon is sitting on a(n) bed.$
+17:36:48; Sharon is sitting on a(n) sofa.$
+17:37:38; Sharon is sitting on a(n) chair.$
+17:37:43; Sharon is sitting on a(n) sofa.$
+17:37:44; Sharon is sitting on a(n) sofa.$
+17:38:13; Sharon has a connection with a(n) sink.$
+17:38:16; Sharon is playing with a oven.$
+17:38:26; Sharon has a connection with a(n) sink.$
+17:39:57; Sharon is using the computer with a(n) laptop.$
+17:40:04; Sharon has a connection with a(n) sink.$
+17:41:07; Sharon is using the computer with a(n) laptop.$
+17:41:20; Sharon is using the tv with a(n)remote.$
+17:41:34; Sharon is using the tv with a(n)remote.$
+17:42:10; Sharon has a connection with a(n) refrigerator.$
+17:42:16; Sharon is playing with a(n) frisbee.$
+17:42:19; Sharon is playing with a(n) frisbee.$
+17:45:16; Sharon has a connection with a(n) sink.$
+17:45:41; Sharon has a connection with a(n) sink.$
+17:46:14; Sharon is sitting on a(n) sofa.$ Sharon is sitting on a(n) chair.$
+17:46:16; Sharon is sitting on a(n) sofa.$
+17:46:17; Sharon is sitting on a(n) sofa.$
+17:46:18; Sharon is sitting on a(n) chair.$
+17:46:27; Sharon is sitting on a(n) sofa.$
+17:46:28; Sharon is sitting on a(n) chair.$
+17:46:35; Sharon is sitting on a(n) sofa.$
+17:46:40; Sharon is sitting on a(n) chair.$
+17:46:52; Sharon is sitting on a(n) chair.$
+17:46:57; Sharon is sitting on a(n) chair.$
+17:46:59; Sharon is sitting on a(n) chair.$
+17:47:00; Sharon is sitting on a(n) chair.$
+17:47:02; Sharon has a connection with a(n) toilet.$
+17:47:03; Sharon is sitting on a(n) chair.$
+17:47:04; Sharon is sitting on a(n) chair.$
+17:47:06; Sharon is sitting on a(n) chair.$
+17:47:07; Sharon is sitting on a(n) chair.$
+17:47:08; Sharon is sitting on a(n) chair.$
+17:47:10; Sharon is sitting on a(n) chair.$

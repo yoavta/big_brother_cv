@@ -23,13 +23,13 @@ from categories_list import categories_list
 
 detector = HandDetector(detectionCon = 0.6, maxHands = 2)
 data_form = form()
-my_camera = Camera(30,30)
+my_camera = Camera(0,-10)
 firebase = firebase_config()
 #define Name
 db = firebase.firebase.database()
 categories = categories_list(firebase,db)
+first_person_show = False
 
-name = db.child("name").get().val()
 # Extracting object names:
 classesFile = "Resources/coco.names.txt"
 with open(classesFile, 'rt') as f:
@@ -66,10 +66,10 @@ parser.add_argument('--model', help='.tflite model path',
                     default=os.path.join(default_model_dir,default_model))
 parser.add_argument('--labels', help='label file path',
                     default=os.path.join(default_model_dir, default_labels))
-parser.add_argument('--top_k', type=int, default=8,
+parser.add_argument('--top_k', type=int, default=5,
                     help='number of categories with highest score to display')
 parser.add_argument('--camera_idx', type=int, help='Index of which video source to use. ', default = 0)
-parser.add_argument('--threshold', type=float, default=0.35,
+parser.add_argument('--threshold', type=float, default=0.25,
                     help='classifier score threshold')
 args = parser.parse_args()
 
@@ -80,8 +80,8 @@ labels = read_label_file(args.labels)
 inference_size = input_size(interpreter)
 
 cap = cv2.VideoCapture(0)
-screen_width = 1000
-screen_height = 500
+screen_width = 640
+screen_height = 360
 cap.set(3, screen_width)
 cap.set(4, screen_height)
 
@@ -106,39 +106,45 @@ def analyze_connections(connections):
     for con in connections:
         list_in = categories.which_list_am_i_complet(con)
         if list_in == "computer":
-            st = name + " using the computer with " + con + "."
+            st = name + " is using the computer with a(n) " + con + "."
         elif list_in == "danger":
-            st = name + " is playing with " + con + "."
+            st = name + " is playing with a " + con + "."
             if con in categories.get_importants():
-                st = "watch out!! " + name + " is playing with " + con + "."
-                speek(st)
-                Lights.alarm_once(3)
+                st = "watch out!! " + name + " is playing with a(n) " + con + "."
+#                 speek(st)
+#                 Lights.alarm_once(3)
         elif list_in == "food":
-            st = name + " is  eating a " + con + "."
+            st = name + " is eating a(n) " + con + "."
         elif list_in == "holdings":
-            st = name + " is  holding a " + con + "."
+            st = name + " is holding a(n) " + con + "."
         elif list_in == "playing":
-            st = name + " is playing with "+ con + "."
+            st = name + " is playing with a(n) "+ con + "."
         elif list_in == "sitting":
-            st = name + " is sitting on a "+ con + "."
+            st = name + " is sitting on a(n) "+ con + "."
         elif list_in == "specific":
             if con == 'toothbrush':
-                st = name + "is brushing is teeth."
+                st = name + "is brushing her teeth."
             elif con == 'book':
                 st = name + " is reading a book."
             elif con == 'cell phone':
-                st = name + " using his phone."
+                st = name + " is using her phone."
         elif list_in  == "tv":
-            st = name + " using the tv with " + con + "."
+            st = name + " is using the tv with a(n)" + con + "."
         elif list_in == "wearing":
-            st = name + " is wearing a " + con + "."
+            st = name + " is wearing a(n) " + con + "."
         else:
-            st = name + " has connection with " + con + "."
+            st = name + " has a connection with a(n) " + con + "."
         # print(st)
         events.append(st)
 
         if con in categories.get_importants():
+#             count = str(data_form.important_num)
+#             file_name = "important"+count+".jpg"
+#             print(file_name)
+#             cv2.imwrite(file_name, cv2_im)
+#             firebase.upload_img(file_name)
             data_form.add_important(st)
+           
             
     data_form.print2file(events,firebase)
 
@@ -210,7 +216,7 @@ def person_connections(person_box,objs):
 
 def camera_move_check(rectangle_size, center_object):
     half_rec_size = int(rectangle_size/2)
-    shift = 0
+    shift = 40
     center_screen = (int(screen_width/2), int(screen_height/2)+shift)
     top_left= (center_screen[0]-half_rec_size,center_screen[1]-half_rec_size)
 
@@ -295,7 +301,8 @@ while True:
     while not firebase.is_on():
         time.sleep(2)
         pass
-    
+    name = db.child("name").get().val()
+
     print("capture started")
     firebase.initial()
     while True:
@@ -326,6 +333,8 @@ while True:
             data_form.print_report(firebase)
             break
 
+
+        
         for i in range(4):
             bboxes = []
     #         print("i :"+ str(i))
@@ -341,12 +350,20 @@ while True:
             
             hands, cv2_im = detector.findHands(cv2_im)
             cv2_im, person_center = append_objs_to_img(cv2_im, inference_size, objs, labels)
-            
-            moving_sensitivity= 200
+            if first_person_show == False and person_center != None :
+                first_person_show = True
+                st = name + " has entered the house."
+                events = []
+                events.append(st)
+                data_form.print2file(events,firebase)
+                speek("hello" + name)
+                
+            moving_sensitivity= 140
             if person_center is not None:
                 camera_move_check(moving_sensitivity, person_center)
 
             cv2.imshow("Image", cv2_im)
+
 
 
 

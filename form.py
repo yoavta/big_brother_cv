@@ -8,6 +8,7 @@ class form:
     def __init__(self):
         self.current_time = time.strftime("%H-%M-%S", time.localtime())
         self.important_events = []
+        self.important_num = 1
 
         self.path = "data/data" + self.current_time + ".txt"
         f = open(self.path, 'w+')
@@ -18,8 +19,8 @@ class form:
         current_time = time.strftime("%H:%M:%S", t)
         str = current_time + ": " + txt + "."
         self.important_events.append(str)
-        
-     
+        self.important_num = self.important_num +1
+             
         
 
     def print2file(self, events,firebase):
@@ -36,7 +37,8 @@ class form:
 
         with open(self.path, "a") as f:
             f.write(str + "\n")
-            str_to_firebase = str[:-1]
+            str_to_firebase = str.replace("$", "")
+
         firebase.add_live(str_to_firebase)
         print(str_to_firebase + ": added")
         f.close()
