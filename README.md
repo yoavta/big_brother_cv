@@ -9,10 +9,37 @@ simultaneously.
 The app offers recent updates about events caught by the camera, alerts when a possible dangerous situation occurs, the ability to choose which events are more important for
 you to monitor, and a detailed report about the events that occured while using the system.
 
-Visuals from the system:
+&nbsp;
+&nbsp;
 
-# Image1
+## Visuals from the system:
 
-# Image2
+___System setup:___
 
-# Image3
+<img src="https://user-images.githubusercontent.com/70321869/136662484-825223dc-58bf-41fe-9f3b-c817ba70c02b.jpg" width="600" height="400">
+
+<img src="https://user-images.githubusercontent.com/70321869/136661979-6825f4df-ca30-448d-9952-818b6f9f74b9.JPG" width="600" height="400">
+&nbsp;
+
+&nbsp;
+
+
+___App:___
+
+<img src="https://user-images.githubusercontent.com/70321869/136663562-4c9f64e6-e27e-459f-804a-41bef39097e1.jpg" width="600" height="400">
+<a href="https://github.com/yoavta/big_brother_cv_android" target="_blank">App rpository.</a>
+&nbsp;
+
+&nbsp;
+
+
+___detections:___
+
+<img src="https://user-images.githubusercontent.com/70321869/136664884-41c2e79b-1078-45c9-8202-e8140a154144.jpg" width="600" height="400">
+&nbsp;
+
+&nbsp;
+
+___Firebase database structure:___
+
+<img src="https://user-images.githubusercontent.com/70321869/136663943-4e6641ba-b0cc-469a-9675-8eec1d91738f.jpg" width="225" height="450">
