@@ -4,18 +4,22 @@ import yeelight
 from yeelight import *
 from yeelight import transitions
 
-bulb1 = Bulb('192.168.0.191', effect="smooth")
-bulb2 = Bulb('192.168.0.159', effect="smooth")
-# bulb_savta = Bulb('192.168.1.167', effect="smooth")
-bulbs = [bulb1, bulb2]
-
+try:
+    bulb1 = Bulb('192.168.0.191', effect="smooth")
+    bulb2 = Bulb('192.168.0.159', effect="smooth")
+    # bulb_savta = Bulb('192.168.1.167', effect="smooth")
+    bulbs = [bulb1, bulb2]
+except:
+    print ("error with connection to cam")
 old_prop = []
 
 def alarm_once(sec):
-    alarm_all()
-    time.sleep(sec)
-    stop_alarm_all()
-
+    try:
+        alarm_all()
+        time.sleep(sec)
+        stop_alarm_all()
+    except:
+        print ("error with connection to cam")
 def print_hi(name):
     bulb_savta.turn_off()
 #     from yeelight import discover_bulbs
