@@ -1,6 +1,0 @@
-22:22:33; Yoav has connection with pottedplant.$
-22:22:40; Yoav has connection with pottedplant.$ Yoav has connection with cell phone.$ Yoav has connection with remote.$
-22:22:48; Yoav has connection with remote.$ Yoav has connection with pottedplant.$ Yoav has connection with cell phone.$ Yoav has connection with vase.$
-22:22:55; Yoav has connection with remote.$ Yoav has connection with vase.$ Yoav has connection with pottedplant.$ Yoav has connection with cell phone.$
-22:23:02; Yoav has connection with remote.$ Yoav has connection with pottedplant.$ Yoav has connection with vase.$
-22:23:09; Yoav has connection with remote.$ Yoav has connection with pottedplant.$
