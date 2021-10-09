@@ -1,6 +1,6 @@
 import pyrebase
 import time
-
+import os
 
 class firebase_config:
 
@@ -11,6 +11,8 @@ class firebase_config:
         self.situations_num = 1
         self.important_num = 1
         self.initial()
+        
+    
         
 
 
@@ -23,7 +25,9 @@ class firebase_config:
             "messagingSenderId": "880755436451",
             "appId": "1:880755436451:web:1ebd63181e4eedd7890816",
             "measurementId": "G-WPGXX4BPBK",
-            "storageBucket": "big-brother-cv.appspot.com"
+            "storageBucket": "big-brother-cv.appspot.com",
+            "serviceAccount": "/home/pi/big_brother_cv/Resources/big-brother-cv-firebase-adminsdk-ub4bk-68309ff742.json"
+
         }
 
         return pyrebase.initialize_app(config)
@@ -75,7 +79,7 @@ class firebase_config:
     def add_important(self, txt):
         self.firebase.database().child("data").child("forms").child("important events").update({self.important_num:txt})
         self.important_num=self.important_num+1
-        
+
         
     def add_in_total(self, txt):
         self.firebase.database().child("data").child("forms").child("in total").update({self.in_total_num:txt})
@@ -91,6 +95,14 @@ class firebase_config:
         self.firebase.database().child("data").child("forms").child("in total").set({"pass":"pass"})
         self.firebase.database().child("data").child("forms").child("situations").set({"pass":"pass"})
         self.firebase.database().child("data").child("forms").child("important events").set({"pass":"pass"})
+        
+        for i in range (self.firebase.storage().child("images").list_files().__sizeof__()):
+            try:
+                path = "images/important"+str(i)+".jpg"
+                self.firebase.storage().child("images").delete(path)
+            except:
+                pass
+        
 
         
     def is_on(self):
@@ -103,6 +115,15 @@ class firebase_config:
             return True
         else:
             return False
+        
+    def upload_img(self,file_name):
+        storage = self.firebase.storage()
+        storage.child("images").child(file_name).put(file_name)
+        os.remove(file_name)
+        
+        
+        
+        
 
         
 
