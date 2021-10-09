@@ -1,0 +1,8 @@
+17:10:47; Sharon has entered the house.$
+17:10:55; Sharon is sitting on a(n) sofa.$
+17:11:41; Sharon is sitting on a(n) sofa.$
+17:11:42; Sharon is sitting on a(n) sofa.$ Sharon is playing with a vase.$
+17:11:45; Sharon is sitting on a(n) sofa.$
+17:11:47; Sharon is sitting on a(n) sofa.$
+17:11:48; Sharon is sitting on a(n) sofa.$
+17:11:54; Sharon has a connection with a(n) umbrella.$

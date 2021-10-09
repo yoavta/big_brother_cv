@@ -1,0 +1,335 @@
+12:22:13; yoav is sitting on a chair.$
+12:22:17; yoav is sitting on a chair.$
+12:22:26; watch out!! yoav is playing with scissors.$ yoav is sitting on a chair.$
+12:22:29; yoav is sitting on a chair.$
+12:22:31; yoav is sitting on a chair.$
+12:22:32; yoav is sitting on a chair.$
+12:22:33; yoav is sitting on a chair.$
+12:22:34; yoav is sitting on a chair.$
+12:22:38; yoav is sitting on a chair.$
+12:22:39; yoav is sitting on a chair.$
+12:22:40; yoav is sitting on a chair.$
+12:22:41; yoav is sitting on a chair.$
+12:22:42; yoav is sitting on a chair.$
+12:22:43; yoav is sitting on a chair.$
+12:22:46; yoav is sitting on a chair.$
+12:22:47; yoav is sitting on a chair.$
+12:22:48; yoav is sitting on a chair.$
+12:22:50; yoav is sitting on a chair.$
+12:22:51; yoav is sitting on a chair.$
+12:22:52; yoav is sitting on a chair.$
+12:22:53; yoav is sitting on a chair.$
+12:22:54; yoav is sitting on a chair.$
+12:22:56; yoav is sitting on a chair.$
+12:22:58; yoav is sitting on a chair.$ yoav is playing with scissors.$
+12:23:00; yoav is sitting on a chair.$
+12:23:07; yoav is sitting on a chair.$
+12:23:08; yoav using the computer with keyboard.$
+12:23:12; yoav is sitting on a chair.$
+12:23:14; yoav is sitting on a chair.$
+12:23:15; yoav using the tv with remote.$
+12:23:16; yoav is sitting on a chair.$
+12:23:18; yoav is sitting on a chair.$
+12:23:19; yoav is sitting on a chair.$
+12:25:05; yoav is sitting on a chair.$
+12:25:07; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:25:11; yoav is sitting on a chair.$
+12:25:13; yoav is sitting on a chair.$
+12:25:16; yoav is sitting on a chair.$
+12:25:17; yoav is sitting on a chair.$
+12:25:19; yoav is sitting on a chair.$
+12:25:20; yoav is sitting on a chair.$
+12:25:21; yoav is sitting on a chair.$
+12:25:23; yoav is sitting on a chair.$
+12:25:26; yoav is sitting on a chair.$
+12:25:27; yoav is sitting on a chair.$
+12:25:29; yoav is sitting on a chair.$
+12:25:30; yoav is sitting on a chair.$
+12:25:32; yoav is sitting on a chair.$
+12:25:57; yoav is sitting on a chair.$
+12:25:58; yoav is sitting on a chair.$
+12:26:00; yoav is sitting on a chair.$
+12:26:01; yoav is sitting on a chair.$
+12:26:02; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:26:39; yoav is sitting on a chair.$
+12:26:40; yoav is sitting on a chair.$
+12:28:12; yoav is sitting on a chair.$
+12:28:17; yoav is sitting on a chair.$
+12:28:20; yoav is sitting on a chair.$
+12:28:21; yoav is sitting on a chair.$
+12:28:23; yoav is sitting on a chair.$
+12:28:24; yoav is sitting on a chair.$
+12:28:29; yoav is sitting on a chair.$
+12:28:31; yoav is sitting on a chair.$
+12:28:32; yoav is sitting on a chair.$
+12:28:34; yoav is sitting on a chair.$
+12:28:35; yoav is sitting on a chair.$
+12:28:36; yoav is sitting on a chair.$
+12:28:39; yoav using the tv with remote.$ yoav is sitting on a chair.$
+12:28:41; yoav is sitting on a chair.$
+12:28:42; yoav using the tv with remote.$ yoav is sitting on a chair.$
+12:28:44; yoav is sitting on a chair.$
+12:28:45; yoav is sitting on a chair.$
+12:28:47; yoav is sitting on a chair.$
+12:28:52; yoav is sitting on a chair.$
+12:28:54; yoav is sitting on a chair.$
+12:28:56; yoav is sitting on a chair.$
+12:29:03; yoav is sitting on a chair.$
+12:29:08; yoav is sitting on a chair.$
+12:29:19; yoav is sitting on a chair.$
+12:29:27; yoav has connection with sink.$
+12:29:34; yoav has connection with sink.$
+12:29:42; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:29:44; yoav has connection with sink.$
+12:29:45; yoav has connection with sink.$
+12:29:48; yoav is sitting on a chair.$
+12:29:50; yoav is sitting on a chair.$
+12:29:52; yoav is sitting on a chair.$
+12:29:56; yoav is sitting on a chair.$
+12:29:58; yoav is sitting on a chair.$
+12:29:59; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:01; yoav is sitting on a chair.$
+12:30:02; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:04; yoav is sitting on a chair.$
+12:30:13; yoav is sitting on a chair.$
+12:30:15; yoav is sitting on a chair.$
+12:30:17; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:19; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:21; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:22; yoav is sitting on a chair.$
+12:30:27; yoav is sitting on a chair.$
+12:30:30; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:33; yoav is sitting on a chair.$
+12:30:34; yoav is sitting on a chair.$
+12:30:36; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:37; yoav is sitting on a chair.$
+12:30:38; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:40; yoav is sitting on a chair.$
+12:30:41; yoav is sitting on a chair.$
+12:30:42; yoav is sitting on a chair.$
+12:30:44; yoav is sitting on a chair.$
+12:30:45; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:47; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:48; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:49; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:51; yoav is sitting on a chair.$
+12:30:52; yoav is sitting on a chair.$ yoav has connection with sink.$
+12:30:53; yoav is sitting on a chair.$
+12:30:55; yoav is sitting on a chair.$
+12:30:56; yoav is sitting on a chair.$
+12:30:57; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$ yoav has connection with sink.$
+12:30:59; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$ yoav has connection with sink.$
+12:31:00; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$ yoav has connection with sink.$
+12:31:02; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$ yoav has connection with sink.$
+12:31:03; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$ yoav has connection with sink.$
+12:31:05; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:06; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:07; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:09; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:10; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:11; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:13; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:31:14; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:16; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:17; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:19; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:20; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:21; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:23; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:24; yoav using the tv with tvmonitor.$
+12:31:25; yoav using the tv with tvmonitor.$
+12:31:27; yoav using the tv with tvmonitor.$
+12:31:28; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:29; yoav using the tv with tvmonitor.$
+12:31:30; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:32; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:33; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:35; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:31:38; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:39; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:31:41; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:31:42; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:44; yoav using the tv with tvmonitor.$
+12:31:45; yoav using the tv with tvmonitor.$
+12:31:47; yoav using the tv with tvmonitor.$
+12:31:48; yoav using the tv with tvmonitor.$
+12:31:50; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:51; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:31:53; yoav using the tv with tvmonitor.$
+12:31:54; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:31:56; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:57; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:31:59; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:00; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:01; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:03; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:04; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:06; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:07; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:08; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:10; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:11; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:13; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:15; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:16; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:18; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:19; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:21; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:22; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:23; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:25; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:26; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:27; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:29; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:30; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:32; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:33; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:35; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:37; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:39; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:40; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:43; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:44; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:46; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:47; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:49; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:50; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:51; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:52; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:54; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:55; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:32:56; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:58; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:32:59; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:00; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:01; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:03; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:04; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:06; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:07; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:09; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:10; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:11; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:13; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:14; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:15; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:17; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:18; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:20; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:21; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:22; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:24; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:25; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:27; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:28; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:29; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:31; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:32; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:33; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:35; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:36; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:38; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:39; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:41; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:42; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:44; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:45; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:46; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:48; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:49; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:51; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:52; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:53; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:55; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:33:56; yoav is sitting on a chair.$ yoav using the tv with tvmonitor.$
+12:33:57; yoav using the tv with tvmonitor.$
+12:33:59; yoav using the tv with tvmonitor.$
+12:34:00; yoav using the tv with tvmonitor.$
+12:34:01; yoav using the tv with tvmonitor.$
+12:34:02; yoav using the tv with tvmonitor.$
+12:34:04; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:34:05; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:34:07; yoav using the tv with tvmonitor.$
+12:34:08; yoav using the tv with tvmonitor.$
+12:34:09; yoav using the tv with tvmonitor.$
+12:34:11; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:34:12; yoav using the tv with tvmonitor.$
+12:34:13; yoav using the tv with tvmonitor.$
+12:34:15; yoav using the tv with tvmonitor.$
+12:34:17; yoav using the tv with tvmonitor.$
+12:34:18; yoav using the tv with tvmonitor.$
+12:34:19; yoav using the tv with tvmonitor.$
+12:34:24; yoav using the tv with tvmonitor.$
+12:34:25; yoav using the tv with tvmonitor.$ yoav is sitting on a chair.$
+12:34:27; yoav using the tv with tvmonitor.$
+12:34:28; yoav using the tv with tvmonitor.$
+12:34:29; yoav using the tv with tvmonitor.$
+12:34:31; yoav using the tv with tvmonitor.$
+12:34:32; yoav using the tv with tvmonitor.$
+12:34:33; yoav using the tv with tvmonitor.$
+12:34:47; liad using the tv with tvmonitor.$
+12:34:48; liad using the tv with tvmonitor.$
+12:34:49; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:34:51; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:34:52; liad using the tv with tvmonitor.$
+12:34:54; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:34:55; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:34:56; liad using the tv with tvmonitor.$ liad is sitting on a chair.$ liad has connection with sink.$
+12:34:58; liad using the tv with tvmonitor.$ liad has connection with refrigerator.$
+12:35:00; liad is sitting on a chair.$ liad using the tv with tvmonitor.$
+12:35:01; liad using the tv with tvmonitor.$
+12:35:02; liad using the tv with tvmonitor.$
+12:35:04; liad using the tv with tvmonitor.$
+12:35:05; liad using the tv with tvmonitor.$
+12:35:07; liad using the tv with tvmonitor.$
+12:35:08; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:10; liad using the tv with tvmonitor.$
+12:35:11; liad using the tv with tvmonitor.$
+12:35:13; liad using the tv with tvmonitor.$
+12:35:14; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:16; liad using the tv with tvmonitor.$
+12:35:17; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:19; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:35:20; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:35:21; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:35:23; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:35:25; liad using the tv with tvmonitor.$ liad has connection with sink.$ liad is sitting on a chair.$
+12:35:26; liad using the tv with tvmonitor.$ liad is sitting on a chair.$ liad has connection with sink.$
+12:35:28; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:29; liad using the tv with tvmonitor.$ liad is sitting on a chair.$
+12:35:31; liad using the tv with tvmonitor.$
+12:35:32; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:33; liad using the tv with tvmonitor.$
+12:35:35; liad using the tv with tvmonitor.$
+12:35:36; liad using the tv with tvmonitor.$
+12:35:37; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:39; liad using the tv with tvmonitor.$
+12:35:40; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:42; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:43; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:44; liad using the tv with tvmonitor.$
+12:35:46; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:47; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:49; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:50; liad using the tv with tvmonitor.$
+12:35:51; liad using the tv with tvmonitor.$
+12:35:53; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:54; liad using the tv with tvmonitor.$
+12:35:56; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:35:57; liad using the tv with tvmonitor.$
+12:39:12; liad using the tv with tvmonitor.$
+12:39:14; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:39:15; liad using the tv with tvmonitor.$
+12:39:16; liad using the tv with tvmonitor.$
+12:39:17; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:39:19; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:39:20; liad using the tv with tvmonitor.$ liad has connection with sink.$ liad is sitting on a chair.$
+12:39:22; liad using the tv with tvmonitor.$ liad has connection with sink.$
+12:39:23; liad using the tv with tvmonitor.$ liad is sitting on a chair.$ liad has connection with sink.$
+12:39:24; liad using the tv with tvmonitor.$
+12:39:26; liad using the tv with tvmonitor.$
+12:51:35; liad is sitting on a chair.$
+12:51:45; liad is sitting on a chair.$
+12:55:42; liad is sitting on a chair.$
+12:55:43; liad is sitting on a chair.$
+12:55:50; liad using the computer with laptop.$

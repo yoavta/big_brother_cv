@@ -1,0 +1,431 @@
+22:42:18; sharon is sitting on a chair.$
+22:42:19; sharon is sitting on a chair.$
+22:42:21; sharon is sitting on a chair.$
+22:42:22; sharon is sitting on a chair.$
+22:42:23; sharon is sitting on a chair.$
+22:42:25; sharon is sitting on a chair.$
+22:42:26; sharon is sitting on a chair.$
+22:42:27; sharon is sitting on a chair.$
+22:42:29; sharon is sitting on a chair.$
+22:42:30; sharon is sitting on a chair.$
+22:42:31; sharon is sitting on a chair.$
+22:42:32; sharon is sitting on a chair.$
+22:42:34; sharon is sitting on a chair.$
+22:42:35; sharon is sitting on a chair.$
+22:42:40; sharon is sitting on a chair.$
+22:42:41; sharon is sitting on a chair.$
+22:42:43; sharon is sitting on a chair.$
+22:42:44; sharon is sitting on a chair.$
+22:42:45; sharon is sitting on a chair.$
+22:42:46; sharon is sitting on a chair.$
+22:42:48; sharon is sitting on a chair.$
+22:42:49; sharon is sitting on a chair.$
+22:42:53; sharon is sitting on a chair.$
+22:42:54; sharon is sitting on a chair.$
+22:42:56; sharon is sitting on a chair.$
+22:42:57; sharon is sitting on a chair.$
+22:42:58; sharon is sitting on a chair.$
+22:43:00; sharon is sitting on a chair.$
+22:43:02; sharon is sitting on a chair.$
+22:43:03; sharon is sitting on a chair.$
+22:43:04; sharon is sitting on a chair.$
+22:43:06; sharon is sitting on a chair.$
+22:43:07; sharon is sitting on a chair.$
+22:43:08; sharon is sitting on a chair.$
+22:43:09; sharon is sitting on a chair.$
+22:43:11; sharon is sitting on a chair.$
+22:43:12; sharon is sitting on a chair.$
+22:43:13; sharon is  holding a handbag.$ sharon is sitting on a chair.$
+22:43:15; sharon is sitting on a chair.$ sharon is wearing a backpack.$
+22:43:16; sharon is sitting on a chair.$ sharon is wearing a backpack.$
+22:43:17; sharon is wearing a backpack.$ sharon is sitting on a chair.$
+22:43:19; sharon is sitting on a chair.$ sharon is wearing a backpack.$
+22:43:20; sharon is wearing a backpack.$ sharon is sitting on a chair.$
+22:43:21; sharon is wearing a backpack.$ sharon is sitting on a chair.$
+22:43:23; sharon is sitting on a chair.$ sharon is wearing a backpack.$
+22:43:24; sharon is sitting on a chair.$
+22:43:26; sharon is wearing a backpack.$ sharon is sitting on a chair.$
+22:43:27; sharon is sitting on a chair.$
+22:43:29; sharon is sitting on a chair.$
+22:43:30; sharon is sitting on a chair.$
+22:43:31; sharon is sitting on a chair.$
+22:43:33; sharon is sitting on a chair.$
+22:43:34; sharon is sitting on a chair.$
+22:43:35; sharon is wearing a backpack.$
+22:43:37; sharon is sitting on a chair.$
+22:43:41; sharon is sitting on a chair.$
+22:43:52; watch out!! sharon is playing with scissors.$
+22:43:53; sharon is sitting on a chair.$
+22:43:59; sharon using his phone.$ sharon is sitting on a chair.$
+22:44:01; sharon is sitting on a chair.$
+22:44:02; sharon is sitting on a chair.$
+22:44:04; sharon is sitting on a chair.$ sharon using his phone.$
+22:44:05; sharon is sitting on a chair.$
+22:44:06; sharon is sitting on a chair.$
+22:44:08; sharon is sitting on a chair.$
+22:44:09; sharon is sitting on a chair.$
+22:44:11; sharon is sitting on a chair.$
+22:44:12; sharon is sitting on a chair.$
+22:44:13; sharon is sitting on a chair.$
+22:44:15; sharon is sitting on a chair.$
+22:44:16; sharon is sitting on a chair.$
+22:44:17; sharon is sitting on a chair.$
+22:44:19; sharon is sitting on a chair.$
+22:44:20; sharon is sitting on a chair.$
+22:44:22; sharon is sitting on a chair.$
+22:44:23; sharon is sitting on a chair.$
+22:44:24; sharon using the tv with remote.$ sharon is sitting on a chair.$
+22:44:25; sharon using the tv with remote.$ sharon is sitting on a chair.$
+22:44:27; sharon using the tv with remote.$ sharon is sitting on a chair.$
+22:44:28; sharon is sitting on a chair.$
+22:44:29; sharon is sitting on a chair.$
+22:44:30; sharon is sitting on a chair.$
+22:44:32; sharon is sitting on a chair.$
+22:44:33; sharon using the tv with remote.$ sharon is sitting on a chair.$
+22:44:35; sharon is sitting on a chair.$
+22:44:36; sharon is sitting on a chair.$
+22:44:37; sharon is sitting on a chair.$
+22:44:38; sharon is sitting on a chair.$
+22:44:40; sharon is sitting on a chair.$
+22:44:41; sharon is sitting on a chair.$
+22:44:43; sharon is sitting on a chair.$
+22:44:44; sharon is sitting on a chair.$
+22:44:45; sharon is sitting on a chair.$
+22:44:53; sharon is sitting on a chair.$
+22:44:54; sharon is sitting on a chair.$
+22:44:55; sharon is sitting on a chair.$
+22:44:57; sharon is sitting on a chair.$
+22:44:58; sharon is sitting on a chair.$
+22:44:59; sharon is sitting on a chair.$
+22:45:01; sharon is sitting on a chair.$
+22:45:02; sharon is sitting on a chair.$
+22:45:03; sharon is sitting on a chair.$
+22:45:04; sharon is sitting on a chair.$
+22:45:06; sharon is sitting on a chair.$
+22:45:07; sharon is sitting on a chair.$
+22:45:08; sharon is sitting on a chair.$
+22:45:09; sharon is sitting on a chair.$
+22:45:11; sharon is sitting on a chair.$
+22:45:12; sharon is sitting on a chair.$
+22:45:13; sharon is sitting on a chair.$
+22:45:14; sharon is sitting on a chair.$
+22:45:16; sharon is sitting on a chair.$
+22:45:17; sharon is sitting on a chair.$
+22:45:23; sharon is sitting on a chair.$
+22:45:24; sharon is sitting on a chair.$
+22:45:25; sharon is sitting on a chair.$
+22:45:26; sharon is sitting on a chair.$
+22:45:28; sharon is sitting on a chair.$
+22:45:30; sharon is sitting on a chair.$
+22:45:31; sharon is sitting on a chair.$
+22:45:32; sharon is sitting on a chair.$
+22:45:34; sharon is sitting on a chair.$
+22:45:35; sharon is sitting on a chair.$
+22:45:36; sharon is sitting on a chair.$
+22:45:38; sharon is sitting on a chair.$
+22:45:39; sharon is sitting on a chair.$
+22:45:41; sharon is sitting on a chair.$
+22:45:42; sharon is sitting on a chair.$
+22:45:43; sharon is sitting on a chair.$
+22:45:45; sharon is sitting on a chair.$
+22:45:46; sharon is sitting on a chair.$
+22:45:47; sharon is sitting on a chair.$
+22:45:49; sharon is sitting on a chair.$
+22:45:52; sharon using the computer with laptop.$
+22:45:55; sharon using the computer with laptop.$
+22:45:58; sharon is sitting on a chair.$
+22:45:59; sharon is sitting on a chair.$
+22:46:01; sharon is sitting on a chair.$
+22:46:02; sharon is sitting on a chair.$
+22:46:03; sharon is sitting on a chair.$
+22:46:06; sharon is sitting on a chair.$
+22:46:07; sharon is sitting on a chair.$
+22:46:09; sharon is sitting on a chair.$
+22:46:11; sharon is sitting on a chair.$
+22:46:12; sharon is sitting on a chair.$
+22:46:13; sharon is sitting on a chair.$
+22:46:15; sharon is sitting on a chair.$
+22:46:23; sharon is sitting on a chair.$
+22:46:25; sharon is sitting on a chair.$
+22:46:26; sharon is sitting on a chair.$
+22:46:28; sharon is sitting on a chair.$
+22:46:29; sharon is sitting on a chair.$
+22:46:30; sharon is sitting on a chair.$
+22:46:32; sharon is sitting on a chair.$
+22:46:33; sharon is sitting on a chair.$
+22:46:35; sharon is sitting on a chair.$
+22:46:36; sharon is sitting on a chair.$
+22:46:37; sharon is sitting on a chair.$
+22:46:39; sharon is sitting on a chair.$
+22:46:40; sharon is sitting on a chair.$
+22:46:41; sharon is sitting on a chair.$
+22:46:43; sharon is sitting on a chair.$
+22:46:44; sharon is sitting on a chair.$
+22:46:45; sharon is sitting on a chair.$
+22:46:47; sharon is sitting on a chair.$
+22:46:48; sharon is sitting on a chair.$
+22:46:49; sharon is sitting on a chair.$
+22:46:50; sharon is sitting on a chair.$
+22:46:52; sharon is sitting on a chair.$
+22:46:53; sharon is sitting on a chair.$
+22:46:55; sharon is sitting on a chair.$
+22:46:56; sharon is sitting on a chair.$
+22:46:57; sharon is sitting on a chair.$
+22:46:59; sharon is sitting on a chair.$
+22:47:00; sharon is sitting on a chair.$
+22:47:01; sharon is sitting on a chair.$
+22:47:03; sharon is sitting on a chair.$
+22:47:05; sharon is sitting on a chair.$
+22:47:06; sharon is sitting on a chair.$
+22:47:07; sharon is sitting on a chair.$
+22:47:09; sharon is sitting on a chair.$
+22:47:10; sharon is sitting on a chair.$
+22:47:11; sharon is sitting on a chair.$
+22:47:13; sharon is sitting on a chair.$
+22:47:14; sharon is sitting on a chair.$
+22:47:15; sharon is sitting on a chair.$
+22:47:17; sharon is sitting on a chair.$
+22:47:18; sharon is sitting on a chair.$
+22:47:19; sharon is sitting on a chair.$
+22:47:20; sharon is sitting on a chair.$
+22:47:22; sharon is sitting on a chair.$
+22:47:23; sharon is sitting on a chair.$
+22:47:24; sharon is sitting on a chair.$
+22:47:26; sharon is sitting on a chair.$
+22:47:27; sharon is sitting on a chair.$
+22:47:28; sharon is sitting on a chair.$
+22:47:29; sharon is sitting on a chair.$
+22:47:31; sharon is sitting on a chair.$
+22:47:32; sharon is sitting on a chair.$
+22:47:33; sharon is sitting on a chair.$
+22:47:35; sharon is sitting on a chair.$
+22:47:36; sharon is sitting on a chair.$
+22:47:37; sharon is sitting on a chair.$
+22:47:38; sharon is sitting on a chair.$
+22:47:40; sharon is sitting on a chair.$
+22:47:41; sharon is sitting on a chair.$
+22:47:42; sharon is sitting on a chair.$
+22:47:44; sharon is sitting on a chair.$
+22:47:45; sharon is sitting on a chair.$
+22:47:47; sharon is sitting on a chair.$
+22:47:48; sharon is sitting on a chair.$
+22:47:49; sharon is sitting on a chair.$
+22:47:51; sharon is sitting on a chair.$
+22:47:52; sharon is sitting on a chair.$
+22:47:54; sharon is sitting on a chair.$
+22:47:55; sharon is sitting on a chair.$
+22:47:57; sharon is sitting on a chair.$
+22:47:58; sharon is sitting on a chair.$
+22:47:59; sharon is  eating a apple.$ sharon is sitting on a chair.$
+22:48:01; sharon is playing with sports ball.$ sharon is sitting on a chair.$
+22:48:02; sharon is  eating a apple.$ sharon is sitting on a chair.$
+22:48:03; sharon is sitting on a chair.$
+22:48:05; sharon is sitting on a chair.$
+22:48:06; sharon is sitting on a chair.$
+22:48:09; sharon is sitting on a chair.$
+22:48:11; sharon is sitting on a chair.$
+22:48:12; sharon is sitting on a chair.$
+22:48:13; sharon is sitting on a chair.$
+22:48:15; sharon is sitting on a chair.$
+22:48:16; sharon is sitting on a chair.$
+22:48:17; sharon is sitting on a chair.$
+22:48:19; sharon is sitting on a chair.$
+22:48:20; sharon is sitting on a chair.$
+22:48:22; sharon is sitting on a chair.$
+22:48:23; sharon is sitting on a chair.$
+22:48:24; sharon is sitting on a chair.$
+22:48:26; sharon is sitting on a chair.$
+22:48:27; sharon is sitting on a chair.$
+22:48:29; sharon is sitting on a chair.$
+22:48:30; sharon is sitting on a chair.$
+22:48:32; sharon is sitting on a chair.$
+22:48:34; sharon is sitting on a chair.$
+22:48:35; sharon is sitting on a chair.$
+22:48:36; sharon is sitting on a chair.$
+22:48:48; sharon is sitting on a chair.$
+22:48:49; sharon is sitting on a chair.$
+22:48:50; sharon is sitting on a chair.$
+22:48:53; sharon is sitting on a chair.$
+22:48:55; sharon is sitting on a chair.$
+22:48:56; sharon is sitting on a chair.$
+22:48:57; sharon is sitting on a chair.$
+22:48:59; sharon is sitting on a chair.$
+22:49:00; sharon is sitting on a chair.$
+22:49:01; sharon is sitting on a chair.$
+22:49:03; sharon is sitting on a chair.$
+22:49:04; sharon is sitting on a chair.$
+22:49:06; sharon is sitting on a chair.$
+22:49:07; sharon is sitting on a chair.$
+22:49:15; sharon is  holding a handbag.$
+22:49:16; sharon is  holding a handbag.$
+22:50:05; watch out!! sharon is playing with scissors.$
+22:50:08; sharon using his phone.$
+22:50:14; sharon is sitting on a chair.$
+22:50:17; sharon has connection with refrigerator.$
+22:50:20; sharon has connection with refrigerator.$
+22:50:26; sharon is sitting on a chair.$
+22:50:28; sharon is sitting on a chair.$
+22:50:31; sharon is sitting on a chair.$
+22:50:33; sharon is sitting on a chair.$
+22:50:34; sharon is sitting on a chair.$
+22:50:35; sharon is sitting on a chair.$
+22:50:37; sharon is sitting on a chair.$
+22:50:38; sharon is sitting on a chair.$
+22:50:39; sharon is sitting on a chair.$
+22:50:40; sharon is sitting on a chair.$
+22:50:49; sharon is sitting on a chair.$
+22:50:50; sharon is sitting on a chair.$
+22:50:52; sharon is sitting on a chair.$
+22:50:53; sharon is sitting on a chair.$
+22:50:55; sharon is sitting on a chair.$
+22:50:56; sharon is sitting on a chair.$
+22:50:57; sharon is sitting on a chair.$
+22:50:59; sharon is sitting on a chair.$
+22:51:00; sharon is sitting on a chair.$
+22:51:01; sharon is sitting on a chair.$
+22:51:02; sharon is sitting on a chair.$
+22:51:04; sharon is sitting on a chair.$
+22:51:05; sharon is sitting on a chair.$
+22:51:10; sharon is sitting on a chair.$
+22:51:46; sharon is sitting on a chair.$
+22:52:44; sharon has connection with refrigerator.$
+22:52:45; sharon has connection with refrigerator.$
+22:52:47; sharon has connection with refrigerator.$
+22:52:53; sharon has connection with refrigerator.$
+22:52:55; sharon has connection with refrigerator.$
+22:52:56; sharon has connection with refrigerator.$ sharon is  holding a handbag.$
+22:52:58; sharon has connection with refrigerator.$ sharon is  holding a handbag.$
+22:52:59; sharon has connection with refrigerator.$
+22:53:03; sharon is sitting on a chair.$
+22:53:04; sharon is sitting on a chair.$
+22:53:05; sharon is sitting on a chair.$
+22:53:07; sharon is sitting on a chair.$
+22:53:08; sharon is sitting on a chair.$
+22:53:11; sharon is sitting on a chair.$
+22:53:13; sharon is sitting on a chair.$
+22:53:17; sharon is sitting on a chair.$
+22:53:18; sharon is sitting on a chair.$
+22:53:20; sharon is sitting on a chair.$
+22:53:21; sharon is sitting on a chair.$
+22:53:30; sharon has connection with refrigerator.$
+22:53:31; sharon has connection with refrigerator.$
+22:53:59; sharon has connection with refrigerator.$
+22:54:00; sharon has connection with toilet.$
+22:54:05; sharon has connection with refrigerator.$
+22:54:07; sharon is wearing a backpack.$ sharon has connection with refrigerator.$
+22:54:12; sharon is sitting on a chair.$
+22:54:13; sharon is sitting on a chair.$ sharon is wearing a backpack.$
+22:54:14; sharon is sitting on a chair.$
+22:54:15; sharon is sitting on a chair.$
+22:54:17; sharon is sitting on a chair.$
+22:54:18; sharon is sitting on a chair.$
+22:54:21; sharon is sitting on a chair.$
+22:54:23; sharon is sitting on a chair.$
+22:54:25; sharon is sitting on a chair.$
+22:54:26; sharon is sitting on a chair.$
+22:54:28; sharon is sitting on a chair.$
+22:54:31; sharon is wearing a backpack.$
+22:54:33; sharon is wearing a backpack.$ sharon is sitting on a chair.$
+22:54:35; sharon is wearing a backpack.$
+22:54:36; sharon is sitting on a chair.$
+22:54:37; sharon is sitting on a chair.$
+22:54:38; sharon is sitting on a chair.$
+22:54:40; sharon is sitting on a chair.$
+22:54:52; sharon is wearing a backpack.$
+22:54:53; sharon is sitting on a chair.$
+22:54:56; sharon is sitting on a chair.$
+22:54:58; sharon is sitting on a chair.$
+22:55:05; sharon is sitting on a chair.$
+22:55:08; sharon is sitting on a chair.$
+22:55:16; sharon using the computer with laptop.$
+22:55:18; sharon is sitting on a chair.$
+22:55:19; sharon is sitting on a chair.$
+22:55:28; sharon is sitting on a sofa.$
+22:55:30; sharon is sitting on a chair.$
+22:55:31; sharon is sitting on a chair.$ sharon is sitting on a bench.$
+22:55:32; sharon is sitting on a bench.$
+22:55:34; sharon is sitting on a chair.$
+22:55:35; sharon is sitting on a chair.$
+22:55:38; sharon is sitting on a sofa.$
+22:55:39; sharon is sitting on a chair.$
+22:55:40; sharon is sitting on a sofa.$
+22:55:42; sharon is sitting on a sofa.$
+22:55:46; sharon is sitting on a chair.$
+22:55:48; sharon is sitting on a sofa.$
+22:55:50; sharon using the computer with laptop.$
+22:55:59; sharon is sitting on a chair.$
+22:56:02; sharon is sitting on a chair.$
+22:56:03; sharon is sitting on a sofa.$
+22:56:06; sharon is sitting on a chair.$
+22:56:07; sharon is sitting on a chair.$
+22:56:09; sharon is sitting on a sofa.$
+22:56:17; sharon is sitting on a sofa.$
+22:56:20; sharon is sitting on a chair.$
+22:56:33; sharon is sitting on a chair.$
+22:56:38; sharon is sitting on a bench.$
+22:56:42; sharon is sitting on a chair.$
+22:56:44; sharon is sitting on a bench.$
+22:56:48; sharon is sitting on a chair.$ sharon using the computer with laptop.$
+22:56:50; sharon is sitting on a chair.$
+22:56:54; sharon is sitting on a chair.$
+22:56:55; sharon is sitting on a sofa.$ sharon is sitting on a chair.$
+22:56:58; sharon is sitting on a chair.$
+22:57:03; sharon is sitting on a bench.$
+22:57:06; sharon is sitting on a chair.$
+22:57:20; sharon using the computer with laptop.$
+22:57:27; sharon is sitting on a chair.$
+22:57:28; sharon is sitting on a sofa.$
+22:57:30; sharon is sitting on a chair.$
+22:57:44; sharon is sitting on a chair.$
+22:57:45; sharon is sitting on a chair.$
+22:57:57; sharon is sitting on a chair.$
+22:58:00; sharon is sitting on a sofa.$
+22:58:05; sharon is sitting on a bench.$
+22:58:10; sharon using the computer with laptop.$
+22:58:12; sharon using the computer with laptop.$
+22:58:16; sharon using the computer with laptop.$
+22:58:21; sharon using the computer with laptop.$
+22:58:24; sharon using the computer with laptop.$
+22:58:26; sharon using the computer with laptop.$
+22:58:32; sharon is sitting on a sofa.$
+22:58:34; sharon is sitting on a sofa.$
+22:58:35; sharon is sitting on a sofa.$
+22:58:42; sharon is sitting on a sofa.$
+22:58:46; sharon is sitting on a sofa.$
+22:59:08; sharon is sitting on a chair.$
+22:59:11; sharon is sitting on a chair.$
+22:59:12; sharon using the tv with remote.$
+22:59:13; sharon is sitting on a chair.$
+22:59:15; sharon is sitting on a chair.$
+22:59:16; sharon is sitting on a chair.$
+22:59:18; sharon is sitting on a chair.$
+22:59:22; sharon using the computer with laptop.$
+22:59:37; sharon using the computer with laptop.$
+22:59:48; sharon using the computer with laptop.$
+22:59:49; sharon using the computer with laptop.$
+23:00:28; sharon is sitting on a chair.$
+23:00:34; sharon is sitting on a chair.$
+23:00:36; sharon is sitting on a chair.$
+23:00:37; sharon is sitting on a sofa.$
+23:00:52; sharon is sitting on a sofa.$
+23:00:53; sharon using the computer with laptop.$ sharon is sitting on a sofa.$
+23:01:17; sharon is sitting on a chair.$
+23:01:26; sharon is sitting on a sofa.$
+23:01:33; sharon using the computer with laptop.$ sharon is sitting on a sofa.$
+23:01:42; sharon is sitting on a chair.$
+23:01:45; sharon is sitting on a chair.$
+23:01:47; sharon is sitting on a chair.$
+23:01:55; sharon is sitting on a sofa.$
+23:02:08; sharon is sitting on a sofa.$
+23:02:26; sharon is sitting on a chair.$
+23:02:35; sharon is sitting on a bench.$
+23:02:38; sharon is sitting on a sofa.$
+23:02:39; sharon is sitting on a sofa.$
+23:02:51; sharon is sitting on a sofa.$
+23:03:04; sharon is sitting on a sofa.$
+23:03:05; sharon is sitting on a chair.$
+23:03:07; sharon is sitting on a sofa.$
+23:03:13; sharon is sitting on a sofa.$
+23:03:16; sharon is sitting on a bench.$
+23:03:17; sharon is sitting on a bench.$
+23:03:21; sharon is sitting on a bench.$
