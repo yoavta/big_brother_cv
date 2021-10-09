@@ -1,5 +1,0 @@
-23:34:57; inigo montoya is sitting on a sofa.$
-23:34:59; inigo montoya is sitting on a sofa.$
-23:35:00; inigo montoya using the computer with laptop.$
-23:35:01; inigo montoya using the computer with laptop.$
-23:35:02; inigo montoya using the computer with laptop.$

@@ -1,9 +1,0 @@
-01:09:05; inigo montoya using the computer with laptop.$
-01:09:09; inigo montoya has connection with cell phone.$ inigo montoya using the computer with laptop.$
-01:09:11; inigo montoya using the computer with laptop.$
-01:09:12; inigo montoya using the computer with laptop.$ inigo montoya is wearing a backpack.$
-01:09:19; inigo montoya using the computer with laptop.$
-01:09:20; inigo montoya using the computer with laptop.$
-01:09:27; inigo montoya using the computer with laptop.$
-01:09:30; inigo montoya is wearing a backpack.$
-01:09:31; inigo montoya using the computer with laptop.$
