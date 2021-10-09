@@ -19,7 +19,18 @@ from pycoral.utils.dataset import read_label_file
 from pycoral.utils.edgetpu import make_interpreter
 from pycoral.utils.edgetpu import run_inference
 from categories_list import categories_list
+from rasbppery import Camera
+from firebase_config import firebase_config
+import pyrebase
 
+whT = 320
+confThreshold = 0.5
+nmsThreshold = 0.3
+detector = HandDetector(detectionCon = 0.4, maxHands = 2)
+data_form = form()
+# my_camera = Camera(-0.3,0)
+
+firebase = firebase_config()
 
 detector = HandDetector(detectionCon = 0.6, maxHands = 2)
 data_form = form()
@@ -29,12 +40,14 @@ firebase = firebase_config()
 db = firebase.firebase.database()
 categories = categories_list(firebase,db)
 first_person_show = False
+name = db.child("name").get().val()
 
 # Extracting object names:
 classesFile = "Resources/coco.names.txt"
 with open(classesFile, 'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
 f.close()
+
 
 classesFile = "Resources/person.txt"
 with open(classesFile, 'rt') as f:
@@ -47,14 +60,11 @@ with open(classesFile, 'rt') as f:
 f.close()
 
 
+
 classesFile = "Resources/other.txt"
 with open(classesFile, 'rt') as f:
     other_list = f.read().rstrip('\n').split('\n')
 f.close()
-
-
-
-#################
 
 
 
@@ -101,6 +111,7 @@ def speek(text):
 
 
 
+
 def analyze_connections(connections):
     events =[]
     for con in connections:
@@ -132,6 +143,7 @@ def analyze_connections(connections):
             st = name + " is using the tv with a(n)" + con + "."
         elif list_in == "wearing":
             st = name + " is wearing a(n) " + con + "."
+
         else:
             st = name + " has a connection with a(n) " + con + "."
         # print(st)
@@ -377,7 +389,6 @@ while True:
         analyze_connections(connections)
 
     print("capture stoped")
-
 
 
 

@@ -79,6 +79,7 @@ class form:
         # text = "report time: " + current_time + "\n\nImportant events:\n"
         report_time_txt=current_time
         text = report_time_txt + "\n\nImportant events:\n"
+        text = "report time: " + current_time + "\n\nImportant events:\n"
         # ADD HERE SUMMARY OF IMPORTANT EVENTS (DANGEROUS, SURPRISING...)
         text = text + "\n\nSituations:\n"
         # DOESN'T PRINT BY CHRONOLOGICAL ORDER!
@@ -86,6 +87,39 @@ class form:
         total_times = {}
         situations = []
 
+
+        for t in dict:
+            for con in dict[t]:
+                situations.append((str(t[:-1]), str(con[1]), str(con[2])))
+                # text = text + str(t[:-1]) + " from " + str(con[1]) + " to " + str(con[2]) + ".\n"
+                start = con[1]
+                end = con[2]
+                FMT = '%H:%M:%S'
+                tdelta = datetime.strptime(end, FMT) - datetime.strptime(start, FMT)
+                if t[:-1] in total_times:
+                    t1 = datetime.strptime(str(total_times[t[:-1]][0]), FMT)
+                    t2 = datetime.strptime(str(tdelta), FMT)
+                    time_zero = datetime.strptime('00:00:00', FMT)
+                    total_times[t[:-1]] = ((t1 - time_zero + t2).time(), total_times[t[:-1]][1] +1)
+                else:
+                    total_times[t[:-1]] = (tdelta, 1)
+
+        # Sort situations and add to form:
+        sorted_list = sorted(situations, key=lambda tim: datetime.strptime(tim[1], '%H:%M:%S'))
+        for sit in sorted_list:
+            text = text + str(sit[0]) + " from " + str(sit[1]) + " to " + str(sit[2]) + ".\n"
+
+        text = text + "\n\nIn total:\n"
+        for t in total_times:
+            text = text + str(t) + " for " + str(total_times[t][0])
+            split = str(total_times[t][0]).split(':')
+            if split[0] != '0' and split[0] != '00':
+                text = text + " hour(s), "
+            elif split[1] != '00':
+                text = text + " minute(s), "
+            else:
+                text = text + " second(s), "
+            text = text + str(total_times[t][1]) + " time(s) total.\n"
 
         for t in dict:
             for con in dict[t]:                
