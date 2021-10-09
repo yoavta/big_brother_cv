@@ -5,9 +5,8 @@ from yeelight import *
 from yeelight import transitions
 
 try:
-    bulb1 = Bulb('192.168.0.191', effect="smooth")
-    bulb2 = Bulb('192.168.0.159', effect="smooth")
-    # bulb_savta = Bulb('192.168.1.167', effect="smooth")
+    bulb1 = Bulb('XXX.XXX.XXX.XXX', effect="smooth")
+    bulb2 = Bulb('XXX.XXX.XXX.XXX', effect="smooth")
     bulbs = [bulb1, bulb2]
 except:
     print ("error with connection to cam")
