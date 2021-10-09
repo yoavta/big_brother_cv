@@ -2,6 +2,7 @@ import pyrebase
 import time
 import os
 
+
 class firebase_config:
 
     def __init__(self):
@@ -13,7 +14,7 @@ class firebase_config:
         self.initial()
         
     
-        
+
 
 
     def config(self):
@@ -36,8 +37,7 @@ class firebase_config:
         if self.firebase.database().child("data").child("categories").child("change").get().val()==1:
             return True
         return False
-    
-    
+
     def tick_categories(self, name, mark):
         list = self.firebase.database().child("data").child("categories").child(name).get().val().keys()
         for l in list:
@@ -127,5 +127,4 @@ class firebase_config:
 
         
 
-        
-        
+      
