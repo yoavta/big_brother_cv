@@ -1,7 +1,0 @@
-report time: 22-23-09.
-
-Situations:
- Yoav has connection with pottedplant:  6 times.
- Yoav has connection with cell phone:  3 times.
- Yoav has connection with remote:  5 times.
- Yoav has connection with vase:  3 times.

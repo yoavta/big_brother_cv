@@ -1,7 +1,0 @@
-report time: 21-42-28.
-
-Situations:
- Yoav has connection with chair:  1 times.
- Yoav is  eating a apple:  2 times.
- watch out!! Yoav is playing with scissors:  1 times.
- Yoav has connection with cell phone:  1 times.

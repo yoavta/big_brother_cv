@@ -1,5 +1,0 @@
-17:16:59; Sharon has entered the house.$
-17:17:05; Sharon is sitting on a(n) chair.$
-17:17:06; Sharon is sitting on a(n) chair.$
-17:17:14; Sharon is using the computer with a(n) laptop.$
-17:17:26; Sharon is sitting on a(n) chair.$

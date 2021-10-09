@@ -1,6 +1,0 @@
-22:56:32; Yotav using the computer with keyboard.$
-22:56:35; Yotav using the computer with keyboard.$
-22:56:36; Yotav using the computer with keyboard.$
-22:56:38; Yotav is sitting on a chair.$ Yotav using the computer with laptop.$
-22:56:40; Yotav using the computer with laptop.$ Yotav is sitting on a chair.$
-22:56:41; Yotav using the computer with laptop.$ Yotav is sitting on a chair.$

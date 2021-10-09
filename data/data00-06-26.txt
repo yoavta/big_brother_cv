@@ -1,7 +1,0 @@
-00:06:40; Yotav is playing with scissors.$
-00:06:42; Yotav using the computer with keyboard.$
-00:06:43; Yotav is playing with scissors.$
-00:06:46; Yotav is playing with scissors.$ Yotav is sitting on a chair.$
-00:06:48; Yotav is playing with scissors.$ Yotav is sitting on a chair.$
-00:06:50; Yotav is sitting on a chair.$
-00:07:16; Yotav is sitting on a chair.$
