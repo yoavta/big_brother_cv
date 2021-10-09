@@ -27,7 +27,7 @@ ___System setup:___
 ___App:___
 
 <img src="https://user-images.githubusercontent.com/70321869/136663562-4c9f64e6-e27e-459f-804a-41bef39097e1.jpg" width="600" height="400">
-<a href="https://github.com/yoavta/big_brother_cv_android" target="_blank">App rpository.</a>
+<a href="https://github.com/yoavta/big_brother_cv_android" target="_blank">App Repository.</a>
 &nbsp;
 
 &nbsp;
