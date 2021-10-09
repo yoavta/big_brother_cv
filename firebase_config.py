@@ -96,13 +96,13 @@ class firebase_config:
         self.firebase.database().child("data").child("forms").child("situations").set({"pass":"pass"})
         self.firebase.database().child("data").child("forms").child("important events").set({"pass":"pass"})
         
-        for i in range (self.firebase.storage().child("images").list_files().__sizeof__()):
-            try:
-                path = "images/important"+str(i)+".jpg"
-                self.firebase.storage().child("images").delete(path)
-            except:
-                pass
-        
+#         for i in range (self.firebase.storage().child("images").list_files().__sizeof__()):
+#             try:
+#                 path = "images/important"+str(i)+".jpg"
+#                 self.firebase.storage().child("images").delete(path)
+#             except:
+#                 pass
+#         
 
         
     def is_on(self):
