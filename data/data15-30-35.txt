@@ -1,0 +1,114 @@
+15:30:46; yoav tamir is sitting on a chair.$
+15:30:49; yoav tamir is sitting on a sofa.$
+15:30:50; yoav tamir is sitting on a sofa.$
+15:30:56; yoav tamir is sitting on a chair.$
+15:30:57; yoav tamir is sitting on a chair.$
+15:30:59; yoav tamir is sitting on a chair.$
+15:31:00; yoav tamir is sitting on a chair.$
+15:31:02; yoav tamir is sitting on a chair.$
+15:31:04; yoav tamir is sitting on a chair.$
+15:31:05; yoav tamir is sitting on a chair.$
+15:31:06; yoav tamir is sitting on a chair.$
+15:31:08; yoav tamir is sitting on a chair.$
+15:31:09; yoav tamir is sitting on a chair.$
+15:31:11; yoav tamir is sitting on a chair.$
+15:31:12; yoav tamir is sitting on a chair.$
+15:31:14; yoav tamir is sitting on a chair.$
+15:31:15; yoav tamir is sitting on a chair.$
+15:31:17; yoav tamir is sitting on a chair.$
+15:31:18; yoav tamir is sitting on a chair.$
+15:31:20; yoav tamir is sitting on a chair.$
+15:31:21; yoav tamir is sitting on a chair.$
+15:31:23; yoav tamir is sitting on a chair.$
+15:31:24; yoav tamir is sitting on a chair.$
+15:31:26; yoav tamir is sitting on a chair.$
+15:31:27; yoav tamir is sitting on a chair.$
+15:31:28; yoav tamir is sitting on a chair.$
+15:31:29; yoav tamir is sitting on a chair.$
+15:31:31; yoav tamir is sitting on a chair.$
+15:31:32; yoav tamir is sitting on a chair.$
+15:31:34; yoav tamir is sitting on a chair.$
+15:31:35; yoav tamir is sitting on a chair.$
+15:31:37; yoav tamir is sitting on a chair.$
+15:31:38; yoav tamir is sitting on a chair.$
+15:31:40; yoav tamir is sitting on a chair.$
+15:31:41; yoav tamir is sitting on a chair.$
+15:31:43; yoav tamir is sitting on a chair.$
+15:31:44; yoav tamir is sitting on a chair.$
+15:31:45; yoav tamir is sitting on a chair.$
+15:31:47; yoav tamir is sitting on a chair.$
+15:31:48; yoav tamir is sitting on a chair.$
+15:31:57; yoav tamir is sitting on a chair.$ watch out!! yoav tamir is playing with scissors.$
+15:31:58; yoav tamir is sitting on a chair.$
+15:32:01; yoav tamir is sitting on a chair.$
+15:32:07; yoav tamir is sitting on a sofa.$
+15:32:22; yoav tamir is sitting on a chair.$
+15:32:33; yoav tamir is sitting on a chair.$
+15:32:34; yoav tamir is sitting on a chair.$
+15:32:36; yoav tamir is sitting on a sofa.$
+15:32:37; yoav tamir is sitting on a chair.$
+15:32:38; yoav tamir is sitting on a chair.$
+15:32:40; yoav tamir is sitting on a chair.$
+15:32:49; yoav tamir is sitting on a chair.$
+15:32:53; yoav tamir is sitting on a chair.$
+15:32:54; yoav tamir is sitting on a chair.$
+15:32:56; yoav tamir is sitting on a sofa.$
+15:32:58; yoav tamir is sitting on a chair.$
+15:33:00; yoav tamir is sitting on a chair.$
+15:33:01; yoav tamir is sitting on a chair.$
+15:33:02; yoav tamir is sitting on a chair.$
+15:33:05; yoav tamir is sitting on a sofa.$
+15:33:07; yoav tamir is sitting on a chair.$
+15:33:08; yoav tamir is sitting on a sofa.$
+15:33:10; yoav tamir is sitting on a chair.$
+15:33:11; yoav tamir is sitting on a sofa.$
+15:33:15; yoav tamir is sitting on a sofa.$
+15:33:16; yoav tamir is sitting on a sofa.$
+15:33:18; yoav tamir is sitting on a sofa.$
+15:33:19; yoav tamir is sitting on a sofa.$
+15:33:20; yoav tamir is sitting on a chair.$
+15:33:21; yoav tamir is sitting on a sofa.$
+15:33:22; yoav tamir is sitting on a chair.$
+15:33:24; yoav tamir is sitting on a sofa.$
+15:33:26; yoav tamir is sitting on a chair.$ yoav tamir is sitting on a sofa.$
+15:33:27; yoav tamir is sitting on a sofa.$ yoav tamir is sitting on a chair.$
+15:33:28; yoav tamir is sitting on a sofa.$
+15:33:29; yoav tamir is sitting on a sofa.$ yoav tamir is sitting on a chair.$
+15:33:30; yoav tamir is sitting on a sofa.$ yoav tamir is sitting on a chair.$
+15:33:31; yoav tamir is sitting on a sofa.$
+15:33:32; yoav tamir is sitting on a chair.$
+15:33:34; yoav tamir is sitting on a sofa.$
+15:33:35; yoav tamir is sitting on a sofa.$
+15:33:37; yoav tamir is sitting on a sofa.$
+15:33:39; yoav tamir is sitting on a sofa.$
+15:33:40; yoav tamir is sitting on a sofa.$
+15:33:41; yoav tamir is sitting on a sofa.$
+15:33:42; yoav tamir is sitting on a sofa.$
+15:33:43; yoav tamir is sitting on a sofa.$
+15:33:45; yoav tamir is sitting on a sofa.$
+15:33:46; yoav tamir is sitting on a sofa.$
+15:33:47; yoav tamir is sitting on a sofa.$
+15:33:49; yoav tamir is sitting on a sofa.$
+15:33:50; yoav tamir is sitting on a sofa.$
+15:33:52; yoav tamir is sitting on a sofa.$
+15:33:53; yoav tamir is sitting on a sofa.$
+15:33:55; yoav tamir is sitting on a sofa.$
+15:33:56; yoav tamir is sitting on a sofa.$
+15:33:58; yoav tamir is sitting on a sofa.$
+15:34:00; yoav tamir is sitting on a sofa.$ yoav tamir is sitting on a chair.$
+15:34:01; yoav tamir is sitting on a sofa.$
+15:34:03; yoav tamir is sitting on a chair.$ yoav tamir is sitting on a sofa.$
+15:34:06; yoav tamir is sitting on a chair.$ yoav tamir is sitting on a sofa.$
+15:34:07; yoav tamir is sitting on a sofa.$
+15:34:09; yoav tamir is sitting on a chair.$ yoav tamir is sitting on a sofa.$
+15:34:10; yoav tamir is sitting on a sofa.$
+15:34:11; yoav tamir is sitting on a chair.$ yoav tamir is sitting on a sofa.$
+15:34:13; yoav tamir is sitting on a sofa.$ yoav tamir is sitting on a chair.$
+15:34:14; yoav tamir is sitting on a sofa.$ yoav tamir is sitting on a chair.$
+15:34:16; yoav tamir is sitting on a sofa.$
+15:34:17; yoav tamir is sitting on a sofa.$
+15:34:20; yoav tamir is sitting on a sofa.$
+15:34:21; yoav tamir is sitting on a sofa.$
+15:34:23; yoav tamir is sitting on a sofa.$
+15:34:24; yoav tamir is sitting on a chair.$
+15:34:26; yoav tamir is sitting on a sofa.$

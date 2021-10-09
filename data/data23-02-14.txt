@@ -1,0 +1,16 @@
+23:02:31; Yotav is sitting on a chair.$
+23:02:33; Yotav using the computer with laptop.$ Yotav using the computer with keyboard.$
+23:02:35; Yotav using the computer with laptop.$
+23:02:37; Yotav using the computer with laptop.$ Yotav using the computer with keyboard.$
+23:02:38; Yotav using the computer with laptop.$ Yotav is sitting on a chair.$
+23:02:40; Yotav using the computer with laptop.$ Yotav using the computer with keyboard.$
+23:02:42; Yotav using the computer with laptop.$ Yotav using the computer with keyboard.$
+23:02:44; Yotav using the computer with keyboard.$ Yotav is sitting on a chair.$ Yotav using the computer with mouse.$
+23:02:45; Yotav using the computer with laptop.$ Yotav using the computer with mouse.$
+23:02:47; Yotav using the computer with mouse.$ Yotav using the computer with keyboard.$ Yotav is sitting on a chair.$
+23:02:49; Yotav is sitting on a chair.$ Yotav using the computer with laptop.$
+23:02:51; Yotav using the computer with laptop.$ Yotav is sitting on a chair.$
+23:02:52; Yotav using the computer with laptop.$
+23:02:58; Yotav using the computer with laptop.$ Yotav using the computer with keyboard.$
+23:03:00; Yotav using the computer with laptop.$ Yotav using the computer with keyboard.$
+23:03:02; Yotav using the computer with laptop.$ Yotav using the computer with keyboard.$

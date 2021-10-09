@@ -1,0 +1,9 @@
+01:35:34; yoav tamir is sitting on a sofa.$
+01:35:36; yoav tamir is sitting on a sofa.$
+01:35:37; yoav tamir using the computer with laptop.$
+01:35:40; yoav tamir using the computer with laptop.$
+01:35:44; yoav tamir is sitting on a bed.$ yoav tamir is sitting on a sofa.$
+01:35:45; yoav tamir is wearing a backpack.$
+01:35:50; yoav tamir is sitting on a sofa.$
+01:36:04; yoav tamir using the tv with tvmonitor.$
+01:36:05; yoav tamir using the tv with tvmonitor.$
