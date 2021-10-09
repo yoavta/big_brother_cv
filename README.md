@@ -30,6 +30,7 @@ ___App:___
 <a href="https://github.com/yoavta/big_brother_cv_android" target="_blank">App Repository.</a>
 &nbsp;
 
+
 &nbsp;
 
 
@@ -39,7 +40,6 @@ ___detections:___
 &nbsp;
 
 &nbsp;
-
 ___Firebase database structure:___
 
 <img src="https://user-images.githubusercontent.com/70321869/136663943-4e6641ba-b0cc-469a-9675-8eec1d91738f.jpg" width="225" height="450">
