@@ -1,5 +1,0 @@
-14:13:29; liad is wearing a backpack.$
-14:13:30; liad is wearing a backpack.$
-14:13:39; liad is sitting on a chair.$
-14:13:42; liad is sitting on a chair.$
-14:14:02; liad is sitting on a chair.$
