@@ -5,8 +5,7 @@ from time import sleep
 
 class Camera:
     def __init__(self,start_tilt,start_pan):
-        # self.remote_factory = PiGPIOFactory(host='192.168.0.192')
-        self.remote_factory = PiGPIOFactory(host='192.168.1.249')
+        self.remote_factory = PiGPIOFactory(host='xxx.xxx.xx.x.xxx')
         self.pan = Servo(14,pin_factory=self.remote_factory)
         self.tilt = Servo(18,pin_factory=self.remote_factory)
         self.move_pan_to(start_pan)
