@@ -1,0 +1,9 @@
+14:50:56; yoav tamir has connection with cell phone.$ yoav tamir is sitting on a chair.$
+14:50:57; yoav tamir is sitting on a chair.$
+14:50:59; yoav tamir has connection with cell phone.$ yoav tamir is sitting on a chair.$
+14:51:00; yoav tamir is sitting on a chair.$
+14:51:01; yoav tamir has connection with cell phone.$
+14:51:03; yoav tamir has connection with cell phone.$
+14:51:08; yoav tamir is sitting on a chair.$
+14:51:11; yoav tamir using the tv with remote.$
+14:51:17; yoav tamir is sitting on a chair.$

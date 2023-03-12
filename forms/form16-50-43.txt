@@ -1,0 +1,23 @@
+16-50-43
+
+Important events:
+
+
+Situations:
+ Sharon has entered the house from 16:06:36 to 16:06:36.
+ Sharon using his phone from 16:06:39 to 16:06:39.
+ Sharon is sitting on a chair from 16:08:57 to 16:09:03.
+ Sharon is sitting on a chair from 16:11:09 to 16:11:31.
+ Sharon using his phone from 16:11:16 to 16:11:18.
+ Sharon is wearing a tie from 16:31:03 to 16:31:03.
+ Sharon is sitting on a chair from 16:31:31 to 16:31:31.
+ Sharon is sitting on a chair from 16:49:09 to 16:49:09.
+ Sharon has connection with toilet from 16:49:30 to 16:49:30.
+
+
+In total:
+ Sharon has entered the house for 0:00:00 second(s), 1 time(s) total.
+ Sharon using his phone for 00:00:02 second(s), 2 time(s) total.
+ Sharon is sitting on a chair for 00:00:28 second(s), 4 time(s) total.
+ Sharon is wearing a tie for 0:00:00 second(s), 1 time(s) total.
+ Sharon has connection with toilet for 0:00:00 second(s), 1 time(s) total.

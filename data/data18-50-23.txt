@@ -1,0 +1,18 @@
+18:51:22; Sharon has entered the house.$
+18:51:30; Sharon is playing with a(n) bicycle.$
+18:51:46; Sharon is using her phone.$
+18:51:49; Sharon has a connection with a(n) refrigerator.$
+18:51:53; Sharon has a connection with a(n) sink.$
+18:51:55; Sharon has a connection with a(n) sink.$
+18:52:00; Sharon has a connection with a(n) sink.$
+18:52:02; Sharon has a connection with a(n) sink.$
+18:52:06; Sharon has a connection with a(n) sink.$
+18:52:07; Sharon has a connection with a(n) sink.$
+18:52:08; Sharon has a connection with a(n) sink.$
+18:52:09; Sharon has a connection with a(n) sink.$
+18:52:11; Sharon has a connection with a(n) sink.$
+18:52:21; Sharon is using the tv with a(n)tvmonitor.$
+18:52:43; Sharon is eating a(n) apple.$
+18:52:56; Sharon is eating a(n) apple.$
+18:53:31; Sharon is eating a(n) apple.$
+18:53:34; Sharon is eating a(n) apple.$

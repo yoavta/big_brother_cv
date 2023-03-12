@@ -1,0 +1,19 @@
+00:01:39; Yotav using the computer with mouse.$ Yotav is sitting on a chair.$
+00:01:42; Yotav is sitting on a bench.$
+00:01:46; Yotav using the computer with mouse.$
+00:01:49; Yotav is sitting on a chair.$
+00:01:51; Yotav is sitting on a chair.$
+00:01:53; Yotav is sitting on a chair.$
+00:01:57; Yotav is playing with scissors.$
+00:01:59; Yotav using the computer with laptop.$
+00:02:02; Yotav is sitting on a chair.$
+00:02:03; Yotav is sitting on a chair.$ Yotav is playing with scissors.$
+00:02:05; Yotav is sitting on a chair.$ Yotav using the computer with mouse.$
+00:02:06; Yotav is sitting on a chair.$
+00:02:07; Yotav is sitting on a chair.$
+00:02:09; Yotav is sitting on a chair.$
+00:02:10; Yotav is sitting on a chair.$ Yotav is playing with scissors.$
+00:02:12; Yotav is sitting on a chair.$
+00:02:13; Yotav is sitting on a chair.$ Yotav is playing with scissors.$
+00:02:14; Yotav is sitting on a chair.$ Yotav is playing with scissors.$
+00:02:16; Yotav is sitting on a chair.$

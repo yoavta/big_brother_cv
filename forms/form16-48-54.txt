@@ -1,0 +1,4 @@
+report time: 16-48-54.
+
+Situations:
+ Yoav has connection with cell phone(1):  2 times.

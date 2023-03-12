@@ -1,0 +1,31 @@
+00:56:38; inigo montoya has connection with cell phone.$
+00:56:40; inigo montoya has connection with cell phone.$ inigo montoya is sitting on a chair.$
+00:56:41; inigo montoya has connection with cell phone.$
+00:56:42; inigo montoya is reading a book.$
+00:56:44; inigo montoya is reading a book.$
+00:56:58; inigo montoya is reading a book.$ inigo montoya is sitting on a sofa.$
+00:57:01; inigo montoya is reading a book.$
+00:57:03; inigo montoya is reading a book.$
+00:57:05; inigo montoya is reading a book.$
+00:57:06; inigo montoya is reading a book.$
+00:57:07; inigo montoya is reading a book.$
+00:57:09; inigo montoya is reading a book.$
+00:57:10; inigo montoya using the computer with laptop.$
+00:57:13; inigo montoya using the computer with laptop.$
+00:57:15; inigo montoya using the computer with laptop.$
+00:57:16; inigo montoya is reading a book.$
+00:57:21; inigo montoya using the computer with laptop.$
+00:57:22; inigo montoya using the computer with laptop.$
+00:57:23; inigo montoya is reading a book.$
+00:57:30; inigo montoya using the computer with laptop.$
+00:57:32; inigo montoya using the computer with laptop.$
+00:57:33; inigo montoya using the computer with laptop.$
+00:57:34; inigo montoya using the computer with laptop.$
+00:57:36; inigo montoya using the computer with laptop.$
+00:57:37; inigo montoya using the computer with laptop.$
+00:57:38; inigo montoya using the computer with laptop.$ inigo montoya is sitting on a sofa.$
+00:57:40; inigo montoya using the computer with laptop.$ inigo montoya is sitting on a sofa.$
+00:57:41; inigo montoya using the computer with laptop.$
+00:57:43; inigo montoya using the computer with laptop.$ inigo montoya is sitting on a sofa.$
+00:57:45; inigo montoya is sitting on a bed.$
+00:57:46; inigo montoya has connection with cell phone.$

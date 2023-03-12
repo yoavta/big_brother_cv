@@ -1,0 +1,17 @@
+20-21-38
+
+Important events:
+
+
+Situations:
+ sharon using the computer with mouse from 20:21:20 to 20:21:23.
+ sharon using the computer with laptop from 20:21:22 to 20:21:31.
+ sharon using the computer with keyboard from 20:21:24 to 20:21:38.
+ sharon is sitting on a chair from 20:21:34 to 20:21:36.
+
+
+In total:
+ sharon using the computer with mouse for 0:00:03 second(s), 1 time(s) total.
+ sharon using the computer with laptop for 0:00:09 second(s), 1 time(s) total.
+ sharon using the computer with keyboard for 0:00:14 second(s), 1 time(s) total.
+ sharon is sitting on a chair for 0:00:02 second(s), 1 time(s) total.
