@@ -1,0 +1,43 @@
+13:57:34; sharon has entered the house.$
+13:57:36; sharon is wearing a(n) tie.$
+13:57:37; sharon is wearing a(n) tie.$
+13:57:38; sharon is wearing a(n) tie.$
+13:57:40; sharon is wearing a(n) tie.$
+13:57:41; sharon is wearing a(n) tie.$
+13:57:42; sharon is wearing a(n) tie.$
+13:57:43; sharon is wearing a(n) tie.$
+13:57:45; sharon is wearing a(n) tie.$
+13:57:46; sharon is wearing a(n) tie.$
+13:57:47; sharon is wearing a(n) tie.$
+13:57:48; sharon is wearing a(n) tie.$
+13:57:49; sharon is wearing a(n) tie.$
+13:57:52; sharon is wearing a(n) tie.$
+13:57:53; sharon is wearing a(n) tie.$
+13:57:55; sharon is wearing a(n) tie.$
+13:57:56; sharon is wearing a(n) tie.$
+13:57:57; sharon is wearing a(n) tie.$
+13:57:59; sharon is wearing a(n) tie.$
+13:58:00; sharon is wearing a(n) tie.$
+13:58:01; sharon is wearing a(n) tie.$
+13:58:02; sharon is wearing a(n) tie.$
+13:58:25; sharon is sitting on a(n) chair.$
+13:58:29; sharon is using the tv with a(n)tvmonitor.$
+13:58:30; sharon is using the tv with a(n)tvmonitor.$ sharon is sitting on a(n) sofa.$
+13:58:32; sharon is sitting on a(n) sofa.$
+13:58:33; sharon is using the tv with a(n)tvmonitor.$ sharon is sitting on a(n) chair.$
+13:58:34; sharon is using the tv with a(n)tvmonitor.$
+13:58:36; sharon is sitting on a(n) sofa.$
+13:58:39; sharon is sitting on a(n) sofa.$
+13:58:57; sharon is using the tv with a(n)tvmonitor.$
+13:59:13; sharon is using the tv with a(n)tvmonitor.$
+13:59:14; sharon is using the tv with a(n)tvmonitor.$
+13:59:16; sharon is using the tv with a(n)tvmonitor.$
+13:59:17; sharon is using the tv with a(n)tvmonitor.$
+13:59:18; sharon is using the tv with a(n)tvmonitor.$
+13:59:21; sharon is using the tv with a(n)tvmonitor.$
+13:59:23; sharon is using the tv with a(n)tvmonitor.$
+13:59:25; sharon is using the tv with a(n)tvmonitor.$
+13:59:28; sharon is using the tv with a(n)remote.$ sharon is using the tv with a(n)tvmonitor.$
+13:59:29; sharon is wearing a(n) tie.$
+13:59:33; sharon is wearing a(n) tie.$
+13:59:46; sharon is using the computer with a(n) mouse.$

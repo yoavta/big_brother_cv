@@ -1,0 +1,4 @@
+13:48:09; sharon has entered the house.$
+13:48:16; sharon has a connection with a(n) umbrella.$
+13:48:31; sharon has a connection with a(n) refrigerator.$
+13:48:32; sharon has a connection with a(n) refrigerator.$
