@@ -1,32 +1,42 @@
-import Lights
-import time
-from form import form
 import argparse
-import cv2
 import os
-from cvzone.HandTrackingModule import HandDetector
+import time
 from subprocess import call
-from pycoral.adapters.common import input_size
-from pycoral.adapters.detect import get_objects
-from pycoral.utils.dataset import read_label_file
-from pycoral.utils.edgetpu import make_interpreter
-from pycoral.utils.edgetpu import run_inference
-from categories_list import categories_list
-from Camera import Camera
-from firebase_config import firebase_config
+
+import cv2
+import numpy as np
+import tensorflow as tf
+from cvzone.HandTrackingModule import HandDetector
+
+from categories_list import CategoriesList
+# from Camera import Camera
+from firebase_config_example import  FirebaseConfig
+from form import form
 
 # initialize hand detector.
 detector = HandDetector(detectionCon=0.6, maxHands=2)
 
 # creating objects
-firebase = firebase_config()
+firebase = FirebaseConfig()
+
 data_form = form()
-my_camera = Camera(0, -10)
+# my_camera = Camera(0, -10)
+
+class Object:
+    """Class to hold information about a detected object."""
+    def __init__(self):
+        self.id = None
+        self.score = None
+        self.bbox = None
+        self.label_id = None
 
 # firebase configurations
-db = firebase.firebase.database()
-categories = categories_list(firebase, db)
-name = db.child("name").get().val()
+db = firebase.firebase
+categories = CategoriesList(firebase, db)
+name = db.reference("name").get()
+
+
+
 
 first_person_show = False
 
@@ -54,26 +64,31 @@ with open(classesFile, 'rt') as f:
 f.close()
 
 # initialize tensorflow object detector.
-default_model_dir = '../all_models'
-default_model = 'mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite'
+default_model_dir = 'Resources/ssd_mobilenet_v2_2'
+default_model = 'ssd_mobilenet_v2.tflite'
 default_labels = 'coco_labels.txt'
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', help='.tflite model path',
-                    default=os.path.join(default_model_dir,default_model))
+                    default=os.path.join(default_model_dir, default_model))
 parser.add_argument('--labels', help='label file path',
                     default=os.path.join(default_model_dir, default_labels))
 parser.add_argument('--top_k', type=int, default=5,
                     help='number of categories with highest score to display')
-parser.add_argument('--camera_idx', type=int, help='Index of which video source to use. ', default = 0)
+parser.add_argument('--camera_idx', type=int, help='Index of which video source to use. ', default=0)
 parser.add_argument('--threshold', type=float, default=0.25,
                     help='classifier score threshold')
 args = parser.parse_args()
 
 print('Loading {} with {} labels.'.format(args.model, args.labels))
-interpreter = make_interpreter(args.model)
+interpreter = tf.lite.Interpreter(model_path=args.model)
 interpreter.allocate_tensors()
-labels = read_label_file(args.labels)
-inference_size = input_size(interpreter)
+
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
+input_shape = input_details[0]['shape']
+
+with open(args.labels, 'r') as f:
+    labels = [line.strip() for line in f.readlines()]
 
 # initialize openCV and Camera settings
 cap = cv2.VideoCapture(0)
@@ -81,6 +96,30 @@ screen_width = 640
 screen_height = 360
 cap.set(3, screen_width)
 cap.set(4, screen_height)
+
+
+def get_objects(interpreter, threshold):
+    """Returns a list of detected objects."""
+    output_details = interpreter.get_output_details()
+    scores = interpreter.get_tensor(output_details[2]['index'])
+    boxes = interpreter.get_tensor(output_details[0]['index'])
+    classes = interpreter.get_tensor(output_details[1]['index'])
+
+    objects = []
+    for i in range(len(scores)):
+        if scores[i] >= threshold:
+            obj = Object()
+            obj.id = i
+            obj.score = scores[i]
+            obj.bbox = boxes[i]
+            obj.label_id = int(classes[0][i])
+            objects.append(obj)
+
+    return objects
+
+
+
+
 
 
 # speak from text function
@@ -103,7 +142,7 @@ def analyze_connections(connections):
                 st = "watch out!! " + name + " is playing with a(n) " + con + "."
                 # speaking and open warning lights.
                 speak(st)
-                Lights.alarm_once(3)
+                # Lights.alarm_once(3)
         elif list_in == "food":
             st = name + " is eating a(n) " + con + "."
         elif list_in == "holdings":
@@ -199,30 +238,30 @@ def person_connections(person_box):
 
 
 # checkin if the camera should move to keep track the person. if it should move- execute moving.
-def camera_move_check(rectangle_size, center_object):
-    half_rec_size = int(rectangle_size / 2)
-    shift = 40
-    center_screen = (int(screen_width / 2), int(screen_height / 2) + shift)
-    top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
-
-    cv2.rectangle(cv2_im, top_left, (top_left[0] + rectangle_size, top_left[1] + rectangle_size), (0, 0, 255), 2)
-    x, y = center_object[0], center_object[1]
-    left_x = top_left[0]
-    right_x = top_left[0] + rectangle_size
-    lower_y = top_left[1]
-    upper_y = top_left[1] + rectangle_size
-    step = 2
-
-    if x < left_x:
-        my_camera.move_left(step)
-    if x > right_x:
-        my_camera.move_right(step)
-
-    if y < lower_y:
-        my_camera.move_up(step)
-
-    if y > upper_y:
-        my_camera.move_down(step)
+# def camera_move_check(rectangle_size, center_object):
+#     half_rec_size = int(rectangle_size / 2)
+#     shift = 40
+#     center_screen = (int(screen_width / 2), int(screen_height / 2) + shift)
+#     top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
+#
+#     cv2.rectangle(cv2_im, top_left, (top_left[0] + rectangle_size, top_left[1] + rectangle_size), (0, 0, 255), 2)
+#     x, y = center_object[0], center_object[1]
+#     left_x = top_left[0]
+#     right_x = top_left[0] + rectangle_size
+#     lower_y = top_left[1]
+#     upper_y = top_left[1] + rectangle_size
+#     step = 2
+#
+#     if x < left_x:
+#         my_camera.move_left(step)
+#     if x > right_x:
+#         my_camera.move_right(step)
+#
+#     if y < lower_y:
+#         my_camera.move_up(step)
+#
+#     if y > upper_y:
+#         my_camera.move_down(step)
 
 
 # taking objects detected and mark them on the image.
@@ -267,7 +306,7 @@ while True:
     while not firebase.is_on():
         time.sleep(2)
         pass
-    name = db.child("name").get().val()
+    name = db.reference("name").get()
 
     print("capture started")
     firebase.initial()
@@ -295,16 +334,27 @@ while True:
             data_form.print_report(firebase)
             break
 
+        input_details = interpreter.get_input_details()
+        output_details = interpreter.get_output_details()
+        inference_size = tuple(input_details[0]['shape'][1:3])
+
+        print("Model input shape:", input_details[0]['shape'])
+
         for i in range(4):
             bboxes = []
             ret, frame = cap.read()
             if not ret:
                 break
+
             cv2_im = frame
+            cv2.imshow("Image", cv2_im)
 
             cv2_im_rgb = cv2.cvtColor(cv2_im, cv2.COLOR_BGR2RGB)
             cv2_im_rgb = cv2.resize(cv2_im_rgb, inference_size)
-            run_inference(interpreter, cv2_im_rgb.tobytes())
+            input_tensor = np.expand_dims(cv2_im_rgb, axis=0)
+
+            interpreter.set_tensor(input_details[0]['index'], input_tensor)
+            interpreter.invoke()
             objs = get_objects(interpreter, args.threshold)[:args.top_k]
 
             hands, cv2_im = detector.findHands(cv2_im)
@@ -318,8 +368,8 @@ while True:
                 speak("hello" + name)
 
             moving_sensitivity = 140
-            if person_center is not None:
-                camera_move_check(moving_sensitivity, person_center)
+            # if person_center is not None:
+            #     camera_move_check(moving_sensitivity, person_center)
 
             cv2.imshow("Image", cv2_im)
 
@@ -330,4 +380,4 @@ while True:
 
         analyze_connections(connections)
 
-    print("capture stoped")
+        print("capture stopped")
