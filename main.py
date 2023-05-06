@@ -23,12 +23,20 @@ data_form = form()
 # my_camera = Camera(0, -10)
 
 class Object:
-    """Class to hold information about a detected object."""
-    def __init__(self):
-        self.id = None
-        self.score = None
-        self.bbox = None
-        self.label_id = None
+    def __init__(self, class_id, score, bbox):
+        self.id = class_id
+        self.score = score
+        self.bbox = bbox
+
+class BBox:
+    def __init__(self, xmin, ymin, xmax, ymax):
+        self.xmin = xmin
+        self.ymin = ymin
+        self.xmax = xmax
+        self.ymax = ymax
+
+
+
 
 # firebase configurations
 db = firebase.firebase
@@ -86,7 +94,6 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 input_shape = input_details[0]['shape']
-
 with open(args.labels, 'r') as f:
     labels = [line.strip() for line in f.readlines()]
 
@@ -96,29 +103,6 @@ screen_width = 640
 screen_height = 360
 cap.set(3, screen_width)
 cap.set(4, screen_height)
-
-
-def get_objects(interpreter, threshold):
-    """Returns a list of detected objects."""
-    output_details = interpreter.get_output_details()
-    scores = interpreter.get_tensor(output_details[2]['index'])
-    boxes = interpreter.get_tensor(output_details[0]['index'])
-    classes = interpreter.get_tensor(output_details[1]['index'])
-
-    objects = []
-    for i in range(len(scores)):
-        if scores[i] >= threshold:
-            obj = Object()
-            obj.id = i
-            obj.score = scores[i]
-            obj.bbox = boxes[i]
-            obj.label_id = int(classes[0][i])
-            objects.append(obj)
-
-    return objects
-
-
-
 
 
 
@@ -347,15 +331,25 @@ while True:
                 break
 
             cv2_im = frame
-            cv2.imshow("Image", cv2_im)
-
             cv2_im_rgb = cv2.cvtColor(cv2_im, cv2.COLOR_BGR2RGB)
             cv2_im_rgb = cv2.resize(cv2_im_rgb, inference_size)
             input_tensor = np.expand_dims(cv2_im_rgb, axis=0)
 
             interpreter.set_tensor(input_details[0]['index'], input_tensor)
-            interpreter.invoke()
+            tf.keras.applications.MobileNetV2(
+                input_shape=None,
+                alpha=1.0,
+                include_top=True,
+                weights="imagenet",
+                input_tensor=None,
+                pooling=None,
+                classes=1000,
+                classifier_activation="softmax",
+                **kwargs
+            )
+
             objs = get_objects(interpreter, args.threshold)[:args.top_k]
+            objs = objs[:args.top_k]
 
             hands, cv2_im = detector.findHands(cv2_im)
             cv2_im, person_center = append_objs_to_img(cv2_im, inference_size, objs, labels)
