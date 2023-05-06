@@ -361,18 +361,18 @@ while True:
             if key == 27:
                 break
 
-            # objs = get_objects(threshold)
-            # objs = objs[:args.top_k]
-            #
-            # hands, cv2_im = detector.findHands(cv2_im)
-            # cv2_im, person_center = append_objs_to_img(cv2_im, inference_size, objs, labels)
-            # if first_person_show == False and person_center != None:
-            #     first_person_show = True
-            #     st = name + " has entered the house."
-            #     events = []
-            #     events.append(st)
-            #     data_form.print2file(events, firebase)
-            #     speak("hello" + name)
+            objs = get_objects(threshold)
+            objs = objs[:args.top_k]
+
+            hands, cv2_im = detector.findHands(cv2_im)
+            cv2_im, person_center = append_objs_to_img(cv2_im, inference_size, objs, labels)
+            if first_person_show == False and person_center != None:
+                first_person_show = True
+                st = name + " has entered the house."
+                events = []
+                events.append(st)
+                data_form.print2file(events, firebase)
+                speak("hello" + name)
             #
             # moving_sensitivity = 140
             # # if person_center is not None:
