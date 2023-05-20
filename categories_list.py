@@ -28,6 +28,10 @@ class CategoriesList:
                 return category
         return None
 
+    def which_list_am_i_complete(self, item):
+        return self.which_list_am_i(item, self.complete_lists)
+
+
     def make_one_list(self, lists):
         new_list = []
         for lst in lists:
