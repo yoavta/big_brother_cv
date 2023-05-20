@@ -11,7 +11,9 @@ class ActionsTypes(Enum):
     STOP = "stop",
     START = "start",
     TURN_ON = "turn_on",
-    TURN_OFF = "turn_off"
+    TURN_OFF = "turn_off",
+    BACKWARD = "backward",
+    FORWARD = "forward",
 
 
 def send_data(action: ActionsTypes):

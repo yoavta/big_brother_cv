@@ -10,8 +10,7 @@ port = 12345
 
 
 def receive_data(conn):
-    data_length_bytes = conn.recv(4)
-    data_length = int.from_bytes(data_length_bytes, byteorder='big')
+    data_length = 921600
     need_to_receive = data_length
     chunk_size = 4096
 
@@ -28,6 +27,8 @@ def receive_data(conn):
         if not data:
             return
         received_data += data
+
+    print(f'len(received_data) = {len(received_data)}')
     return received_data
 
 
