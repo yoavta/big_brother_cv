@@ -19,6 +19,8 @@ detector = HandDetector(detectionCon=0.6, maxHands=2)
 firebase = FirebaseConfig()
 
 data_form = form()
+screen_width = 640
+screen_height = 480
 
 
 # my_camera = Camera(0, -10)
@@ -73,6 +75,7 @@ f.close()
 # default_model_dir = 'Resources/ssd_mobilenet_v2_2'
 # default_model = 'ssd_mobilenet_v2.tflite'
 default_labels = 'coco_labels.txt'
+
 
 # initialize openCV and Camera settings
 # cap = cv2.VideoCapture(0)
@@ -284,6 +287,35 @@ def get_objects(frame, threshold, model_loaded, img):
     return objs
 
 
+def camera_move_check(img, rectangle_size, center_object, person_box: BBox) -> ActionsTypes:
+    half_rec_size = int(rectangle_size / 2)
+    center_screen = (int(screen_width / 2), int(screen_height / 2))
+    top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
+
+    cv2.rectangle(img, top_left, (top_left[0] + rectangle_size, top_left[1] + rectangle_size), (0, 0, 255), 2)
+    x, y = center_object[0], center_object[1]
+    left_x = top_left[0]
+    right_x = top_left[0] + rectangle_size
+
+    top_box = person_box.ymin
+    bottom_box = person_box.ymax
+    threshold = 10
+    if (top_box < top_left[1] + threshold)hh and (bottom_box > top_left[1] + rectangle_size - threshold):
+        return ActionsTypes.BACKWARD
+
+    if x < left_x:
+        return ActionsTypes.LEFT
+
+    if x > right_x:
+        return ActionsTypes.RIGHT
+
+    # if y< lower_y:
+    #     return (3, y-center_screen[1])
+    #
+    # if y> upper_y:
+    #     return (4, y-center_screen[1])
+
+
 def append_objs_to_img(cv2_image, inference_size, objs, labels):
     height, width, channels = cv2_image.shape
     # scale_x, scale_y = width / inference_size[0], height / inference_size[1]
@@ -319,7 +351,7 @@ def append_objs_to_img(cv2_image, inference_size, objs, labels):
     # analyze connections with person.
     person_connections(person_box)
 
-    return cv2_image, person_center
+    return cv2_image, person_center, person_box
 
 
 while True:
@@ -363,7 +395,9 @@ while True:
             data_form.print_report(firebase)
             break
 
-        for i in range(4):
+        is_person = False
+
+        for i in range(3):
             bboxes = []
             frame = process_data()
             if frame is None:
@@ -376,7 +410,8 @@ while True:
             objs = get_objects(frame, threshold, model_loaded, cv2_im)
 
             hands, cv2_im = detector.findHands(cv2_im)
-            cv2_im, person_center = append_objs_to_img(cv2_im, inference_size, objs, labels)
+            cv2_im, person_center, person_box = append_objs_to_img(cv2_im, inference_size, objs, labels)
+            is_person = person_center is not None or is_person
             if first_person_show == False and person_center != None:
                 first_person_show = True
                 st = name + " has entered the house."
@@ -385,21 +420,21 @@ while True:
                 data_form.print2file(events, firebase)
                 speak("hello" + name)
             #
-            # moving_sensitivity = 140
-            # # if person_center is not None:
-            # #     camera_move_check(moving_sensitivity, person_center)
-            #
+            moving_sensitivity = 140
+            if person_center is not None:
+                move_direction = camera_move_check(cv2_im, moving_sensitivity, person_center, person_box)
+                if move_direction:
+                    send_data(move_direction)
 
             cv2.imshow("Image", cv2_im)
         confidence_level = 2
         for key in possible_connections.keys():
-            if possible_connections.get(key) >= confidence_level:
-                connections.append(key)
+            connections.append(key)
 
         results = analyze_connections(connections)
         if results:
             send_data(ActionsTypes.STOP)
-        else:
+        elif is_person:
             send_data(ActionsTypes.START)
 
     print("capture stopped")
