@@ -1,0 +1,12 @@
+20:10:45; oro has entered the house.$
+20:12:05; oro is sitting on a(n) chair.$
+20:12:46; oro is sitting on a(n) chair.$
+20:13:17; oro is sitting on a(n) chair.$
+20:13:21; oro is sitting on a(n) chair.$
+20:13:25; oro is sitting on a(n) chair.$
+20:13:29; oro is sitting on a(n) chair.$
+20:15:05; oro is using the tv with a(n)tvmonitor.$
+20:15:09; oro is using the tv with a(n)tvmonitor.$
+20:15:13; oro is using the tv with a(n)tvmonitor.$
+20:15:18; oro is using the tv with a(n)tvmonitor.$
+20:16:37; oro is sitting on a(n) chair.$
