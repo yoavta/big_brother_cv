@@ -1,18 +1,17 @@
-import time
-
 import cv2
 import numpy as np
 from cvzone.HandTrackingModule import HandDetector
 
 from categories_list import CategoriesList
-from controller_client import send_data, ActionsTypes
-from controller_server import process_data, run_server, accept_connection
+from controller_client import ActionsTypes
 # from Camera import Camera
 from firebase_config_example import FirebaseConfig
 from form import form
 # initialize hand detector.
 from utils import speak, read_label_file
-
+from controller_server import run_server,accept_connection,process_data
+from controller_client import  send_data
+import time
 detector = HandDetector(detectionCon=0.6, maxHands=2)
 
 # creating objects
@@ -133,8 +132,7 @@ def get_box_dimensions(outputs, height, width):
     return boxes, confs, class_ids
 
 
-def draw_labels(boxes, confs, colors, class_ids, classes, img):
-    indexes = cv2.dnn.NMSBoxes(boxes, confs, 0.5, 0.4)
+def draw_labels(boxes, colors, class_ids, classes, img, indexes):
     font = cv2.FONT_HERSHEY_PLAIN
     for i in range(len(boxes)):
         if i in indexes:
@@ -278,13 +276,29 @@ def get_objects(frame, threshold, model_loaded, img):
     model, classes, colors, output_layers = model_loaded
     blob, outputs = detect_objects(frame, model, output_layers)
     boxes, confs, class_ids = get_box_dimensions(outputs, height, width)
-    draw_labels(boxes, confs, colors, class_ids, classes, img)
+    indexes = cv2.dnn.NMSBoxes(boxes, confs, 0.5, 0.4)
+    draw_labels(boxes, colors, class_ids, classes, img, indexes)
+
+    #             x, y, w, h = boxes[i]
+    #             x, y, w, h = boxes[i]
+    # x_min, y_min, x_max, y_max = boxes[i]
 
     def make(bbox, score, id):
-        return Object(id, score, BBox(bbox[0], bbox[1], bbox[2], bbox[3]))
+        return Object(id, score, BBox(bbox[0], bbox[1], bbox[0]+ bbox[2], bbox[1]+bbox[3]))
 
-    objs = [make(bbox, score, class_ids[i]) for i, (bbox, score) in enumerate(zip(boxes, confs)) if score > threshold]
-    return objs
+    if indexes is None:
+        return []
+
+    objs = [make(bbox, score, class_ids[i]) for i, (bbox, score) in enumerate(zip(boxes, confs))]
+
+    if isinstance(indexes, np.ndarray):
+        flattened_indexes = indexes.flatten()
+    else:
+        flattened_indexes = np.array(indexes).flatten()
+
+    filtered_objs = [objs[i] for i in flattened_indexes if objs[i].score > threshold]
+
+    return filtered_objs
 
 
 def camera_move_check(img, rectangle_size, center_object, person_box: BBox) -> ActionsTypes:
@@ -297,11 +311,11 @@ def camera_move_check(img, rectangle_size, center_object, person_box: BBox) -> A
     left_x = top_left[0]
     right_x = top_left[0] + rectangle_size
 
-    top_box = person_box.ymin
-    bottom_box = person_box.ymax
-    threshold = 10
-    if (top_box < top_left[1] + threshold)hh and (bottom_box > top_left[1] + rectangle_size - threshold):
-        return ActionsTypes.BACKWARD
+    # top_box = person_box.ymin
+    # bottom_box = person_box.ymax
+    # threshold = 200
+    # if (top_box < top_left[1] + threshold) and (bottom_box > top_left[1] + rectangle_size - threshold):
+    #     return ActionsTypes.BACKWARD
 
     if x < left_x:
         return ActionsTypes.LEFT
@@ -316,34 +330,35 @@ def camera_move_check(img, rectangle_size, center_object, person_box: BBox) -> A
     #     return (4, y-center_screen[1])
 
 
-def append_objs_to_img(cv2_image, inference_size, objs, labels):
+def append_objs_to_img(cv2_image, objs):
     height, width, channels = cv2_image.shape
     # scale_x, scale_y = width / inference_size[0], height / inference_size[1]
     person_center = None
     person_box = None
     for obj in objs:
-        percent = int(100 * obj.score)
+        # percent = int(100 * obj.score)
         bbox = obj.bbox
-        # bbox = obj.bbox.scale(scale_x, scale_y)
-        # x0, y0 = int(bbox.xmin), int(bbox.ymin)
-        # x1, y1 = int(bbox.xmax), int(bbox.ymax)
+        # # bbox = obj.bbox.scale(scale_x, scale_y)
+        # # x0, y0 = int(bbox.xmin), int(bbox.ymin)
+        # # x1, y1 = int(bbox.xmax), int(bbox.ymax)
         x0, y0, x1, y1 = [bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax]
         bboxes.append([x0, y0, x1 - x0, y1 - y0])
         classIds.append(obj.id)
-
-        label = '{}% {}'.format(percent, labels.get(obj.id, obj.id))
+        #
+        # label = '{}% {}'.format(percent, labels.get(obj.id, obj.id))
         tag = labels.get(obj.id, obj.id)
-
-        cv2_image = cv2.rectangle(cv2_image, (x0, y0), (x1, y1), (0, 255, 0), 2)
-        cv2_image = cv2.putText(cv2_image, label, (x0, y0 + 30),
-                                cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0), 2)
+        #
+        # cv2_image = cv2.rectangle(cv2_image, (x0, y0), (x1, y1), (0, 255, 0), 2)
+        # cv2_image = cv2.putText(cv2_image, label, (x0, y0 + 30),
+        #                         cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0), 2)
 
         # in case object is person.
         if tag == 'person':
             person_box = bbox
+            cv2.rectangle(cv2_image, (x0, y0), (x1, y1), (255, 0, 255), 2)
             person_cor = (x0, y0, x1, y1)
             person_center = (int((person_cor[0] + person_cor[2]) / 2), int((person_cor[1] + person_cor[3]) / 2))
-            cv2.circle(cv2_image, person_center, 3, (220, 20, 20), 2)
+            cv2.circle(cv2_image, person_center, 10, (255, 0, 255), cv2.FILLED)
 
     # analyze connections with hands.
     hand_connections(objs)
@@ -352,7 +367,6 @@ def append_objs_to_img(cv2_image, inference_size, objs, labels):
     person_connections(person_box)
 
     return cv2_image, person_center, person_box
-
 
 while True:
     print("waiting for power on to get started")
@@ -397,7 +411,7 @@ while True:
 
         is_person = False
 
-        for i in range(3):
+        for i in range(1):
             bboxes = []
             frame = process_data()
             if frame is None:
@@ -406,11 +420,11 @@ while True:
             cv2_im = frame.copy()
             inference_size = (320, 320)
 
-            threshold = 0.5
+            threshold = 0.6
             objs = get_objects(frame, threshold, model_loaded, cv2_im)
 
             hands, cv2_im = detector.findHands(cv2_im)
-            cv2_im, person_center, person_box = append_objs_to_img(cv2_im, inference_size, objs, labels)
+            cv2_im, person_center, person_box = append_objs_to_img(cv2_im, objs)
             is_person = person_center is not None or is_person
             if first_person_show == False and person_center != None:
                 first_person_show = True
@@ -421,20 +435,21 @@ while True:
                 speak("hello" + name)
             #
             moving_sensitivity = 140
+            move_direction = None
             if person_center is not None:
                 move_direction = camera_move_check(cv2_im, moving_sensitivity, person_center, person_box)
                 if move_direction:
                     send_data(move_direction)
 
             cv2.imshow("Image", cv2_im)
-        confidence_level = 2
+        confidence_level = 0
         for key in possible_connections.keys():
             connections.append(key)
 
         results = analyze_connections(connections)
-        if results:
+        if is_person and move_direction is None:
             send_data(ActionsTypes.STOP)
-        elif is_person:
+        elif move_direction is None and not is_person:
             send_data(ActionsTypes.START)
 
     print("capture stopped")
