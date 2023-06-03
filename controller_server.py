@@ -1,9 +1,8 @@
 import socket
-import cv2
-import numpy as np
 import time
-from typing import Tuple, Optional
-from enum import Enum
+import cv2
+
+import numpy as np
 
 host = '10.0.2.235'
 port = 12345
@@ -12,7 +11,7 @@ port = 12345
 def receive_data(conn):
     data_length = 921600
     need_to_receive = data_length
-    chunk_size = 4096
+    chunk_size = 3600
 
     received_data = b''
     while len(received_data) < data_length and need_to_receive > chunk_size:
@@ -22,13 +21,11 @@ def receive_data(conn):
         received_data += data
         need_to_receive -= len(data)
 
-    if need_to_receive > 0:
+    while need_to_receive > 0:
         data = conn.recv(need_to_receive)
-        if not data:
-            return
         received_data += data
+        need_to_receive -= len(data)
 
-    print(f'len(received_data) = {len(received_data)}')
     return received_data
 
 
@@ -64,13 +61,25 @@ def process_data():
         return
     image_data = np_array[:total_size]
     image = image_data.reshape(image_shape[0], image_shape[1], 3)
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+
+    # Define range of blue color in HSV
+    lower_blue = np.array([50, 50, 50])
+    upper_blue = np.array([130, 255, 255])
+
+    # Threshold the HSV image to get only blue colors
+    mask = cv2.inRange(image, lower_blue, upper_blue)
+
+    # Bitwise-AND mask and original image
+    res = cv2.bitwise_and(image, image, mask=mask)
+
+    # Convert back to RGB
+    image = cv2.cvtColor(res, cv2.COLOR_HSV2RGB)
     return image
 
 
 def run_server():
     init_server()
-
-
 
 #
 # def test():
