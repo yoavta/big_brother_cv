@@ -368,7 +368,7 @@ def append_objs_to_img(cv2_image, objs):
 
     return cv2_image, person_center, person_box
 
-while True:
+def main():
     print("waiting for power on to get started")
     while not firebase.is_on():
         time.sleep(2)
@@ -453,3 +453,6 @@ while True:
             send_data(ActionsTypes.START)
 
     print("capture stopped")
+
+if __name__ == '__main__':
+    main()
