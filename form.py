@@ -9,8 +9,9 @@ class form:
         self.current_time = time.strftime("%H-%M-%S", time.localtime())
         self.important_events = []
         self.important_num = 1
-
-        self.path = "data/data" + self.current_time + ".txt"
+        root_dir = os.path.dirname(os.path.abspath(__file__))  # get the directory of the current file
+        data_dir = os.path.join(root_dir, 'data')  # append 'data' to this directory
+        self.path = os.path.join(data_dir, "data" + self.current_time + ".txt")  # append the filename to this directory
         f = open(self.path, 'w+')
         f.close()
         
