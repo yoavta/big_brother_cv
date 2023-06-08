@@ -35,3 +35,4 @@ cv2.waitKey(100)
 cv2.destroyAllWindows()
 
 print(objs)
+
