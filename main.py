@@ -420,7 +420,7 @@ while True:
             cv2_im = frame.copy()
             inference_size = (320, 320)
 
-            threshold = 0.6
+            threshold = 0.3
             objs = get_objects(frame, threshold, model_loaded, cv2_im)
 
             hands, cv2_im = detector.findHands(cv2_im)
@@ -434,7 +434,7 @@ while True:
                 data_form.print2file(events, firebase)
                 speak("hello" + name)
             #
-            moving_sensitivity = 140
+            moving_sensitivity = 220
             move_direction = None
             if person_center is not None:
                 move_direction = camera_move_check(cv2_im, moving_sensitivity, person_center, person_box)

@@ -61,20 +61,19 @@ def process_data():
         return
     image_data = np_array[:total_size]
     image = image_data.reshape(image_shape[0], image_shape[1], 3)
-    image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
 
-    # Define range of blue color in HSV
-    lower_blue = np.array([50, 50, 50])
-    upper_blue = np.array([130, 255, 255])
+    # Swap the color channels
+    image = image[:, :, ::-1]  # This will swap the order of the channels
 
-    # Threshold the HSV image to get only blue colors
-    mask = cv2.inRange(image, lower_blue, upper_blue)
+    # Convert to YCrCb color space
+    image_yuv = cv2.cvtColor(image, cv2.COLOR_RGB2YCrCb)
 
-    # Bitwise-AND mask and original image
-    res = cv2.bitwise_and(image, image, mask=mask)
+    # Apply histogram equalization on the Y channel
+    image_yuv[:, :, 0] = cv2.equalizeHist(image_yuv[:, :, 0])
 
     # Convert back to RGB
-    image = cv2.cvtColor(res, cv2.COLOR_HSV2RGB)
+    image = cv2.cvtColor(image_yuv, cv2.COLOR_YCrCb2RGB)
+
     return image
 
 
