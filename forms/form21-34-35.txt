@@ -1,0 +1,32 @@
+report time: 21-34-35
+
+Important events:
+
+
+Situations:
+ oro has entered the house from 21:33:36 to 21:33:36.
+ oro is sitting on a(n) chair from 21:33:38 to 21:34:34.
+ oro is playing with a scissors from 21:34:00 to 21:34:08.
+ watch out!! oro is playing with a(n) scissors from 21:34:16 to 21:34:28.
+
+
+In total:
+ oro has entered the house for 0:00:00 second(s), 1 time(s) total.
+ oro is sitting on a(n) chair for 0:00:56 second(s), 1 time(s) total.
+ oro is playing with a scissors for 0:00:08 second(s), 1 time(s) total.
+ watch out!! oro is playing with a(n) scissors for 0:00:12 second(s), 1 time(s) total.
+ oro has entered the house from 21:33:36 to 21:33:36.
+ oro has entered the house from 21:33:36 to 21:33:36.
+ oro is sitting on a(n) chair from 21:33:38 to 21:34:34.
+ oro is sitting on a(n) chair from 21:33:38 to 21:34:34.
+ oro is playing with a scissors from 21:34:00 to 21:34:08.
+ oro is playing with a scissors from 21:34:00 to 21:34:08.
+ watch out!! oro is playing with a(n) scissors from 21:34:16 to 21:34:28.
+ watch out!! oro is playing with a(n) scissors from 21:34:16 to 21:34:28.
+
+
+In total:
+ oro has entered the house for 00:00:00 second(s), 2 time(s) total.
+ oro is sitting on a(n) chair for 00:01:52 minute(s), 2 time(s) total.
+ oro is playing with a scissors for 00:00:16 second(s), 2 time(s) total.
+ watch out!! oro is playing with a(n) scissors for 00:00:24 second(s), 2 time(s) total.
