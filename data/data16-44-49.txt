@@ -1,0 +1,4 @@
+16:45:04; sharon has entered the house.$
+16:45:22; sharon is wearing a(n) backpack.$
+16:45:46; sharon is sitting on a(n) chair.$
+16:46:01; sharon is playing with a(n) bicycle.$

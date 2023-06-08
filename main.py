@@ -1,44 +1,51 @@
-import argparse
-import os
-import time
-from subprocess import call
-
 import cv2
 import numpy as np
-import tensorflow as tf
 from cvzone.HandTrackingModule import HandDetector
 
 from categories_list import CategoriesList
+from controller_client import ActionsTypes
 # from Camera import Camera
-from firebase_config_example import  FirebaseConfig
+from firebase_config_example import FirebaseConfig
 from form import form
-
 # initialize hand detector.
+from utils import speak, read_label_file
+from controller_server import run_server,accept_connection,process_data
+from controller_client import  send_data
+import time
 detector = HandDetector(detectionCon=0.6, maxHands=2)
 
 # creating objects
 firebase = FirebaseConfig()
 
 data_form = form()
+screen_width = 640
+screen_height = 480
+
+
 # my_camera = Camera(0, -10)
 
 class Object:
-    """Class to hold information about a detected object."""
-    def __init__(self):
-        self.id = None
-        self.score = None
-        self.bbox = None
-        self.label_id = None
+    def __init__(self, class_id, score, bbox):
+        self.id = class_id
+        self.score = score
+        self.bbox = bbox
+
+
+class BBox:
+    def __init__(self, xmin, ymin, xmax, ymax):
+        self.xmin = xmin
+        self.ymin = ymin
+        self.xmax = xmax
+        self.ymax = ymax
+
 
 # firebase configurations
 db = firebase.firebase
 categories = CategoriesList(firebase, db)
 name = db.reference("name").get()
 
-
-
-
 first_person_show = False
+labels = read_label_file('Resources/coco.names.txt')
 
 # Extracting object names:
 classesFile = "Resources/coco.names.txt"
@@ -64,76 +71,107 @@ with open(classesFile, 'rt') as f:
 f.close()
 
 # initialize tensorflow object detector.
-default_model_dir = 'Resources/ssd_mobilenet_v2_2'
-default_model = 'ssd_mobilenet_v2.tflite'
+# default_model_dir = 'Resources/ssd_mobilenet_v2_2'
+# default_model = 'ssd_mobilenet_v2.tflite'
 default_labels = 'coco_labels.txt'
-parser = argparse.ArgumentParser()
-parser.add_argument('--model', help='.tflite model path',
-                    default=os.path.join(default_model_dir, default_model))
-parser.add_argument('--labels', help='label file path',
-                    default=os.path.join(default_model_dir, default_labels))
-parser.add_argument('--top_k', type=int, default=5,
-                    help='number of categories with highest score to display')
-parser.add_argument('--camera_idx', type=int, help='Index of which video source to use. ', default=0)
-parser.add_argument('--threshold', type=float, default=0.25,
-                    help='classifier score threshold')
-args = parser.parse_args()
 
-print('Loading {} with {} labels.'.format(args.model, args.labels))
-interpreter = tf.lite.Interpreter(model_path=args.model)
-interpreter.allocate_tensors()
-
-input_details = interpreter.get_input_details()
-output_details = interpreter.get_output_details()
-input_shape = input_details[0]['shape']
-
-with open(args.labels, 'r') as f:
-    labels = [line.strip() for line in f.readlines()]
 
 # initialize openCV and Camera settings
-cap = cv2.VideoCapture(0)
-screen_width = 640
-screen_height = 360
-cap.set(3, screen_width)
-cap.set(4, screen_height)
+# cap = cv2.VideoCapture(0)
+# screen_width = 640
+# screen_height = 360
+# cap.set(3, screen_width)
+# cap.set(4, screen_height)
 
 
-def get_objects(interpreter, threshold):
-    """Returns a list of detected objects."""
-    output_details = interpreter.get_output_details()
-    scores = interpreter.get_tensor(output_details[2]['index'])
-    boxes = interpreter.get_tensor(output_details[0]['index'])
-    classes = interpreter.get_tensor(output_details[1]['index'])
+def start_webcam():
+    cap = cv2.VideoCapture(0)
 
-    objects = []
-    for i in range(len(scores)):
-        if scores[i] >= threshold:
-            obj = Object()
-            obj.id = i
-            obj.score = scores[i]
-            obj.bbox = boxes[i]
-            obj.label_id = int(classes[0][i])
-            objects.append(obj)
-
-    return objects
+    return cap
 
 
+def display_blob(blob):
+    for b in blob:
+        for n, imgb in enumerate(b):
+            cv2.imshow(str(n), imgb)
 
 
+def load_image(img_path):
+    img = cv2.imread(img_path)
+    img = cv2.resize(img, None, fx=0.4, fy=0.4)
+    height, width, channels = img.shape
+    return img, height, width, channels
 
 
-# speak from text function
-def speak(text):
-    cmd_beg = 'pico2wave -w testpico.wav "'
-    cmd_end = '" && paplay testpico.wav'  # To play back the stored .wav file and to dump the std errors to /dev/null
-    call([cmd_beg + text + cmd_end], shell=True)
+def detect_objects(img, net, outputLayers):
+    blob = cv2.dnn.blobFromImage(img, scalefactor=0.00392, size=(320, 320), mean=(0, 0, 0), swapRB=True, crop=False)
+    net.setInput(blob)
+    outputs = net.forward(outputLayers)
+    return blob, outputs
+
+
+def get_box_dimensions(outputs, height, width):
+    boxes = []
+    confs = []
+    class_ids = []
+    for output in outputs:
+        for detect in output:
+            scores = detect[5:]
+            class_id = np.argmax(scores)
+            conf = scores[class_id]
+            if conf > 0.3:
+                center_x = int(detect[0] * width)
+                center_y = int(detect[1] * height)
+                w = int(detect[2] * width)
+                h = int(detect[3] * height)
+                x = int(center_x - w / 2)
+                y = int(center_y - h / 2)
+                boxes.append([x, y, w, h])
+                confs.append(float(conf))
+                class_ids.append(class_id)
+    return boxes, confs, class_ids
+
+
+def draw_labels(boxes, colors, class_ids, classes, img, indexes):
+    font = cv2.FONT_HERSHEY_PLAIN
+    for i in range(len(boxes)):
+        if i in indexes:
+            x, y, w, h = boxes[i]
+            label = str(classes[class_ids[i]])
+            color = colors[i]
+            cv2.rectangle(img, (x, y), (x + w, y + h), color, 2)
+            cv2.putText(img, label, (x, y - 5), font, 1, color, 1)
+    cv2.imshow("Image", img)
+
+
+def image_detect(img_path):
+    model, classes, colors, output_layers = load_yolo()
+    image, height, width, channels = load_image(img_path)
+    blob, outputs = detect_objects(image, model, output_layers)
+    boxes, confs, class_ids = get_box_dimensions(outputs, height, width)
+    draw_labels(boxes, confs, colors, class_ids, classes, image)
+    while True:
+        key = cv2.waitKey(1)
+        if key == 27:
+            break
+
+
+def load_yolo():
+    net = cv2.dnn.readNet("Resources/yolo/yolov3.weights", "Resources/yolo/yolov3.cfg")
+    classes = []
+    with open("Resources/coco.names.txt", "r") as f:
+        classes = [line.strip() for line in f.readlines()]
+
+    output_layers = [layer_name for layer_name in net.getUnconnectedOutLayersNames()]
+    colors = np.random.uniform(0, 255, size=(len(classes), 3))
+    return net, classes, colors, output_layers
 
 
 # linking object connection to a categories and produce update text.
 def analyze_connections(connections):
     events = []
     for con in connections:
-        list_in = categories.which_list_am_i_complet(con)
+        list_in = categories.which_list_am_i_complete(con)
         if list_in == "computer":
             st = name + " is using the computer with a(n) " + con + "."
         elif list_in == "danger":
@@ -170,15 +208,11 @@ def analyze_connections(connections):
         # check if this connection eas nark as important.
         if con in categories.get_importants():
             data_form.add_important(st)
-            # upload important images to firebase.
-            #             count = str(data_form.important_num)
-            #             file_name = "important"+count+".jpg"
-            #             print(file_name)
-            #             cv2.imwrite(file_name, cv2_im)
-            #             firebase.upload_img(file_name)
 
     # printing to file
     data_form.print2file(events, firebase)
+
+    return events
 
 
 # analyze connections with hands. check if there is overlapping between objects and hands.
@@ -213,10 +247,10 @@ def hand_connections(objs):
 
 
 # analyze connections with person. check if there is overlapping between objects and person.
-def person_connections(person_box):
+def person_connections(person_box: BBox):
     if person_box is not None:
         current_frame_connections = []
-        x2, y2, w2, h2 = person_box[0], person_box[1], person_box[2], person_box[3]
+        x2, y2, w2, h2 = [person_box.xmin, person_box.ymin, person_box.xmax, person_box.ymax]
         total_cons = len(bboxes)
         for j in range(total_cons):
             box = bboxes[j]
@@ -237,60 +271,94 @@ def person_connections(person_box):
                         possible_connections[labels.get(obj_id, obj_id)] = 1
 
 
-# checkin if the camera should move to keep track the person. if it should move- execute moving.
-# def camera_move_check(rectangle_size, center_object):
-#     half_rec_size = int(rectangle_size / 2)
-#     shift = 40
-#     center_screen = (int(screen_width / 2), int(screen_height / 2) + shift)
-#     top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
-#
-#     cv2.rectangle(cv2_im, top_left, (top_left[0] + rectangle_size, top_left[1] + rectangle_size), (0, 0, 255), 2)
-#     x, y = center_object[0], center_object[1]
-#     left_x = top_left[0]
-#     right_x = top_left[0] + rectangle_size
-#     lower_y = top_left[1]
-#     upper_y = top_left[1] + rectangle_size
-#     step = 2
-#
-#     if x < left_x:
-#         my_camera.move_left(step)
-#     if x > right_x:
-#         my_camera.move_right(step)
-#
-#     if y < lower_y:
-#         my_camera.move_up(step)
-#
-#     if y > upper_y:
-#         my_camera.move_down(step)
+def get_objects(frame, threshold, model_loaded, img):
+    height, width, channels = frame.shape
+    model, classes, colors, output_layers = model_loaded
+    blob, outputs = detect_objects(frame, model, output_layers)
+    boxes, confs, class_ids = get_box_dimensions(outputs, height, width)
+    indexes = cv2.dnn.NMSBoxes(boxes, confs, 0.5, 0.4)
+    draw_labels(boxes, colors, class_ids, classes, img, indexes)
+
+    #             x, y, w, h = boxes[i]
+    #             x, y, w, h = boxes[i]
+    # x_min, y_min, x_max, y_max = boxes[i]
+
+    def make(bbox, score, id):
+        return Object(id, score, BBox(bbox[0], bbox[1], bbox[0]+ bbox[2], bbox[1]+bbox[3]))
+
+    if indexes is None:
+        return []
+
+    objs = [make(bbox, score, class_ids[i]) for i, (bbox, score) in enumerate(zip(boxes, confs))]
+
+    if isinstance(indexes, np.ndarray):
+        flattened_indexes = indexes.flatten()
+    else:
+        flattened_indexes = np.array(indexes).flatten()
+
+    filtered_objs = [objs[i] for i in flattened_indexes if objs[i].score > threshold]
+
+    return filtered_objs
 
 
-# taking objects detected and mark them on the image.
-def append_objs_to_img(cv2_image, inference_size, objs, labels):
+def camera_move_check(img, rectangle_size, center_object, person_box: BBox) -> ActionsTypes:
+    half_rec_size = int(rectangle_size / 2)
+    center_screen = (int(screen_width / 2), int(screen_height / 2))
+    top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
+
+    cv2.rectangle(img, top_left, (top_left[0] + rectangle_size, top_left[1] + rectangle_size), (0, 0, 255), 2)
+    x, y = center_object[0], center_object[1]
+    left_x = top_left[0]
+    right_x = top_left[0] + rectangle_size
+
+    # top_box = person_box.ymin
+    # bottom_box = person_box.ymax
+    # threshold = 200
+    # if (top_box < top_left[1] + threshold) and (bottom_box > top_left[1] + rectangle_size - threshold):
+    #     return ActionsTypes.BACKWARD
+
+    if x < left_x:
+        return ActionsTypes.LEFT
+
+    if x > right_x:
+        return ActionsTypes.RIGHT
+
+    # if y< lower_y:
+    #     return (3, y-center_screen[1])
+    #
+    # if y> upper_y:
+    #     return (4, y-center_screen[1])
+
+
+def append_objs_to_img(cv2_image, objs):
     height, width, channels = cv2_image.shape
-    scale_x, scale_y = width / inference_size[0], height / inference_size[1]
+    # scale_x, scale_y = width / inference_size[0], height / inference_size[1]
     person_center = None
     person_box = None
     for obj in objs:
-        percent = int(100 * obj.score)
-        bbox = obj.bbox.scale(scale_x, scale_y)
-        x0, y0 = int(bbox.xmin), int(bbox.ymin)
-        x1, y1 = int(bbox.xmax), int(bbox.ymax)
+        # percent = int(100 * obj.score)
+        bbox = obj.bbox
+        # # bbox = obj.bbox.scale(scale_x, scale_y)
+        # # x0, y0 = int(bbox.xmin), int(bbox.ymin)
+        # # x1, y1 = int(bbox.xmax), int(bbox.ymax)
+        x0, y0, x1, y1 = [bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax]
         bboxes.append([x0, y0, x1 - x0, y1 - y0])
         classIds.append(obj.id)
-
-        label = '{}% {}'.format(percent, labels.get(obj.id, obj.id))
+        #
+        # label = '{}% {}'.format(percent, labels.get(obj.id, obj.id))
         tag = labels.get(obj.id, obj.id)
-
-        cv2_image = cv2.rectangle(cv2_image, (x0, y0), (x1, y1), (0, 255, 0), 2)
-        cv2_image = cv2.putText(cv2_image, label, (x0, y0 + 30),
-                                cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0), 2)
+        #
+        # cv2_image = cv2.rectangle(cv2_image, (x0, y0), (x1, y1), (0, 255, 0), 2)
+        # cv2_image = cv2.putText(cv2_image, label, (x0, y0 + 30),
+        #                         cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0), 2)
 
         # in case object is person.
         if tag == 'person':
             person_box = bbox
+            cv2.rectangle(cv2_image, (x0, y0), (x1, y1), (255, 0, 255), 2)
             person_cor = (x0, y0, x1, y1)
             person_center = (int((person_cor[0] + person_cor[2]) / 2), int((person_cor[1] + person_cor[3]) / 2))
-            cv2.circle(cv2_image, person_center, 3, (220, 20, 20), 2)
+            cv2.circle(cv2_image, person_center, 10, (255, 0, 255), cv2.FILLED)
 
     # analyze connections with hands.
     hand_connections(objs)
@@ -298,18 +366,25 @@ def append_objs_to_img(cv2_image, inference_size, objs, labels):
     # analyze connections with person.
     person_connections(person_box)
 
-    return cv2_image, person_center
-
+    return cv2_image, person_center, person_box
 
 while True:
     print("waiting for power on to get started")
     while not firebase.is_on():
         time.sleep(2)
         pass
+    run_server()
+    send_data(ActionsTypes.TURN_ON)
+    accept_connection()
+
     name = db.reference("name").get()
 
     print("capture started")
     firebase.initial()
+    # TODO: robot should wake up and start to capture.
+    model, classes, colors, output_layers = load_yolo()
+    model_loaded = [model, classes, colors, output_layers]
+
     while True:
         classIds = []
         confs = []
@@ -334,31 +409,23 @@ while True:
             data_form.print_report(firebase)
             break
 
-        input_details = interpreter.get_input_details()
-        output_details = interpreter.get_output_details()
-        inference_size = tuple(input_details[0]['shape'][1:3])
+        is_person = False
 
-        print("Model input shape:", input_details[0]['shape'])
-
-        for i in range(4):
+        for i in range(1):
             bboxes = []
-            ret, frame = cap.read()
-            if not ret:
-                break
+            frame = process_data()
+            if frame is None:
+                continue
 
-            cv2_im = frame
-            cv2.imshow("Image", cv2_im)
+            cv2_im = frame.copy()
+            inference_size = (320, 320)
 
-            cv2_im_rgb = cv2.cvtColor(cv2_im, cv2.COLOR_BGR2RGB)
-            cv2_im_rgb = cv2.resize(cv2_im_rgb, inference_size)
-            input_tensor = np.expand_dims(cv2_im_rgb, axis=0)
-
-            interpreter.set_tensor(input_details[0]['index'], input_tensor)
-            interpreter.invoke()
-            objs = get_objects(interpreter, args.threshold)[:args.top_k]
+            threshold = 0.3
+            objs = get_objects(frame, threshold, model_loaded, cv2_im)
 
             hands, cv2_im = detector.findHands(cv2_im)
-            cv2_im, person_center = append_objs_to_img(cv2_im, inference_size, objs, labels)
+            cv2_im, person_center, person_box = append_objs_to_img(cv2_im, objs)
+            is_person = person_center is not None or is_person
             if first_person_show == False and person_center != None:
                 first_person_show = True
                 st = name + " has entered the house."
@@ -366,18 +433,23 @@ while True:
                 events.append(st)
                 data_form.print2file(events, firebase)
                 speak("hello" + name)
-
-            moving_sensitivity = 140
-            # if person_center is not None:
-            #     camera_move_check(moving_sensitivity, person_center)
+            #
+            moving_sensitivity = 220
+            move_direction = None
+            if person_center is not None:
+                move_direction = camera_move_check(cv2_im, moving_sensitivity, person_center, person_box)
+                if move_direction:
+                    send_data(move_direction)
 
             cv2.imshow("Image", cv2_im)
-
-        confidence_level = 2
+        confidence_level = 0
         for key in possible_connections.keys():
-            if possible_connections.get(key) >= confidence_level:
-                connections.append(key)
+            connections.append(key)
 
-        analyze_connections(connections)
+        results = analyze_connections(connections)
+        if is_person and move_direction is None:
+            send_data(ActionsTypes.STOP)
+        elif move_direction is None and not is_person:
+            send_data(ActionsTypes.START)
 
-        print("capture stopped")
+    print("capture stopped")
