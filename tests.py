@@ -12,7 +12,8 @@ def process_image(image_path):
     frame = cv2.resize(frame, (640, 480))
     cv2_im = frame.copy()
 
-    threshold = 0.6
+    threshold = 0.3
+
     objs = get_objects(frame, threshold, model_loaded, cv2_im)
 
     # show image
