@@ -15,7 +15,7 @@ class FirebaseConfig:
         self.initial()
 
     def config(self):
-        cred = credentials.Certificate('/Users/yoavtamir/PycharmProjects/Learning/big_brother_cv/big-brother-cv-firebase-adminsdk-ub4bk-de7418174c.json')
+        cred = credentials.Certificate('../big-brother-cv-firebase-adminsdk-ub4bk-de7418174c.json')
         firebase_admin.initialize_app(cred, {
             'databaseURL': 'https://big-brother-cv-default-rtdb.firebaseio.com/'
         })

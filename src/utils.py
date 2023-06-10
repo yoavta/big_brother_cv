@@ -1,3 +1,4 @@
+import os
 import re
 from subprocess import call
 
@@ -19,3 +20,14 @@ def read_label_file(file_path):
         else:
             ret[row_number] = content.strip()
     return ret
+
+
+def read_file(file_path):
+    with open(file_path, 'rt') as f:
+        return f.read().rstrip('\n').split('\n')
+
+
+def get_path(relative_path):
+    return os.path.join(os.path.dirname(__file__), relative_path)
+
+
