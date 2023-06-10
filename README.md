@@ -16,8 +16,7 @@ you to monitor, and a detailed report about the events that occured while using 
 
 ### ___System setup:___
 
-![IMG_8779](https://github.com/yoavta/big_brother_cv/assets/91034418/25b4ec5e-eaf4-4c23-b547-ebc4ff32d241)
-<img src="[https://user-images.githubusercontent.com/70321869/136663562-4c9f64e6-e27e-459f-804a-41bef39097e1.jpg](https://github.com/yoavta/big_brother_cv/assets/91034418/25b4ec5e-eaf4-4c23-b547-ebc4ff32d241)" width="600" height="400">
+![robot](https://github.com/yoavta/big_brother_cv/assets/91034418/25b4ec5e-eaf4-4c23-b547-ebc4ff32d241)
 
 &nbsp;
 
