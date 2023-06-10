@@ -15,41 +15,8 @@ toilet
 refrigerator
 tie
 backpack
+microwave
+laptop
 mouse
 keyboard
-remote
-toothbrush
-cell phone
-book
-banana
-apple
-sandwich
-orange
-broccoli
-carrot
-hot dog
-pizza
-donut
-sports ball
-baseball bat
-baseball glove
-frisbee
-tennis racket
-teddy bear
-knife
-microwave
-toaster
-scissors
-hair drier
-vase
 bottle
-wine glass
-cup
-fork
-spoon
-bowl
-umbrella
-handbag
-suitcase
-clock
-laptop

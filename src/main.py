@@ -1,7 +1,7 @@
+import cProfile
+
 import time
-
 import cv2
-
 from categories_list import CategoriesList
 from configuration import Configuration
 from controller_client import ActionsTypes
@@ -9,10 +9,9 @@ from controller_client import send_data
 from controller_server import run_server, accept_connection, process_data
 from firebase_config import FirebaseConfig
 from form import form
-from src.Bbox import BBox
 from src.DetectorStore import DetectorStore
 from src.data_proceesor import analyze_connections
-from utils import speak, camera_move_check
+from utils import speak, camera_move_check, threaded_speak
 
 configuration = Configuration()
 
@@ -28,8 +27,7 @@ def main():
     firebase = FirebaseConfig()
 
     # firebase configurations
-    db = firebase.firebase
-    categories = CategoriesList(firebase, db)
+    categories = CategoriesList(firebase)
     configuration.add_categories(categories)
     first_person_show = False
 
@@ -37,6 +35,7 @@ def main():
     detectors_store = DetectorStore()
 
     while True:
+        threaded_speak("Welcome to the smart home system. Please wait for the system to start.")
         print("waiting for power on to get started")
         while not firebase.is_on():
             time.sleep(2)
@@ -81,8 +80,8 @@ def main():
 
                 cv2_im = frame.copy()
 
-                threshold = 0.3
-                objs = detectors_store.object_detector.get_objects(frame, threshold, detectors_store.object_detector,
+                threshold = 0.2
+                objs = detectors_store.object_detector.get_objects(frame, threshold,
                                                                    cv2_im)
 
                 hands, cv2_im = detectors_store.hand_detector.get_model().findHands(cv2_im)
@@ -95,7 +94,7 @@ def main():
                     st = user_name + " has entered the house."
                     events = [st]
                     data_form.print2file(events, firebase)
-                    speak("hello" + user_name)
+                    threaded_speak("hello" + user_name)
 
                 if person_center is not None:
                     current_move = camera_move_check(cv2_im, configuration.moving_sensitivity, person_center,
@@ -111,7 +110,7 @@ def main():
             for key in possible_connections.keys():
                 connections.append(key)
 
-            analyze_connections(connections, data_form, user_name, firebase, configuration.categories)
+            analyze_connections(connections, data_form, user_name, configuration.categories,firebase)
             if is_person and move_direction is None:
                 send_data(ActionsTypes.STOP)
             elif move_direction is None and not is_person:
@@ -121,4 +120,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    cProfile.run('main()')

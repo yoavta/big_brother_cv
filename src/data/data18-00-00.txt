@@ -1,0 +1,8 @@
+18:00:07; oro has entered the house.$
+18:00:15; watch out!! oro is playing with a(n) oven.$ watch out!! oro is playing with a(n) microwave.$ oro is sitting on a(n) chair.$
+18:00:17; oro is sitting on a(n) chair.$
+18:00:27; watch out!! oro is playing with a(n) oven.$ watch out!! oro is playing with a(n) microwave.$ oro is sitting on a(n) chair.$
+18:00:32; watch out!! oro is playing with a(n) oven.$ oro is sitting on a(n) chair.$
+18:00:37; oro is sitting on a(n) chair.$ watch out!! oro is playing with a(n) oven.$
+18:00:38; oro is sitting on a(n) chair.$
+18:00:41; oro is sitting on a(n) chair.$

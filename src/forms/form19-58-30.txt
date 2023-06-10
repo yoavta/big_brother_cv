@@ -1,0 +1,22 @@
+report time: 19-58-30
+
+Important events:
+
+
+Situations:
+ oro has entered the house from 19:57:43 to 19:57:43.
+ oro is using the computer with a(n) laptop from 19:57:47 to 19:57:59.
+
+
+In total:
+ oro has entered the house for 0:00:00 second(s), 1 time(s) total.
+ oro is using the computer with a(n) laptop for 0:00:12 second(s), 1 time(s) total.
+ oro has entered the house from 19:57:43 to 19:57:43.
+ oro has entered the house from 19:57:43 to 19:57:43.
+ oro is using the computer with a(n) laptop from 19:57:47 to 19:57:59.
+ oro is using the computer with a(n) laptop from 19:57:47 to 19:57:59.
+
+
+In total:
+ oro has entered the house for 00:00:00 second(s), 2 time(s) total.
+ oro is using the computer with a(n) laptop for 00:00:24 second(s), 2 time(s) total.

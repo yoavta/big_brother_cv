@@ -1,0 +1,11 @@
+20:00:08; oro has entered the house.$
+20:00:08; oro is using the computer with a(n) laptop.$
+20:00:12; oro is using the computer with a(n) laptop.$ oro is sitting on a(n) chair.$
+20:00:16; oro is using the computer with a(n) laptop.$ oro is sitting on a(n) chair.$
+20:00:20; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$
+20:00:23; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$
+20:00:27; oro is sitting on a(n) chair.$
+20:00:31; oro is sitting on a(n) chair.$
+20:00:46; watch out!! oro is playing with a(n) microwave.$
+20:00:50; watch out!! oro is playing with a(n) microwave.$
+20:00:54; watch out!! oro is playing with a(n) oven.$

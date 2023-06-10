@@ -9,7 +9,7 @@ class form:
         self.important_events = []
         self.important_num = 1
         root_dir = os.path.dirname(os.path.abspath(__file__))  # get the directory of the current file
-        data_dir = os.path.join(root_dir, '../data')  # append 'data' to this directory
+        data_dir = os.path.join(root_dir, 'data')  # append 'data' to this directory
         self.path = os.path.join(data_dir, "data" + self.current_time + ".txt")  # append the filename to this directory
         f = open(self.path, 'w+')
         f.close()
@@ -87,7 +87,6 @@ class form:
         for t in dict:
             for con in dict[t]:
                 situations.append((str(t[:-1]), str(con[1]), str(con[2])))
-                # text = text + str(t[:-1]) + " from " + str(con[1]) + " to " + str(con[2]) + ".\n"
                 start = con[1]
                 end = con[2]
                 FMT = '%H:%M:%S'
@@ -161,7 +160,7 @@ class form:
             in_total_txt = in_total_txt + str(total_times[t][1]) + " time(s) total.\n"
 
         text = text + in_total_txt
-        path = "../forms/form" + current_time + ".txt"
+        path = "forms/form" + current_time + ".txt"
         file = open(path, 'w+')
         file.write(text)
         file.close()

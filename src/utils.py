@@ -1,5 +1,6 @@
 import os
 import re
+import threading
 from subprocess import call
 
 import cv2
@@ -12,6 +13,10 @@ def speak(text):
     cmd_beg = 'say "'
     cmd_end = '"'
     call([cmd_beg + text + cmd_end], shell=True)
+
+def threaded_speak(text):
+    thread = threading.Thread(target=speak, args=(text,))
+    thread.start()
 
 
 def read_label_file(file_path):
@@ -36,7 +41,8 @@ def get_path(relative_path):
     return os.path.join(os.path.dirname(__file__), relative_path)
 
 
-def camera_move_check(img, rectangle_size, center_object, person_box: Bbox, screen_width, screen_height) -> ActionsTypes:
+def camera_move_check(img, rectangle_size, center_object, person_box: Bbox, screen_width,
+                      screen_height) -> ActionsTypes:
     half_rec_size = int(rectangle_size / 2)
     center_screen = (int(screen_width / 2), int(screen_height / 2))
     top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
@@ -51,11 +57,11 @@ def camera_move_check(img, rectangle_size, center_object, person_box: Bbox, scre
     if person_size > frame_size * 0.3:
         return ActionsTypes.BACKWARD
 
-    if person_size < frame_size * 0.1:
-        return ActionsTypes.FORWARD
-
     if x < left_x:
         return ActionsTypes.LEFT
 
     if x > right_x:
         return ActionsTypes.RIGHT
+
+    if person_size < frame_size * 0.1:
+        return ActionsTypes.FORWARD

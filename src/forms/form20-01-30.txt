@@ -1,0 +1,37 @@
+report time: 20-01-30
+
+Important events:
+
+
+Situations:
+ oro has entered the house from 20:00:08 to 20:00:08.
+ oro is using the computer with a(n) laptop from 20:00:08 to 20:00:23.
+ oro is sitting on a(n) chair from 20:00:12 to 20:00:31.
+ watch out!! oro is playing with a(n) microwave from 20:00:46 to 20:00:50.
+ watch out!! oro is playing with a(n) oven from 20:00:54 to 20:00:54.
+
+
+In total:
+ oro has entered the house for 0:00:00 second(s), 1 time(s) total.
+ oro is using the computer with a(n) laptop for 0:00:15 second(s), 1 time(s) total.
+ oro is sitting on a(n) chair for 0:00:19 second(s), 1 time(s) total.
+ watch out!! oro is playing with a(n) microwave for 0:00:04 second(s), 1 time(s) total.
+ watch out!! oro is playing with a(n) oven for 0:00:00 second(s), 1 time(s) total.
+ oro has entered the house from 20:00:08 to 20:00:08.
+ oro is using the computer with a(n) laptop from 20:00:08 to 20:00:23.
+ oro has entered the house from 20:00:08 to 20:00:08.
+ oro is using the computer with a(n) laptop from 20:00:08 to 20:00:23.
+ oro is sitting on a(n) chair from 20:00:12 to 20:00:31.
+ oro is sitting on a(n) chair from 20:00:12 to 20:00:31.
+ watch out!! oro is playing with a(n) microwave from 20:00:46 to 20:00:50.
+ watch out!! oro is playing with a(n) microwave from 20:00:46 to 20:00:50.
+ watch out!! oro is playing with a(n) oven from 20:00:54 to 20:00:54.
+ watch out!! oro is playing with a(n) oven from 20:00:54 to 20:00:54.
+
+
+In total:
+ oro has entered the house for 00:00:00 second(s), 2 time(s) total.
+ oro is using the computer with a(n) laptop for 00:00:30 second(s), 2 time(s) total.
+ oro is sitting on a(n) chair for 00:00:38 second(s), 2 time(s) total.
+ watch out!! oro is playing with a(n) microwave for 00:00:08 second(s), 2 time(s) total.
+ watch out!! oro is playing with a(n) oven for 00:00:00 second(s), 2 time(s) total.

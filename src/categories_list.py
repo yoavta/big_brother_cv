@@ -1,7 +1,6 @@
 class CategoriesList:
-
-    def __init__(self, firebase, db):
-        self.db = db
+    def __init__(self, firebase):
+        self.db = firebase.firebase
         self.firebase = firebase
         self.categories_names = ["sitting", "computer", "holdings", "playing", "specific", "tv", "using", "danger",
                                  "food", "wearing"]

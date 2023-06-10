@@ -1,0 +1,25 @@
+19:47:50; oro has entered the house.$
+19:47:50; oro is sitting on a(n) chair.$
+19:47:54; oro is sitting on a(n) chair.$
+19:48:02; oro is sitting on a(n) chair.$
+19:48:05; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$ oro is playing with a microwave.$
+19:48:09; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$ oro is playing with a oven.$ oro is playing with a microwave.$
+19:48:13; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$ oro is playing with a oven.$ oro is playing with a microwave.$
+19:48:17; oro is sitting on a(n) chair.$
+19:48:21; oro is sitting on a(n) chair.$
+19:48:25; oro is sitting on a(n) chair.$
+19:48:29; oro is sitting on a(n) chair.$
+19:48:33; oro is sitting on a(n) chair.$
+19:48:37; oro is sitting on a(n) chair.$
+19:48:40; oro is sitting on a(n) chair.$
+19:48:44; oro is sitting on a(n) chair.$
+19:48:49; oro is sitting on a(n) chair.$
+19:48:53; oro is sitting on a(n) chair.$
+19:48:57; oro is sitting on a(n) chair.$
+19:49:00; oro is sitting on a(n) chair.$
+19:49:04; oro is sitting on a(n) chair.$ watch out!! oro is playing with a(n) microwave.$
+19:49:08; oro is sitting on a(n) chair.$ watch out!! oro is playing with a(n) oven.$
+19:49:12; oro is sitting on a(n) chair.$ watch out!! oro is playing with a(n) oven.$
+19:49:16; oro is sitting on a(n) chair.$
+19:49:20; oro is sitting on a(n) chair.$
+19:49:24; oro is sitting on a(n) chair.$

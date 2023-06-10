@@ -1,0 +1,12 @@
+16:44:32; oro has entered the house.$
+16:44:34; oro is eating a(n) orange.$
+16:44:39; oro is eating a(n) orange.$
+16:44:42; oro is eating a(n) orange.$
+16:45:14; oro is playing with a(n) frisbee.$
+16:45:18; oro is playing with a(n) sports ball.$
+16:45:32; oro is playing with a(n) sports ball.$
+16:45:42; oro is eating a(n) orange.$
+16:45:45; oro is eating a(n) orange.$
+16:45:52; oro is eating a(n) orange.$
+16:46:05; oro is playing with a(n) sports ball.$
+16:46:09; oro is playing with a(n) sports ball.$

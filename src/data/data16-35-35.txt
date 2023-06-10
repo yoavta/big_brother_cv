@@ -1,0 +1,10 @@
+16:36:13; oro has entered the house.$
+16:36:15; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$
+16:36:17; oro is using the computer with a(n) laptop.$ oro is sitting on a(n) chair.$
+16:36:20; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$
+16:36:24; oro is sitting on a(n) chair.$ oro is using the computer with a(n) laptop.$
+16:36:28; oro is sitting on a(n) chair.$
+16:36:31; oro is sitting on a(n) chair.$
+16:36:34; oro is sitting on a(n) chair.$
+16:36:37; oro is sitting on a(n) chair.$
+16:36:41; oro is sitting on a(n) chair.$
