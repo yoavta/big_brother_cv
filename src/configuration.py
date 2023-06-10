@@ -2,6 +2,7 @@ from utils import read_label_file, read_file, get_path
 
 class Configuration:
     def __init__(self):
+        self.moving_sensitivity = 220
         self.classNames = read_file(get_path("../Resources/coco.names.txt"))
         self.person_list = read_file(get_path("../Resources/person.txt"))
         self.hand_list = read_file(get_path("../Resources/hand.txt"))

@@ -1,11 +1,13 @@
 import socket
 import time
-import cv2
 
+import cv2
 import numpy as np
 
 host = '10.0.2.235'
 port = 12345
+conn = None
+server_socket = None
 
 
 def receive_data(conn):
@@ -31,6 +33,8 @@ def receive_data(conn):
 
 def init_server():
     global server_socket
+    if server_socket:
+        return
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))
     server_socket.listen(1)
@@ -39,6 +43,9 @@ def init_server():
 
 def accept_connection():
     global conn, addr
+    if conn:
+        return
+
     conn, addr = server_socket.accept()
     print(f'Connection from {addr}')
 
@@ -79,18 +86,3 @@ def process_data():
 
 def run_server():
     init_server()
-
-#
-# def test():
-#     np_arr = np.load('temp.npy')
-#     image_shape = (480, 640)
-#     total_size = image_shape[0] * image_shape[1] * 3
-#     image_data = np_arr[:total_size]
-#     image = image_data.reshape(image_shape[0], image_shape[1], -1)
-#     cv2.imshow('image', image)
-#     cv2.waitKey(0)
-#     cv2.destroyAllWindows()
-#
-#
-#
-# test()
