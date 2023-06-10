@@ -1,4 +1,5 @@
 import os
+
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
@@ -12,7 +13,7 @@ class FirebaseConfig:
         self.in_total_num = 1
         self.situations_num = 1
         self.important_num = 1
-        self.initial()
+        self.reset_data()
 
     def config(self):
         cred = credentials.Certificate('../big-brother-cv-firebase-adminsdk-ub4bk-de7418174c.json')
@@ -60,7 +61,7 @@ class FirebaseConfig:
         db.reference(f"data/forms/situations/{self.situations_num}").set(txt)
         self.situations_num += 1
 
-    def initial(self):
+    def reset_data(self):
         db.reference("data/live update").set({"pass": "pass"})
         db.reference("data/forms/in total").set({"pass": "pass"})
         db.reference("data/forms/situations").set({"pass": "pass"})
@@ -77,3 +78,6 @@ class FirebaseConfig:
         blob = storage.blob(f"images/{file_name}")
         blob.upload_from_filename(file_name)
         os.remove(file_name)
+
+    def get_name(self):
+        return db.reference("name").get()
