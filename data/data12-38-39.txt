@@ -1,0 +1,19 @@
+12:38:49; oro has entered the house.$
+12:39:58; oro is wearing a(n) backpack.$
+12:40:02; oro is wearing a(n) backpack.$ oro is sitting on a(n) chair.$
+12:40:06; oro is holding a(n) bottle.$
+12:40:10; oro is wearing a(n) backpack.$ oro is sitting on a(n) chair.$
+12:40:14; oro is sitting on a(n) chair.$
+12:40:24; oro is holding a(n) bottle.$
+12:40:31; oro is wearing a(n) backpack.$
+12:40:34; oro is wearing a(n) backpack.$
+12:40:38; oro is sitting on a(n) chair.$
+12:40:41; oro is sitting on a(n) chair.$
+12:40:44; oro is sitting on a(n) chair.$
+12:41:02; oro is sitting on a(n) chair.$
+12:41:05; oro is sitting on a(n) chair.$
+12:41:08; oro is sitting on a(n) chair.$
+12:41:22; oro is sitting on a(n) chair.$
+12:41:36; oro is sitting on a(n) chair.$
+12:41:43; oro is sitting on a(n) chair.$
+12:41:50; oro is sitting on a(n) chair.$

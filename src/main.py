@@ -8,8 +8,9 @@ from configuration import Configuration
 from controller_client import ActionsTypes
 from controller_client import send_data
 from controller_server import run_server, accept_connection, process_data
-from firebase_config_example import FirebaseConfig
+from firebase_config import FirebaseConfig
 from form import form
+from src import Bbox
 from src.Bbox import get_box_dimensions, BBox
 from src.DetectorStore import DetectorStore
 from src.Object import Object
@@ -67,7 +68,6 @@ def person_connections(person_box: BBox, bboxes, class_ids, possible_connections
                 else:
                     if configuration.labels.get(obj_id, obj_id) in current_frame_connections:
                         continue
-                    #                     print(labels.get(obj_id,obj_id))
                     current_frame_connections.append(configuration.labels.get(obj_id, obj_id))
                     if configuration.labels.get(obj_id, obj_id) in possible_connections:
                         possible_connections[configuration.labels.get(obj_id, obj_id)] = \
@@ -102,7 +102,7 @@ def get_objects(frame, threshold, object_detector, img):
     return filtered_objs
 
 
-def camera_move_check(img, rectangle_size, center_object) -> ActionsTypes:
+def camera_move_check(img, rectangle_size, center_object, person_box: Bbox) -> ActionsTypes:
     half_rec_size = int(rectangle_size / 2)
     center_screen = (int(configuration.screen_width / 2), int(configuration.screen_height / 2))
     top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
@@ -111,6 +111,14 @@ def camera_move_check(img, rectangle_size, center_object) -> ActionsTypes:
     x, y = center_object[0], center_object[1]
     left_x = top_left[0]
     right_x = top_left[0] + rectangle_size
+
+    frame_size = configuration.screen_width * configuration.screen_height
+    person_size = (person_box.xmax - person_box.xmin) * (person_box.ymax - person_box.ymin)
+    if person_size > frame_size * 0.3:
+        return ActionsTypes.BACKWARD
+
+    if person_size < frame_size * 0.1:
+        return ActionsTypes.FORWARD
 
     if x < left_x:
         return ActionsTypes.LEFT
@@ -145,6 +153,12 @@ def append_objs_to_img(cv2_image, objs, class_ids, bboxes, hands, possible_conne
     return cv2_image, person_center, person_box
 
 
+def initial():
+    run_server()
+    send_data(ActionsTypes.TURN_ON)
+    accept_connection()
+
+
 def main():
     # creating objects
     firebase = FirebaseConfig()
@@ -157,83 +171,87 @@ def main():
 
     data_form = form()
     models_store = DetectorStore()
-    print("waiting for power on to get started")
-    while not firebase.is_on():
-        time.sleep(2)
-        pass
-    run_server()
-    send_data(ActionsTypes.TURN_ON)
-    accept_connection()
-
-    user_name = db.reference("name").get()
-
-    print("capture started")
-    firebase.initial()
-    # TODO: robot should wake up and start to capture.
 
     while True:
-        class_ids = []
-        possible_connections = {}
-        connections = []
+        print("waiting for power on to get started")
+        while not firebase.is_on():
+            time.sleep(2)
+            pass
 
-        if firebase.is_changed():
-            print("categories changed")
-            categories.update_lists()
+        initial()
+        user_name = firebase.get_name()
 
-            firebase.update_finished()
-            print("categories update")
+        print("capture started")
+        firebase.reset_data()
+        # TODO: robot should wake up and start to capture.
+        move_direction = None
 
-        if firebase.is_report():
-            print("producing report......")
-            data_form.print_report(firebase)
-            print("produce finished.")
+        while True:
+            class_ids = []
+            possible_connections = {}
+            connections = []
 
-        if (cv2.waitKey(1) & 0xFF == ord('q')) or (not firebase.is_on()):
-            data_form.print_report(firebase)
-            break
+            if firebase.is_changed():
+                print("categories changed")
+                categories.update_lists()
 
-        is_person = False
+                firebase.update_finished()
+                print("categories update")
 
-        for i in range(configuration.number_of_iterations):
-            bboxes = []
-            frame = process_data()
-            if frame is None:
-                continue
+            if firebase.is_report():
+                print("producing report......")
+                data_form.print_report(firebase)
+                print("produce finished.")
 
-            cv2_im = frame.copy()
+            if (cv2.waitKey(1) & 0xFF == ord('q')) or (not firebase.is_on()):
+                data_form.print_report(firebase)
+                send_data(ActionsTypes.TURN_OFF)
+                break
 
-            threshold = 0.3
-            objs = get_objects(frame, threshold, models_store.object_detector, cv2_im, )
+            is_person = False
 
-            hands, cv2_im = models_store.hand_detector.get_model().findHands(cv2_im)
-            cv2_im, person_center, person_box = append_objs_to_img(cv2_im, objs, class_ids, bboxes, hands,
-                                                                   possible_connections)
-            is_person = person_center is not None or is_person
-            if first_person_show == False and person_center is not None:
-                first_person_show = True
-                st = user_name + " has entered the house."
-                events = [st]
-                data_form.print2file(events, firebase)
-                speak("hello" + user_name)
-            #
-            moving_sensitivity = 220
-            move_direction = None
-            if person_center is not None:
-                move_direction = camera_move_check(cv2_im, moving_sensitivity, person_center)
-                if move_direction:
-                    send_data(move_direction)
+            for i in range(configuration.number_of_iterations):
+                bboxes = []
+                frame = process_data()
+                if frame is None:
+                    continue
 
-            cv2.imshow("Image", cv2_im)
-        for key in possible_connections.keys():
-            connections.append(key)
+                cv2_im = frame.copy()
 
-        results = analyze_connections(connections, data_form, user_name, firebase, configuration.categories)
-        if is_person and move_direction is None:
-            send_data(ActionsTypes.STOP)
-        elif move_direction is None and not is_person:
-            send_data(ActionsTypes.START)
+                threshold = 0.3
+                objs = get_objects(frame, threshold, models_store.object_detector, cv2_im, )
 
-    print("capture stopped")
+                hands, cv2_im = models_store.hand_detector.get_model().findHands(cv2_im)
+                cv2_im, person_center, person_box = append_objs_to_img(cv2_im, objs, class_ids, bboxes, hands,
+                                                                       possible_connections)
+                is_person = person_center is not None or is_person
+                if first_person_show == False and person_center is not None:
+                    first_person_show = True
+                    st = user_name + " has entered the house."
+                    events = [st]
+                    data_form.print2file(events, firebase)
+                    speak("hello" + user_name)
+
+                if person_center is not None:
+                    current_move = camera_move_check(cv2_im, configuration.moving_sensitivity, person_center,
+                                                     person_box)
+                    if current_move:
+                        send_data(current_move)
+                    move_direction = current_move
+                else:
+                    move_direction = None
+
+                cv2.imshow("Image", cv2_im)
+            for key in possible_connections.keys():
+                connections.append(key)
+
+            analyze_connections(connections, data_form, user_name, firebase, configuration.categories)
+            if is_person and move_direction is None:
+                send_data(ActionsTypes.STOP)
+            elif move_direction is None and not is_person:
+                send_data(ActionsTypes.START)
+
+        print("capture stopped")
 
 
 if __name__ == '__main__':
