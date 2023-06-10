@@ -79,7 +79,7 @@ def person_connections(person_box: BBox, bboxes, class_ids, possible_connections
 def get_objects(frame, threshold, object_detector, img):
     height, width, channels = frame.shape
     model, classes, colors, output_layers = object_detector.get_model()
-    blob, outputs = object_detector.detect_objects(frame, model, output_layers)
+    blob, outputs = object_detector.detect_objects(frame)
     boxes, confs, class_ids = get_box_dimensions(outputs, height, width)
     indexes = cv2.dnn.NMSBoxes(boxes, confs, 0.5, 0.4)
     draw_labels(boxes, colors, class_ids, classes, img, indexes)

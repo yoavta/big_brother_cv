@@ -1,6 +1,5 @@
-import time
 import os
-import math
+import time
 from datetime import datetime
 
 
@@ -14,17 +13,15 @@ class form:
         self.path = os.path.join(data_dir, "data" + self.current_time + ".txt")  # append the filename to this directory
         f = open(self.path, 'w+')
         f.close()
-        
+
     def add_important(self, txt):
         t = time.localtime()
         current_time = time.strftime("%H:%M:%S", t)
         str = current_time + ": " + txt + "."
         self.important_events.append(str)
-        self.important_num = self.important_num +1
-             
-        
+        self.important_num = self.important_num + 1
 
-    def print2file(self, events,firebase):
+    def print2file(self, events, firebase):
         if not events:
             return
 
@@ -44,7 +41,7 @@ class form:
         print(str_to_firebase + ": added")
         f.close()
 
-    def print_report(self,firebase):
+    def print_report(self, firebase):
         # f = open(self.path, 'r')
         dict = {}
         with open(self.path, 'r', encoding='UTF-8') as file:
@@ -62,7 +59,7 @@ class form:
                         latest_event = dict[event][-1]
                         FMT = '%H:%M:%S'
                         if int(str((datetime.strptime(timestamp, FMT) - datetime.strptime(latest_event[2], FMT)))
-                                .split(':')[1]) < 1:
+                                       .split(':')[1]) < 1:
                             latest_event[3] = latest_event[3] + 1
                             latest_event[2] = timestamp
                         else:
@@ -72,14 +69,14 @@ class form:
                 line = file.readline().rstrip()
                 # print(split3)
         important_events_txt = "need to be updated later"
-        in_total_txt=""
-        situations_txt=""
-
+        in_total_txt = ""
+        situations_txt = ""
 
         current_time = time.strftime("%H-%M-%S", time.localtime())
         # text = "report time: " + current_time + "\n\nImportant events:\n"
-        report_time_txt=current_time
+        report_time_txt = current_time
         text = report_time_txt + "\n\nImportant events:\n"
+        text = "report time: " + current_time + "\n\nImportant events:\n"
         # ADD HERE SUMMARY OF IMPORTANT EVENTS (DANGEROUS, SURPRISING...)
         text = text + "\n\nSituations:\n"
         # DOESN'T PRINT BY CHRONOLOGICAL ORDER!
@@ -87,9 +84,8 @@ class form:
         total_times = {}
         situations = []
 
-
         for t in dict:
-            for con in dict[t]:                
+            for con in dict[t]:
                 situations.append((str(t[:-1]), str(con[1]), str(con[2])))
                 # text = text + str(t[:-1]) + " from " + str(con[1]) + " to " + str(con[2]) + ".\n"
                 start = con[1]
@@ -100,7 +96,40 @@ class form:
                     t1 = datetime.strptime(str(total_times[t[:-1]][0]), FMT)
                     t2 = datetime.strptime(str(tdelta), FMT)
                     time_zero = datetime.strptime('00:00:00', FMT)
-                    total_times[t[:-1]] = ((t1 - time_zero + t2).time(), total_times[t[:-1]][1] +1)
+                    total_times[t[:-1]] = ((t1 - time_zero + t2).time(), total_times[t[:-1]][1] + 1)
+                else:
+                    total_times[t[:-1]] = (tdelta, 1)
+
+        # Sort situations and add to form:
+        sorted_list = sorted(situations, key=lambda tim: datetime.strptime(tim[1], '%H:%M:%S'))
+        for sit in sorted_list:
+            text = text + str(sit[0]) + " from " + str(sit[1]) + " to " + str(sit[2]) + ".\n"
+
+        text = text + "\n\nIn total:\n"
+        for t in total_times:
+            text = text + str(t) + " for " + str(total_times[t][0])
+            split = str(total_times[t][0]).split(':')
+            if split[0] != '0' and split[0] != '00':
+                text = text + " hour(s), "
+            elif split[1] != '00':
+                text = text + " minute(s), "
+            else:
+                text = text + " second(s), "
+            text = text + str(total_times[t][1]) + " time(s) total.\n"
+
+        for t in dict:
+            for con in dict[t]:
+                situations.append((str(t[:-1]), str(con[1]), str(con[2])))
+                # text = text + str(t[:-1]) + " from " + str(con[1]) + " to " + str(con[2]) + ".\n"
+                start = con[1]
+                end = con[2]
+                FMT = '%H:%M:%S'
+                tdelta = datetime.strptime(end, FMT) - datetime.strptime(start, FMT)
+                if t[:-1] in total_times:
+                    t1 = datetime.strptime(str(total_times[t[:-1]][0]), FMT)
+                    t2 = datetime.strptime(str(tdelta), FMT)
+                    time_zero = datetime.strptime('00:00:00', FMT)
+                    total_times[t[:-1]] = ((t1 - time_zero + t2).time(), total_times[t[:-1]][1] + 1)
                 else:
                     total_times[t[:-1]] = (tdelta, 1)
 
@@ -111,7 +140,7 @@ class form:
             situations_txt = situations_txt + added_str
             firebase.add_situations(added_str)
 
-        text = text+situations_txt
+        text = text + situations_txt
 
         text = text + "\n\nIn total:\n"
         for t in total_times:
@@ -128,7 +157,7 @@ class form:
                 in_total_txt = in_total_txt + " second(s), "
                 firebase_str = firebase_str + " second(s), "
                 firebase.add_in_total(firebase_str)
-            
+
             in_total_txt = in_total_txt + str(total_times[t][1]) + " time(s) total.\n"
 
         text = text + in_total_txt
@@ -139,18 +168,5 @@ class form:
 
         for event in self.important_events:
             firebase.add_important(event)
-            
-        firebase.update_form(report_time_txt,in_total_txt,situations_txt,important_events_txt)
 
-
-
-        # os.startfile("C:/Users/tamir/OneDrive/summerProjects/situations_detector/"+path)
-
-
-
-
-
-
-
-
-
+        firebase.update_form(report_time_txt, in_total_txt, situations_txt, important_events_txt)

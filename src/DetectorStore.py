@@ -19,10 +19,11 @@ class ObjectDetector:
     def get_model(self):
         return self.object_detection_model
 
-    def detect_objects(self, img, net, outputLayers):
+    def detect_objects(self, img):
+        model, classes, colors, output_layers = self.get_model()
         blob = cv2.dnn.blobFromImage(img, scalefactor=0.00392, size=(320, 320), mean=(0, 0, 0), swapRB=True, crop=False)
-        net.setInput(blob)
-        outputs = net.forward(outputLayers)
+        model.setInput(blob)
+        outputs = model.forward(output_layers)
         return blob, outputs
 
 
@@ -35,8 +36,15 @@ class HandDetectionModel:
 
 
 def load_yolo():
-    net = cv2.dnn.readNet("../Resources/yolo/yolov3.weights", "../Resources/yolo/yolov3.cfg")
-    with open(os.path.join(os.path.dirname(__file__), "../Resources/coco.names.txt"), "r") as f:
+    root_dir = os.path.abspath(os.path.dirname(__file__))
+
+    weights_path = os.path.join(root_dir, "../Resources/yolo/yolov3.weights")
+    cfg_path = os.path.join(root_dir, "../Resources/yolo/yolov3.cfg")
+    names_path = os.path.join(root_dir, "../Resources/coco.names.txt")
+
+    net = cv2.dnn.readNet(weights_path, cfg_path)
+
+    with open(names_path, "r") as f:
         classes = [line.strip() for line in f.readlines()]
 
     output_layers = [layer_name for layer_name in net.getUnconnectedOutLayersNames()]
