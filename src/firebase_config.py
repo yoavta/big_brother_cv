@@ -43,6 +43,7 @@ class FirebaseConfig:
 
     def update_form(self, report_time_txt, in_total_txt, situations_txt, important_events_txt):
         db.reference("data/forms").update({"report time": report_time_txt})
+
         db.reference("produce report").set(0)
 
     def add_live(self, txt):

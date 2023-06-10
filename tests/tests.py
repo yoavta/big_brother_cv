@@ -1,58 +1,78 @@
-# import os
-#
-# import cv2
-# import pytest
-#
-# from src.main import load_yolo, get_objects, detector, append_objs_to_img
-#
-# # Load YOLO model
-# model, classes, colors, output_layers = load_yolo()
-# model_loaded = [model, classes, colors, output_layers]
-#
-#
-# def process_image(image_path):
-#     frame = cv2.imread(image_path)
-#     frame = cv2.resize(frame, (640, 480))
-#     cv2_im = frame.copy()
-#
-#     threshold = 0.3
-#
-#     objs = get_objects(frame, threshold, model_loaded, cv2_im)
-#
-#     # show image
-#     hands, cv2_im = detector.findHands(cv2_im)
-#     if hands is not None:
-#         for hand in hands:
-#             objs.append(('hand', hand))
-#
-#     moving_sensitivity = 140
-#     rectangle_size = moving_sensitivity
-#     screen_width = 640
-#     screen_height = 480
-#
-#     half_rec_size = int(rectangle_size / 2)
-#     center_screen = (int(screen_width / 2), int(screen_height / 2))
-#     cv2.circle(cv2_im, center_screen, 2, (0, 0, 255), cv2.FILLED)
-#     top_left = (center_screen[0] - half_rec_size, center_screen[1] - half_rec_size)
-#
-#     append_objs_to_img(cv2_im, objs)
-#
-#     cv2.imshow("Image", cv2_im)
-#     cv2.waitKey(100)
-#     cv2.destroyAllWindows()
-#
-#     return objs
-#
-#
-# @pytest.mark.parametrize("image_path", [f'tests/test_images/{img}' for img in os.listdir("test_images")])
-# def test_detect_hands(image_path):
-#     objs = process_image(image_path)
-#     hand_objs = [obj for obj in objs if obj[0] == 'hand']
-#     assert len(hand_objs) > 0, f"No hands detected in {image_path}"
-#
-#
-# @pytest.mark.parametrize("image_path", [f'tests/test_images/{img}' for img in os.listdir("test_images")])
-# def test_detect_people(image_path):
-#     objs = process_image(image_path)
-#     people_objs = [obj for obj in objs if obj[0] == 'person']
-#     assert len(people_objs) > 0, f"No people detected in {image_path}"
+import os
+
+import cv2
+import pytest
+
+from src.DetectorStore import DetectorStore
+from src.main import camera_move_check
+
+models_store = DetectorStore()
+root_dir = os.path.dirname(os.path.abspath(__file__))
+image_path = os.path.join(root_dir, "test_images")
+
+is_debug = False
+
+
+@pytest.fixture(autouse=True)
+def setup_and_teardown():
+    yield  # this is where the testing happens
+
+    # Code that will be executed after each test
+    print("Teardown")
+
+
+@pytest.mark.parametrize("image_path", [f'test_images/{img}' for img in os.listdir(image_path)])
+def test_detect_hands(image_path):
+    split_path = image_path.split('/')[1].split('.')[0].split('-')
+    image_path = os.path.join(root_dir, image_path)
+
+
+    if is_debug:
+        cv2.imshow('img', cv2.imread(image_path))
+        cv2.waitKey(0)
+
+    img = cv2.imread(image_path)
+
+    hands, img_res = models_store.hand_detector.get_model().findHands(img)
+
+    if is_debug:
+        cv2.imshow('img', img_res)
+        cv2.waitKey(0)
+
+    num_of_expected_hands = split_path.count('h')
+    assert len(
+        hands) == num_of_expected_hands, f"Expected {num_of_expected_hands} hands, but found {len(hands)} in {image_path}"
+
+
+@pytest.mark.parametrize("image_path", [f'test_images/{img}' for img in os.listdir(image_path)])
+def test_detect_people(image_path):
+
+    split_path = image_path.split('/')[1].split('.')[0].split('-')
+
+    if is_debug:
+        cv2.imshow('img', cv2.imread(image_path))
+        cv2.waitKey(0)
+
+    img = cv2.imread(image_path)
+    blob, outputs = models_store.object_detector.detect_objects(img)
+
+    if is_debug:
+        cv2.imshow('img', img)
+        cv2.waitKey(0)
+
+    is_person_expected = split_path.count('p') > 0
+    is_person_found = len(outputs) > 0
+    assert is_person_expected == is_person_found, f"Expected {is_person_expected} people, but found {is_person_found} in {image_path}"
+
+
+# test if the move is correct
+@pytest.mark.parametrize("image_path", [f'test_images/{img}' for img in os.listdir(image_path)])
+def test_detect_move(image_path):
+    split_path = image_path.split('/')[1].split('.')[0].split('-')
+    image_path = os.path.join(root_dir, image_path)
+    img = cv2.imread(image_path)
+    rectangle_size = 100
+
+
+
+    camera_move_check(img,rectangle_size,)
