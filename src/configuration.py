@@ -1,4 +1,4 @@
-from utils import read_label_file, read_file, get_path
+from src.utils import read_label_file, read_file, get_path
 
 class Configuration:
     def __init__(self):
